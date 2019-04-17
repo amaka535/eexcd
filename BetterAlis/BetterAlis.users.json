@@ -1,0 +1,161 @@
+{
+	"zimek": {
+		"uid": "165218",
+		"img": "2",
+		"color": "#ff5454",
+		"bold": "3",
+		"eval": true,
+		"icon": "owner",
+		"showSkinForEveryone": "1",
+		"customImg": ["https://i.imgur.com/KeSJZ6h.png","https://i.imgur.com/7sjyODX.png"],
+		"cellColor": {
+			"r": "255",
+			"g": "96",
+			"b": "96"
+		},
+		"ejectMass": {
+			"color": {
+				"r": "255",
+				"g": "0",
+				"b": "0"
+			},
+			"numSides": "3"
+		}
+	},
+	"yurain": {
+		"uid": "2056",
+		"img": "2",
+		"color": "#d67fff",
+		"bold": "2",
+		"eval": true,
+    "icon": "yurain",
+		"cellColor": {
+			"r": "0",
+			"g": "109",
+			"b": "16"
+		}
+	},
+	"sick": {
+		"uid": "322943",
+		"icon": "vip",
+		"color": "#CCCCFF",
+		"cellColor": {
+			"r": "204",
+			"g": "204",
+			"b": "255"
+		}
+	},
+	"killer": {
+		"uid": "37288",
+		"img": "2",
+		"icon": "vip",
+		"color": "#456be8",
+		"hat": "http://gaver.io/hats/kaneki.png",
+		"cellColor": {
+			"r": "99",
+			"g": "81",
+			"b": "71"
+		}
+	},
+	"yellow": {
+		"uid": "746",
+		"banned": true,
+		"cellColor": {
+			"r": "255",
+			"g": "240",
+			"b": "89"
+		}
+	},
+	"hannah": {
+		"uid": "389192",
+		"img": "2",
+		"eval": true,
+		"bold": "2",
+		"icon": "mod",
+		"color": "#ffaaf3",
+		"hat": "https://nosx.cf/dildo.png",
+		"cellColor": {
+			"r": "249",
+			"g": "172",
+			"b": "242"
+		},
+		"ejectMass": {
+			"color": {
+				"r":"124",
+				"g":"255",
+				"b":"244"
+			}
+		}
+	},
+	"badr": {
+		"uid": "316234",
+		"hat": "https://i.imgur.com/KnJUiXJ.png"
+	},
+	"rinsen": {
+		"uid": "116426",
+		"hat": "https://i.imgur.com/eCVRWJj.png"
+	},
+	"neroz": {
+		"uid": "16999",
+		"img": "2",
+		"color": "#de6bff",
+		"icon": "vip"
+	},
+	"noname": {
+		"uid": "47787",
+		"icon": "vip",
+		"hat": "http://alis.io/assets/img/crownhat.png"
+	},
+	"noskill": {
+		"uid": "310697",
+		"icon":"vip",
+		"ejectMass": {
+			"skin": "https://i.imgur.com/l6IhxBU.png"
+		},
+		"hat": "https://i.imgur.com/Jr8uK3y.png"
+	},
+	"oka": {
+		"uid": "59914",
+		"banned": true
+	},
+	"eagleeye": {
+		"uid": "94133",
+		"img": "2",
+		"eval": true,
+		"bold": "2",
+		"icon": "mod",
+		"color": "#ff6600",
+    "hat":"https://eagleeye1232.github.io/EagleEye/hat.png"
+	},
+	"owner": {
+		"uid": "165218",
+		"img": "2",
+		"eval": true
+	},
+	"icons": [{
+			"name": "owner",
+			"url": "https://zimek.tk/BetterAlis/res/icons/owner.png",
+			"title": "Better Alis Owner & Developer"
+		},
+		{
+			"name": "vip",
+			"url": "https://zimek.tk/BetterAlis/res/icons/vip.png",
+			"title": "Better Alis VIP player"
+		},
+		{
+			"name": "mod",
+			"url": "https://zimek.tk/BetterAlis/res/icons/mod.png",
+			"title": "Better Alis Moderator"
+		},
+		{
+			"name": "donator",
+			"url": "https://zimek.tk/BetterAlis/res/icons/donator.png",
+			"title": "Better Alis Donator"
+		},
+		{
+			"name": "yurain",
+			"url": "https://zimek.tk/BetterAlis/res/icons/devil.png",
+			"title": "Evil Yura"
+		}
+	]
+}
