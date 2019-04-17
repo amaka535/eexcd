@@ -1,0 +1,154 @@
+<head>
+  <title>Zimek.tk - Wiggle text generator</title>
+  <meta name="description" content="Zimek's website - Wiggle Text Generator">
+  <meta property="og:title" content="Zimek.tk">
+  <meta property="og:description" content="Zimek's website - Wiggle Text Generator">
+  <meta property="og:image" content="https://zimek.tk/web/faviconV2.png?v=4f32ecc8f43d">
+  <link rel="shortcut icon" href="https://zimek.tk/web/favicon.png?v=4f32ecc8f43d">
+
+<style>
+    #box{width: 100%;height: 1500px;background-color: #212121;margin: 0 auto;}
+    .previewBox{width: 100%;padding: 10px;margin-top: 60px;}
+    .boxhelp{text-align: left;width: 512px;padding: 10px;}
+    .span{font-size: 20px;color: white;}
+    #skinDiv{margin-top: 128px;margin-left: 128px;border-radius: 1000px;}
+    input{background-color: #303030;outline: none;transition-duration: 0.4s;border: transparent;padding: 5px;font-size: 15px;width: 300px;color: #d1d1d1;}
+    img[src=""]{ display: none; }
+    input[type="color"]{background-color: #303030;border: transparent;padding: 0px;width: 35px;height: 35px;color: #d1d1d1;}
+    input[type="checkbox"]{width: 18px;height: 18px;}
+    textarea{background:transparent;outline: none;border: transparent;padding: 5px;font-size: 20px;color: #d1d1d1;}
+		  button{font-size: 25px;outline: none;padding: 15px;background-color: #151515;border: transparent;color:#d1d1d1;transition-duration: 0.5s;}
+		  button:hover{background-color: #111111;color: white;cursor:pointer;}
+		  input:focus{border-bottom: 1px solid #d1d1d1;}
+		  ::selection {
+       background-color: #d1d1d1;
+       color: #000;
+}
+.bordered{border-bottom: 1px solid white;}
+a{text-decoration: none;}
+.link{color:#cecece;font-size:40px;transition-duration:0.3s;}
+.link:hover{color:#fefefe;text-shadow: 0px 0px 4px #fff}
+.welcum{color:#d6d6d6;font-size:60px;transition-duration:0.6s;}
+.welcum:hover{color:#f7f7f7}
+
+#banner{background-image: url("https://zimek.tk/web/banner.png");
+width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;}
+
+ body {
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none
+outline: none;
+   }
+ input,
+textarea {
+     -moz-user-select: text;
+}
+    ::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 5px;
+        opacity: 0.5;
+    }
+    ::-webkit-scrollbar-track {
+        border-radius: 0x;
+        background: #0c0c0c;
+        opacity: 0.5;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #680254;
+        width: 70%;
+
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #420035;
+    }
+    .top {
+  box-shadow: 50px 0px 50px 0 #2d2d2d;
+  box-shadow: 0 0px 50px 50px #2d2d2d;
+
+}
+
+</style>
+<script>
+function WiggleIT() {
+  document.getElementById("wiggle").value = `${document.getElementById("text").value}
+ ${document.getElementById("text").value}
+  ${document.getElementById("text").value}
+   ${document.getElementById("text").value}
+    ${document.getElementById("text").value}
+     ${document.getElementById("text").value}
+      ${document.getElementById("text").value}
+       ${document.getElementById("text").value}
+        ${document.getElementById("text").value}
+         ${document.getElementById("text").value}
+        ${document.getElementById("text").value}
+       ${document.getElementById("text").value}
+      ${document.getElementById("text").value}
+     ${document.getElementById("text").value}
+    ${document.getElementById("text").value}
+   ${document.getElementById("text").value}
+  ${document.getElementById("text").value}
+ ${document.getElementById("text").value}
+`;
+
+function select() {
+  document.getElementById("myText").select();
+}
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+</head>
+
+
+<body style="font-family: 'Rajdhani', sans-serif;width:100%;margin-left:0px;margin-top:0px;background-color:#151515;">
+
+
+
+
+<div style="text-align: center;width:100%;">
+  <div style="display: inline-block;width: 100%;">
+<div id="hello" class="top" style="z-index:100;width:100%;height:60%;background-color:#2d2d2d;">
+<div style="text-align:center;"><span style="display: inline-block;margin-top:6%;" class="welcum">Wiggle Text Generator</span></div>
+<div style="z-index:200;background-color:#1e1e1e;height:900px;width:100%;margin-top:7%;">
+
+<div style="text-align:center;">
+<div style="display: inline-block;margin-top:5%;">
+
+  <div style="margin-top: 100px;">
+  <span class="span">Text:</span> <input id="text"><br><br><button onclick="WiggleIT()">Generate</button><br><br>
+<textarea onclick="select()" id="wiggle" style="max-width: 500px;min-width: 500px;height: 500px;min-height: 500px;text-align: left;">
+Wiggle
+ Wiggle
+  Wiggle
+   Wiggle
+    Wiggle
+     Wiggle
+      Wiggle
+       Wiggle
+        Wiggle
+         Wiggle
+        Wiggle
+       Wiggle
+      Wiggle
+     Wiggle
+    Wiggle
+   Wiggle
+  Wiggle
+ Wiggle
+</textarea>
+  </div>
+
+</div>
+</div>
+  </div>
+</div>
+
+
+
+
+
+</body>
