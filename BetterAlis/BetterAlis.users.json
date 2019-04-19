@@ -2,18 +2,18 @@
 	"zimek": {
 		"uid": "165218",
 		"img": "2",
-		"color": "#ff5454",
-		"bold": "3",
+		"_color": "#ff5454",
+		"_bold": "3",
 		"eval": true,
-		"icon": "owner",
-		"showSkinForEveryone": "1",
-		"customImg": ["https://i.imgur.com/KeSJZ6h.png","https://i.imgur.com/7sjyODX.png"],
-		"cellColor": {
+		"_icon": "owner",
+		"_showSkinForEveryone": "1",
+		"_customImg": ["https://i.imgur.com/KeSJZ6h.png","https://i.imgur.com/7sjyODX.png"],
+		"_cellColor": {
 			"r": "255",
 			"g": "96",
 			"b": "96"
 		},
-		"ejectMass": {
+		"_ejectMass": {
 			"color": {
 				"r": "255",
 				"g": "0",
