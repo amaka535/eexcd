@@ -35,10 +35,9 @@ var afkMove = setInterval(function(){
   var x = Math.floor(Math.random() * (+3000 - -3000) + -3000)
   var y = Math.floor(Math.random() * (+3000 - -3000) + -3000)
   $("canvas").trigger($.Event("mousemove", {clientX: x, clientY: y}));
-  Split()
 
 }
-}, 18000)
+}, 16000)
 
 /*
 var afkSplit = setInterval(function(){
