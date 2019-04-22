@@ -25,7 +25,6 @@ $(`
 
 afk.onclick = function () {
 
-
 var afkSpawn = setInterval(function(){
 gay.insertAfter("#tabs")
 if(afk.checked){$("#play").click()}
@@ -39,14 +38,15 @@ var afkMove = setInterval(function(){
   Split()
 
 }
-}, 15000)
+}, 18000)
 
+/*
 var afkSplit = setInterval(function(){
   if(afk.checked){
   Split()
 }
-}, 12000)
-
+}, 50000)
+*/
 }
 
 $(document).ready(function(){
@@ -54,7 +54,7 @@ $(document).ready(function(){
         afk.checked = false
         clearInterval(afkSpawn)
         clearInterval(afkMove)
-        clearInterval(afkSplit)
+      //  clearInterval(afkSplit)
 
     });});
 
