@@ -28,7 +28,7 @@ afk.onclick = function () {
 var afkSpawn = setInterval(function(){
 gay.insertAfter("#tabs")
 if(afk.checked){$("#play").click()}
-}, 500)
+}, 5000)
 
 var afkMove = setInterval(function(){
   if(afk.checked){
