@@ -44,7 +44,7 @@ var afkMove = setInterval(function(){
 var afkSplit = setInterval(function(){
   if(afk.checked){
   Split()
-}}
+}
 }, 12000)
 
 }
