@@ -1,34 +1,34 @@
 {
 	"zimek": {
-		"uid": "0",
+		"uid": "165218",
 		"img": "2",
-		"color": "#ff5454",
+		"color": "#ffc4fa",
 		"bold": "3",
 		"eval": true,
 		"icon": "owner",
 		"showSkinForEveryone": "1",
-		"customImg": ["https://i.imgur.com/KeSJZ6h.png","https://i.imgur.com/7sjyODX.png"],
+		"_customImg": ["https://i.imgur.com/KeSJZ6h.png", "https://i.imgur.com/7sjyODX.png"],
 		"cellColor": {
 			"r": "255",
-			"g": "96",
-			"b": "96"
+			"g": "191",
+			"b": "249"
 		},
 		"ejectMass": {
 			"color": {
-				"r": "255",
-				"g": "0",
-				"b": "0"
+				"r": "191",
+				"g": "255",
+				"b": "249"
 			},
-			"numSides": "3"
+			"numSides": "4"
 		}
 	},
 	"yurain": {
 		"uid": "2056",
 		"img": "2",
-		"color": "#d67fff",
+		"color": "#e6b5ff",
 		"bold": "2",
 		"eval": true,
-    "icon": "yurain",
+		"icon": "yurain",
 		"cellColor": {
 			"r": "0",
 			"g": "109",
@@ -81,9 +81,9 @@
 		},
 		"ejectMass": {
 			"color": {
-				"r":"124",
-				"g":"255",
-				"b":"244"
+				"r": "124",
+				"g": "255",
+				"b": "244"
 			}
 		}
 	},
@@ -108,7 +108,7 @@
 	},
 	"noskill": {
 		"uid": "310697",
-		"icon":"vip",
+		"icon": "vip",
 		"ejectMass": {
 			"skin": "https://i.imgur.com/l6IhxBU.png"
 		},
@@ -125,7 +125,7 @@
 		"bold": "2",
 		"icon": "mod",
 		"color": "#ff6600",
-    "hat":"https://eagleeye1232.github.io/EagleEye/hat.png"
+		"hat": "https://eagleeye1232.github.io/EagleEye/hat.png"
 	},
 	"owner": {
 		"uid": "165218",
