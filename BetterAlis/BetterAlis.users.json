@@ -106,9 +106,10 @@
 		"icon": "vip",
 		"hat": "http://alis.io/assets/img/crownhat.png"
 	},
-	"noskill": {
+	"onkill": {
 		"uid": "310697",
-		"icon": "vip",
+		"_icon": "vip",
+		"banned": true,
 		"ejectMass": {
 			"skin": "https://i.imgur.com/l6IhxBU.png"
 		},
