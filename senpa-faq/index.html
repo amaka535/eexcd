@@ -38,11 +38,6 @@ width:100%;
   background-repeat: no-repeat;
   background-size: cover;}
 
-	body {
-  -webkit-user-select: none;
-     -moz-user-select: -moz-none;
-      -ms-user-select: none
-	  }
 	input,
 textarea {
      -moz-user-select: text;
@@ -120,8 +115,47 @@ div.btnbg {
 <head>
 <script>
   $("#main").fadeIn(1000)
-var questions = $.get(`./questions.json?nocache=${Math.random()}`);
-setTimeout(function(){questions = questions.responseJSON
+var questions = {
+	"1": {
+		"q": "What is Senpa.io?",
+		"a": "Senpa.io, an unblocked free to play ball-eating multiplayer agar style io game! Better graphics, smoother game, no downloads required! Eat smaller players and cells to grow, and dominate the leaderboard!"
+	},
+	"2": {
+		"q": "Does Senpa.io have a status page?",
+		"a": "Sure we do! You can find it here! http://status.nbk.io/ Keep in mind the players listed are ACTUAL players and the AI players don't account for the total."
+	},
+  "3": {
+    "q": "The game won't load in!",
+    "a": `Sorry to hear that. First try to troubleshoot the problem by doing the following:
+
+1: Press the esc key at the top left of your keyboard, click play and try again. (This is caused because the system we use to catch bots bugged/flagged your client)
+
+2: If that didn't work, do a hard refresh by doing ctrl + F5 key and trying to play again.
+
+3. Try to use a different browser (The game runs the best on chrome)
+
+4. Restart your computer or check your connection
+
+5. Check the status page: http://status.nbk.io/
+
+6. May be a server restart, maintenance, outage, or updating. Check again later.
+
+7. Go to the discord server and ask for support!`
+  },
+  "4": {
+    "q": "Where can I report a bug, give feedback, suggest features, or help with the community?",
+    "a": "You can suggest features, give feedback, report bugs, and get support from our official discord server! Link: https://discord.gg/DSZaR2X"
+  },
+  "5": {
+    "q": "Do you need any more staff members?",
+    "a": "We aren't currently recruiting staff member, we need people to help and invite people to the game. When we do need more staff, we will post an announcement on the discord server!"
+  },
+  "6": {
+    "q": "Are you lesbian",
+    "a": "sure"
+  },
+}
+
 
   Object.values(questions).forEach(faq=>{
   $(`#questions`).append(`
@@ -133,7 +167,6 @@ setTimeout(function(){questions = questions.responseJSON
   </div><br>
   `)
   })
-}, 1000)
 
 
 </script>
