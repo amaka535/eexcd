@@ -125,20 +125,13 @@ var questions = {
 	},
   "3": {
     "q": "The game won't load in!",
-    "a": `Sorry to hear that. First try to troubleshoot the problem by doing the following:
-
-1: Press the esc key at the top left of your keyboard, click play and try again. (This is caused because the system we use to catch bots bugged/flagged your client)
-
-2: If that didn't work, do a hard refresh by doing ctrl + F5 key and trying to play again.
-
-3. Try to use a different browser (The game runs the best on chrome)
-
-4. Restart your computer or check your connection
-
-5. Check the status page: http://status.nbk.io/
-
-6. May be a server restart, maintenance, outage, or updating. Check again later.
-
+    "a": `Sorry to hear that. First try to troubleshoot the problem by doing the following:<br>
+1: Press the esc key at the top left of your keyboard, click play and try again. (This is caused because the system we use to catch bots bugged/flagged your client)<br>
+2: If that didn't work, do a hard refresh by doing ctrl + F5 key and trying to play again.<br>
+3. Try to use a different browser (The game runs the best on chrome)<br>
+4. Restart your computer or check your connection<br>
+5. Check the status page: http://status.nbk.io/<br>
+6. May be a server restart, maintenance, outage, or updating. Check again later.<br>
 7. Go to the discord server and ask for support!`
   },
   "4": {
@@ -148,17 +141,13 @@ var questions = {
   "5": {
     "q": "Do you need any more staff members?",
     "a": "We aren't currently recruiting staff member, we need people to help and invite people to the game. When we do need more staff, we will post an announcement on the discord server!"
-  },
-  "6": {
-    "q": "Are you lesbian",
-    "a": "sure"
-  },
+  }
 }
 
 
   Object.values(questions).forEach(faq=>{
   $(`#questions`).append(`
-  <div style="text-align: left;margin-top:3%;max-width:50%;margin-left:30%;">
+  <div style="text-align: left;margin-top:3%;margin-left:30%;">
     <div style="margin-top:0.5%;text-align: left;">
     <span class="que">${faq.q}</span><br><br>
     <span class="a">${faq.a}</span>
