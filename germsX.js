@@ -1,12 +1,22 @@
 
-var v = "0.2"
+
+var v = "0.3"
 
 
+//ur actual skin url. i was testing smth dont mind it
+var url = $("#skin").css("background-image")
+url = url.replace(`url("`, "")
+url = url.replace(`")`, "")
+
+//yeah i get images for emojis from my alisio extension
 var res = "https://zimek.tk/BetterAlis/res"
 
-
+//some trash css
 $(`<style>
 .btgSettingsText{fotn-size:25px;}
+.zimekKey{width:50px;font-size:30px;background-color:#111111;}
+.zimekKey:focus{width:50px;font-size:30px;background-color:#111111;}
+
 </style>
 <link href="https://fonts.googleapis.com/css?family=Pattaya|Quicksand|Margarine" rel="stylesheet">
 `).appendTo('head');
@@ -17,13 +27,29 @@ $("div.card.nodrag > div.row > div.col > h6").remove()
 $("#menuCenter > div.card.nodrag > div.row > div.col").append(`<div id="btgMain">
 <h5>Better Germs.io v${v} by Zimek</h5><br>
 <div id="btgSettings">
+<div class="clearfix">
+<h5 class="optionLabel">More Emojis</h5>
+<label class="switch">
+<input type="checkbox" id="btgEmojis" onclick="save()">
+<span class="slider round"></span>
+</label>
+</div>
+
+<div class="row">
+<div class="col-md-6" style="font-size: 20px;width:300px;">x32 Macro</div>
+<div class="col-md-6" style="font-size: 20px;">
+<div class="input-group input-group-sm">
+<input id="btg32split" style="font-size:30px;text-align:center;max-width:60px;margin-left:80px;color:white;" maxlength="1" onkeyup="keyGay(this);" type="text" class="zimekKey form-control">
+</div>
+</div>
+</div>
 
 </div>
 </div>
 `)
 
-
-
+ function keyGay(x) {x.value = x.value.toLowerCase(); save()}
+//emojis rofl
 var emojis = {
   0.01:{"type":"default", "unicode":"😃", "name":"smile", "id":1},
   0.02:{"type":"default", "unicode":"🙂", "name":"smiling", "id":2},
@@ -76,23 +102,46 @@ var emojis = {
   0.49:{"type":"default", "unicode":"🌹", "name":"rose", "id":49},
 }
 
+$(function () {
+    if (!localStorage.getItem("BetterGermsFirst")) {
+        localStorage.setItem("BetterGerms", JSON.stringify({
+        "emojis":true,
+        "split32":"",
+      }));
+        localStorage.setItem("BetterGermsFirst", true);
+        window.location.reload(1);
+    }
+});
+
+const btgStorage = JSON.parse(localStorage.getItem("BetterGerms"));
+
+const btgEmojis = document.getElementById('btgEmojis');
+const btg32split = document.getElementById('btg32split');
+
+btgEmojis.checked = btgStorage.emojis;
+btg32split.value = btgStorage.split32
+//storage
+
+function save(){
+  localStorage.setItem("BetterGerms", JSON.stringify({
+  "emojis":btgEmojis.checked,
+  "split32":`${btg32split.value}`,
+  }));
+}
+
+if(btgStorage.emojis){
+$("#emotes").css({"width":"250px", "height":"280px"})
 
 Object.values(emojis).forEach(emoji=>{
 if(emoji.type === "default"){
 var file = ".svg"
 if(emoji.id == 47)file=".png";
   $("#emotesList").append(`
-    <li class="emotesEmote" onclick="addEmote('${emoji.unicode}')"><img src="${res}/emojis/default/${emoji.id}${file}"></li>
+    <li class="emotesEmote zimekEmoji" onclick="addEmote('${emoji.unicode}')"><img src="${res}/emojis/default/${emoji.id}${file}"></li>
     `)
 }
 
-});
-
-$("#emotes").css({"width":"250px", "height":"280px"})
-
-
-
-
+});}
 
 $("#chat_input").on("keyup", function() {
   var detected = $("#chat_input").val();
@@ -117,4 +166,22 @@ var replacement = {
     'P': 'Р',
     'c': 'с',
     'C': 'С',
+};
+
+function split() { //split function
+    $("body").trigger($.Event("keydown", { keyCode: 32}));
+    $("body").trigger($.Event("keyup", { keyCode: 32}));
+};
+var speed = 50;
+
+window.addEventListener('keydown', keydown);
+function keydown(event) {
+    if (event.key == btg32split.value) { //x32 split
+        split()
+        setTimeout(split, speed);
+        setTimeout(split, speed*2);
+        setTimeout(split, speed*3);
+        setTimeout(split, speed*4);
+
+    }
 };
