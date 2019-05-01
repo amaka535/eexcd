@@ -396,6 +396,15 @@ var btaKeyPopTime = document.getElementById('btaKeyPopTime');
 //saving settings
 
 //load values
+
+if(!btaStorage.hotkeys){
+  btaKeyTriple.value = "";
+  btaKey64.value = "";
+  btaKeyPop.value = "";
+  btaKeyPopTime.value = "";
+  save()
+}
+
 btaLb.checked = btaStorage.lb;
 btaChatFade.checked = btaStorage.chatfade;
 btaChatbox.checked = btaStorage.chatbox;
