@@ -1,20 +1,9 @@
-// ==UserScript==
-// @name         Better Alis Dev
-// @description  Better alis: dev version
-// @namespace    http://tampermonkey.net/
-// @version      12
-// @author       Zimek
-// @match        *://*.alis.io/*
-// @icon         https://zimek.tk/BetterAlis/res/logo.png
-// @run-at       document-end
-// @grant        none
-// ==/UserScript==
 
 /* global fetch, tm_chatuser, sendChat, extra, spectateMode, CryptoJS, localStorage, performance, document, serverExtra, Swal, getHighestScore, playerDetails, userid, conn, myApp, Noty,
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.11"
+var v = "12.12"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
@@ -976,6 +965,34 @@ $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").
 setTimeout(function(){
   if(document.getElementsByClassName("loading saving")){buildserverlist()}
 }, 10000)
+
+
+function split() { //split function
+    $("body").trigger($.Event("keydown", { keyCode: 32}));
+    $("body").trigger($.Event("keyup", { keyCode: 32}));
+};
+var speed = 50; //speed to work
+
+window.addEventListener('keydown', keydown); //macros
+function keydown(event) {
+    if (event.key == btaKeyPop.value) { //popsplit macro
+        split();
+        setTimeout(split, btaKeyPopTime.value);
+    }if (event.key == btaKeyTriple.value) { //triplesplit macro
+        split()
+        setTimeout(split, 60);
+        setTimeout(split, 130);
+    }
+    if (event.key == btaKey64.value) { //x64 macro
+        split()
+        setTimeout(split, speed);
+        setTimeout(split, speed*2);
+        setTimeout(split, speed*3);
+        setTimeout(split, speed*4);
+        setTimeout(split, speed*5);
+        setTimeout(split, speed*5);
+    }
+};
 
 $(document).ready(function(){
     $("#infobtn").click(function(){
