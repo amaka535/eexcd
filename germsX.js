@@ -1,4 +1,12 @@
-
+// ==UserScript==
+// @name         Better Germs.io
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Extension to Germs.io
+// @author       Zimek
+// @match        https://germs.io/*
+// @grant        none
+// ==/UserScript==
 
 var v = "0.3"
 
@@ -44,11 +52,20 @@ $("#menuCenter > div.card.nodrag > div.row > div.col").append(`<div id="btgMain"
 </div>
 </div>
 
+<div class="row">
+<div class="col-md-6" style="font-size: 20px;width:300px;">x128 Macro</div>
+<div class="col-md-6" style="font-size: 20px;">
+<div class="input-group input-group-sm">
+<input id="btg128split" style="font-size:30px;text-align:center;max-width:60px;margin-left:80px;color:white;" maxlength="1" onkeyup="keyGay(this);" type="text" class="zimekKey form-control">
+</div>
+</div>
+</div>
+
 </div>
 </div>
 `)
 
- function keyGay(x) {x.value = x.value.toLowerCase(); save()}
+ function keyGay(x) {x.value = x.value.toLowerCase(); save()} //smh
 //emojis rofl
 var emojis = {
   0.01:{"type":"default", "unicode":"😃", "name":"smile", "id":1},
@@ -107,6 +124,7 @@ $(function () {
         localStorage.setItem("BetterGerms", JSON.stringify({
         "emojis":true,
         "split32":"",
+        "split128":"",
       }));
         localStorage.setItem("BetterGermsFirst", true);
         window.location.reload(1);
@@ -114,18 +132,21 @@ $(function () {
 });
 
 const btgStorage = JSON.parse(localStorage.getItem("BetterGerms"));
-
 const btgEmojis = document.getElementById('btgEmojis');
 const btg32split = document.getElementById('btg32split');
+const btg128split = document.getElementById('btg128split');
 
 btgEmojis.checked = btgStorage.emojis;
 btg32split.value = btgStorage.split32
+btg128split.value = btgStorage.split128
+
 //storage
 
 function save(){
   localStorage.setItem("BetterGerms", JSON.stringify({
   "emojis":btgEmojis.checked,
   "split32":`${btg32split.value}`,
+  "split128":`${btg128split.value}`,
   }));
 }
 
@@ -172,7 +193,7 @@ function split() { //split function
     $("body").trigger($.Event("keydown", { keyCode: 32}));
     $("body").trigger($.Event("keyup", { keyCode: 32}));
 };
-var speed = 50;
+var speed = 60;
 
 window.addEventListener('keydown', keydown);
 function keydown(event) {
@@ -183,5 +204,14 @@ function keydown(event) {
         setTimeout(split, speed*3);
         setTimeout(split, speed*4);
 
+    };
+    if (event.key == btg128split.value) { //x32 split
+        split()
+        setTimeout(split, speed);
+        setTimeout(split, speed*2);
+        setTimeout(split, speed*3);
+        setTimeout(split, speed*4);
+        setTimeout(split, speed*5);
+        setTimeout(split, speed*6);
     }
 };
