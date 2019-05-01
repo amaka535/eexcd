@@ -396,7 +396,7 @@ var btaKeyPopTime = document.getElementById('btaKeyPopTime');
 
 //load values
 
-if(btaStorage.hotkeys==="undefined"){
+if(!btaStorage.hotkeys){
 btaStorage.hotkeys={
   "triple":"",
   "split64":"",
