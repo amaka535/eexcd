@@ -314,8 +314,8 @@ x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" clas
 Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 Pop-Split Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" placeholder="185" max="999" min="100" type="number" class="uk-input hotkey" style="width:80px;">ms<br><br>
 <div>
-Score size: <input type="range" min="5" max="30" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
-Chat text size: <input type="range" min="5" max="30" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
+Score size: <input type="range" min="5" max="30" step="0.1" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
+Chat text size: <input type="range" min="5" max="30" step="0.1" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
 Costumize your chatbox: <span style="margin-left: 5px;"><span id="btaChatHeightVal"></span> x <span id="btaChatRightVal"></span><br>
 <div style="margin-top: 60px;"><input type="range" min="100" max="520" id="btaChatHeight" style="width: 150px;margin-left:-50px;transform: rotate(-90deg);">
 <input type="range" min="152" max="520" id="btaChatRight" style="width: 150px;margin-left:-80px;">
@@ -837,6 +837,8 @@ chatRoom.receiveMessage = function(msg, message, color, extra) {
     var tabContent = $("<div style='display:none;' />");
 
     var timeStyle = ''
+
+    timeStyle += `font-size:${btaChatTextSize.value}px;`
 
     if(btaMsgTime.checked == false){
       timeStyle += 'display:none;'
