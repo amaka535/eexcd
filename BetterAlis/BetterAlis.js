@@ -309,10 +309,10 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaStats" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Ping and FPS</label><br>
 <label><input id="btaHideOwnSkin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide own skin</label><br>
 <label><input id="btaDisableLBColors" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Disable lb colors</label><br>
-Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;">
-x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;">
-Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;">
-Pop-Split Macro Timeout: <input id="btaKeyPopTime" maxlength="3" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;width:130px;">ms
+Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;"><br>
+x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;"><br>
+Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;"><br>
+Pop-Split Macro Timeout: <input id="btaKeyPopTime" maxlength="3" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;width:130px;">ms<br>
 <div>
 Score size: <input type="range" min="5" max="30" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
 Chat text size: <input type="range" min="5" max="30" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
