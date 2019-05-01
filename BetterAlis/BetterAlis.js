@@ -1,18 +1,32 @@
+// ==UserScript==
+// @name         Better Alis Dev
+// @description  Better alis: dev version
+// @namespace    http://tampermonkey.net/
+// @version      12
+// @author       Zimek
+// @match        *://*.alis.io/*
+// @icon         https://zimek.tk/BetterAlis/res/logo.png
+// @run-at       document-end
+// @grant        none
+// ==/UserScript==
+
+/* global fetch, tm_chatuser, sendChat, extra, spectateMode, CryptoJS, localStorage, performance, document, serverExtra, Swal, getHighestScore, playerDetails, userid, conn, myApp, Noty,
+leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.10"
+var v = "12.11"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
-//loading data
+//loading upgrades data
 $("#users").remove()
 var getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
 var users
 var icons
 setTimeout(function(){
   users = getUsers.responseJSON
-setTimeout(function(){icons = users.icons}, 2000)
-}, 3000)
+setTimeout(function(){icons = users.icons}, 1000)
+}, 2000)
 
 
 
@@ -113,7 +127,7 @@ var emojis = {
   0.47:{"type":"default", "unicode":"🤣", "name":"rofl", "id":47},
   0.48:{"type":"default", "unicode":"🤦", "name":"facepalm", "id":48},
   0.49:{"type":"default", "unicode":"🌹", "name":"rose", "id":49},
-  1.2:{"type":"custom", "name":"heartato", "id":2},
+  1.2:{"type":"custom", "name":"heartato", "id":2}, //customs are broken af
   1.3:{"type":"custom", "name":"zero2", "id":3},
   1.4:{"type":"custom", "name":"thonk", "id":4},
   1.5:{"type":"custom", "name":"omegalul", "id":5},
@@ -226,6 +240,7 @@ button{outline: none;}
 #btaEmojisPanelImg:hover{filter: none;opacity: 1;transition-duration: 0.17s;}
 .range{padding: 10px;}
 .rest:hover{border: 2px solid red;}
+.hotkey{width:70px;font-size:30px;background-color:#111111;border-radius:10px;text-align:center;color:#d1d1d1;}
 .font{font-family: Quicksand;}
 .fontBTA{font-family: Pattaya;}
 #btaRestartBtnImg{background-color: rgba(0,0,0,0.7);border-radius: 100px;padding: 5px;margin-top: -5px;margin-left: 3px;transition-duration: 0.2s;cursor: pointer;}
@@ -254,17 +269,14 @@ $(`
 <h5>/clear<br>/clear server</h5><br>
 </div>
 <div style="float: right;width: 49%;"><font size="5px">
-<h4>Update v11: I rewrote whole messages system! new commands, new blocked words bypasser and more! lot of bug fixes and new options!</h4>
-<h4>Update v10.0065: I rewrote whole saving settings system also added new option and fixed needed spectate + auto-respawn. Enjoy!</h4>
 <h4>If you have any ideas to extension tell me on discord (discord server is below)</h4><br>
 <h3>Better alis is not compatible with Havis</h3><br>
-<a href="https://greasyfork.org/en/users/141745-zimek" target="_blank">Check my other extensions!</b></a></font><br>
-<font size="3px"><a href="https://greasyfork.org/en/scripts/376116-alis-winter-theme" target="_blank">Alis winter theme</a></font></div></div>
+</div></div>
 <div style="margin-left: 81px;"><div style="max-height: 200px;">
 <div style="margin-bottom: 30px;float: left;"><a href="https://discord.gg/jewrxwY" target="_blank"><img src="${res}/infopanel/discord.png" width="200px" height="68"></a></div>
 <div class="mark"><b>Better Alis by Zimek</b></div>
 <div style="float: left;margin-top: 10px;margin-left: 10px;"><div class="g-ytsubscribe" data-channelid="UCzQLS2sTAPAYH7qyj0FXP3w" data-layout="full" data-theme="dark" data-count="hidden"></div></div>
-<div style="float: left;margin-top: 10px;margin-left: 10px;"><div class="g-ytsubscribe" data-channelid="UCc6nxxjrUz5J-u6AW7YiXUw" data-layout="full" data-theme="dark" data-count="hidden"></div></div></div></div></div>
+</div></div></div></div>
 `).insertAfter("#settingsoverlays");
 
 $(`
@@ -297,6 +309,10 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaStats" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Ping and FPS</label><br>
 <label><input id="btaHideOwnSkin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide own skin</label><br>
 <label><input id="btaDisableLBColors" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Disable lb colors</label><br>
+Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" type="checkbox" style="margin-top: 3px;">
+x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" type="checkbox" style="margin-top: 3px;">
+Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" type="checkbox" style="margin-top: 3px;">
+Pop-Split Macro Timeout: <input id="btaKeyPopTime" maxlength="3" onkeyup="keyGay(this);" class="uk-checkbox hotkey" type="checkbox" style="margin-top: 3px;width:130px;">ms
 <div>
 Score size: <input type="range" min="5" max="30" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
 Chat text size: <input type="range" min="5" max="30" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
@@ -313,6 +329,9 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
 //==////==//
 
 //==//javascript//==//
+
+//custom menu
+
 
 //default settings
             $(function () {
@@ -335,6 +354,12 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "chatText":14,
                     "chatHeight":178,
                     "chatRight":373,
+                    "hotkeys":{
+                      "triple":"",
+                      "split64":"",
+                      "popsplit":"",
+                      "poptime":"",
+                    },
                     "bgColor":`#212121`
                   }));
                     localStorage.setItem("BetterAlisFirst", true);
@@ -342,17 +367,8 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                 }
             });
 
-            $(function () {
-                if (!localStorage.getItem("BetterAlis11Alert")) {
-$("body").empty(); $("html").css("background-color", "gray")
-$("body").append(`<a href="https://greasyfork.org/en/scripts/371028-better-alis"><h2 style="padding: 20px;">New better alis update v11 CLICK HERE TO INSTALL OR ELSE ITS WONT WORK!!!!</h2></a>`)
-                   localStorage.setItem("BetterAlis11Alert", true);
-                }
-            });
-
-
 const btaStorage = JSON.parse(localStorage.getItem("BetterAlis"));
-
+function keyGay(x) {x.value = x.value.toLowerCase(); save()} //smh
 //version
 $("span#version").text(`v${v}`)
 const btaLb = document.getElementById('btaLb');
@@ -372,6 +388,10 @@ var btaChatTextSize = document.getElementById('btaChatTextSize');
 var btaChatHeight = document.getElementById('btaChatHeight');
 var btaChatRight = document.getElementById('btaChatRight');
 var btaBgColor = document.getElementById('btaBgColor');
+var btaKeyTriple = document.getElementById('btaKeyTriple');
+var btaKey64 = document.getElementById('btaKey64');
+var btaKeyPop = document.getElementById('btaKeyPop');
+var btaKeyPopTime = document.getElementById('btaKeyPopTime');
 
 //saving settings
 
@@ -393,6 +413,10 @@ btaChatTextSize.value = btaStorage.chatText;
 btaChatHeight.value = btaStorage.chatHeight;
 btaChatRight.value = btaStorage.chatRight;
 btaBgColor.value = btaStorage.bgColor;
+btaKeyTriple.value = btaStorage.hotkeys.triple;
+btaKey64.value = btaStorage.hotkeys.split64;
+btaKeyPop.value = btaStorage.hotkeys.popsplit;
+btaKeyPopTime.value = btaStorage.hotkeys.poptime;
 
 
 
@@ -414,9 +438,24 @@ function save(){
   "chatText":btaChatTextSize.value,
   "chatHeight":btaChatHeight.value,
   "chatRight":btaChatRight.value,
+  "hotkeys":{
+    "triple":`${btaKeyTriple.value}`,
+    "split64":`${btaKey64.value}`,
+    "popsplit":`${btaKeyPop.value}`,
+    "poptime":`${btaKeyPopTime.value}`,
+  },
   "bgColor":`${btaBgColor.value}`
   }));
 }
+
+if(btaKeyTriple.value==="undefined"){
+  btaKeyTriple.value = "";
+  btaKey64.value = "";
+  btaKeyPop.value = "";
+  btaKeyPopTime.value = "";
+  save()
+}
+
 
 //input values to spans
 $("#btaScoreSizeVal").text(`${btaStorage.scoreSize}px`);
@@ -428,9 +467,8 @@ $("#btaBgColorVal").text(`${btaStorage.bgColor}`);
 //load saved settings
 
 //bta chat text size
-$(`<style>.msg{font-size: ${btaStorage.chatText}px;}.sender{font-size: ${btaStorage.chatText}px;} .time{font-size: ${btaStorage.chatText}px;color:#afafaf;}</style>`).appendTo("head")
 btaChatTextSize.oninput = function () {
-  localStorage.setItem("BetterAlis", JSON.stringify({...btaStorage, "chatText":btaChatTextSize.value}));
+save()
    $("#btaChatboxTextSizeVal").text(`${btaChatTextSize.value}px`);
    $(".msg, .sender, .time").css("font-size", `${btaChatTextSize.value}px`)
 };
@@ -810,6 +848,10 @@ chatRoom.receiveMessage = function(msg, message, color, extra) {
       if(user.bold>1){
         if(extra.uid == user.uid)timeStyle += 'font-weight:700;';
       }
+
+      if(user.muted){
+        if(extra.uid == user.uid)return;
+      }
 })
 
 
@@ -825,6 +867,7 @@ var errors = $(`<span class='time' style='${timeStyle}'>`).text(`[${this.getTime
     if (extra.isServer){
       style += ' color:#548fff;';
     }
+    style += `font-size:${btaChatTextSize.value}px;`
     style += '"';
     // If we got their PID, caches it and their details
     if (extra.pid) {
@@ -852,10 +895,10 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
 
 })
     tabContent.append(size);
-    errors = $("<span class='msg'>").text(message);
+    errors = $(`<span class='msg' style='font-size:${btaChatTextSize.value}px;'>`).text(message);
     tabContent.append(errors);
     $("#chatroom").append(tabContent);
-    $(tabContent).fadeIn(220)
+    $(tabContent).fadeIn(250)
     this.popupChat(msg, message, color);
     //$('.sender').css('color', chatcolor);
       goChatUP()
