@@ -312,7 +312,7 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
-Pop-Split Macro Timeout: <input id="btaKeyPopTime" maxlength="3" onkeyup="keyGay(this);" type="number" class="uk-input hotkey" style="width:60px;">ms<br>
+Pop-Split Macro Timeout: <input id="btaKeyPopTime" maxlength="3" onkeyup="keyGay(this);" type="number" class="uk-input hotkey" style="appearance: none;width:60px;">ms<br>
 <div>
 Score size: <input type="range" min="5" max="30" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
 Chat text size: <input type="range" min="5" max="30" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
