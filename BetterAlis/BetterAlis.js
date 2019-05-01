@@ -240,7 +240,7 @@ button{outline: none;}
 #btaEmojisPanelImg:hover{filter: none;opacity: 1;transition-duration: 0.17s;}
 .range{padding: 10px;}
 .rest:hover{border: 2px solid red;}
-.hotkey{width:56px;font-size:30px;background-color:#111111;border-radius:10px;text-align:center;color:#d1d1d1;border-bottom:none;height:40px;}
+.hotkey{width:56px;font-size:25px;background-color:#111111;border-radius:10px;text-align:center;color:#d1d1d1;border-bottom:none;height:22px;}
 .font{font-family: Quicksand;}
 .fontBTA{font-family: Pattaya;}
 #btaRestartBtnImg{background-color: rgba(0,0,0,0.7);border-radius: 100px;padding: 5px;margin-top: -5px;margin-left: 3px;transition-duration: 0.2s;cursor: pointer;}
