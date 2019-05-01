@@ -405,6 +405,8 @@ btaStorage.hotkeys={
 }
 }
 
+if(btaStorage.hotkeys.poptime==="")btaStorage.hotkeys.poptime="185";
+
 btaLb.checked = btaStorage.lb;
 btaChatFade.checked = btaStorage.chatfade;
 btaChatbox.checked = btaStorage.chatbox;
