@@ -140,6 +140,7 @@ btgEmojis.checked = btgStorage.emojis;
 btg32split.value = btgStorage.split32
 btg128split.value = btgStorage.split128
 
+if(btg128split.value==="undefined"){btg128split.value =""; save()}
 //storage
 
 function save(){
