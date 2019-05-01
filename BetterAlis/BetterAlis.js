@@ -345,7 +345,7 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "restartbtn":false,
                     "OFFlbColors":false,
                     "stats":true,
-                    "chatfade":true,
+                    "chatfade":false,
                     "emojis":true,
                     "lb":true,
                     "chatbox":true,
