@@ -309,10 +309,10 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaStats" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Ping and FPS</label><br>
 <label><input id="btaHideOwnSkin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide own skin</label><br>
 <label><input id="btaDisableLBColors" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Disable lb colors</label><br>
-Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" type="checkbox" style="margin-top: 3px;">
-x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" type="checkbox" style="margin-top: 3px;">
-Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" type="checkbox" style="margin-top: 3px;">
-Pop-Split Macro Timeout: <input id="btaKeyPopTime" maxlength="3" onkeyup="keyGay(this);" class="uk-checkbox hotkey" type="checkbox" style="margin-top: 3px;width:130px;">ms
+Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;">
+x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;">
+Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;">
+Pop-Split Macro Timeout: <input id="btaKeyPopTime" maxlength="3" onkeyup="keyGay(this);" class="uk-checkbox hotkey" style="margin-top: 3px;width:130px;">ms
 <div>
 Score size: <input type="range" min="5" max="30" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
 Chat text size: <input type="range" min="5" max="30" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
@@ -336,7 +336,6 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
 //default settings
             $(function () {
                 if (!localStorage.getItem("BetterAlisFirst")) {
-                  localStorage.setItem("BetterAlis11Alert", true);
                     localStorage.setItem("BetterAlis", JSON.stringify({
                     "hideownskin":false,
                     "autorespawn":false,
@@ -352,8 +351,8 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "chatbox":true,
                     "scoreSize":15,
                     "chatText":14,
-                    "chatHeight":178,
-                    "chatRight":373,
+                    "chatHeight":320,
+                    "chatRight":340,
                     "hotkeys":{
                       "triple":"",
                       "split64":"",
@@ -398,11 +397,12 @@ var btaKeyPopTime = document.getElementById('btaKeyPopTime');
 //load values
 
 if(btaStorage.hotkeys==="undefined"){
-  btaKeyTriple.value = "";
-  btaKey64.value = "";
-  btaKeyPop.value = "";
-  btaKeyPopTime.value = "";
-  save()
+btaStorage.hotkeys={
+  "triple":"",
+  "split64":"",
+  "popsplit":"",
+  "poptime":"",
+}
 }
 
 btaLb.checked = btaStorage.lb;
