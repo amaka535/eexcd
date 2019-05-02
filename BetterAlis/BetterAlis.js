@@ -14,6 +14,7 @@
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
+try {
 var v = "12.13"
 var res = "https://zimek.tk/BetterAlis/res"
 
@@ -956,7 +957,7 @@ btaAutorespawn.onclick = function () {save()}
       if($("#overlays").css("display") == "none"){
   setTimeout(function(){
 $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").click()
-}, 200)
+}, 60)
 setTimeout(function(){
   if($("#overlays").css("display") == "none" || isJoinedGame == true){
 $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").click()}
@@ -1037,3 +1038,4 @@ $("input#skinurl").attr('maxlength','999999');
 
 setTimeout(function(){checkBanned()}, 2000)
 //==////==//
+} catch (e) {console.log(e)}
