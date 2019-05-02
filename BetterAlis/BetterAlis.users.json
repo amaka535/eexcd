@@ -7,7 +7,7 @@
 		"eval": true,
 		"icon": "owner",
 		"showSkinForEveryone": "1",
-		"customImg": ["https://i.imgur.com/2Yoa16a.png", "https://i.imgur.com/lOMQ3fr.png", "https://i.imgur.com/qN02zF8.png", "https://i.imgur.com/9z5fQcb.png"],
+		"customImg": ["https://i.imgur.com/cKtgTXf.png","https://i.imgur.com/d158Nwd.png","https://i.imgur.com/foUowFN.png"],
 		"cellColor": {
 			"r": "255",
 			"g": "191",
@@ -28,7 +28,7 @@
 		"color": "#e6b5ff",
 		"bold": "2",
 		"eval": true,
-		"icon": "yurain",
+                "icon": "yurain",
 		"cellColor": {
 			"r": "0",
 			"g": "109",
@@ -81,9 +81,9 @@
 		},
 		"ejectMass": {
 			"color": {
-				"r": "124",
-				"g": "255",
-				"b": "244"
+				"r":"124",
+				"g":"255",
+				"b":"244"
 			}
 		}
 	},
@@ -108,8 +108,8 @@
 	},
 	"onkill": {
 		"uid": "310697",
-		"_icon": "vip",
-		"_banned": true,
+		"_icon":"vip",
+                "_banned": true,
 		"ejectMass": {
 			"skin": "https://i.imgur.com/l6IhxBU.png"
 		},
@@ -126,7 +126,7 @@
 		"bold": "2",
 		"icon": "mod",
 		"color": "#ff6600",
-		"hat": "https://eagleeye1232.github.io/EagleEye/hat.png"
+    "hat":"https://eagleeye1232.github.io/EagleEye/hat.png"
 	},
 	"owner": {
 		"uid": "165218",
