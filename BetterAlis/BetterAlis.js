@@ -1038,4 +1038,6 @@ $("input#skinurl").attr('maxlength','999999');
 
 setTimeout(function(){checkBanned()}, 2000)
 //==////==//
-} catch (e) {$("#div_lb").append(e)}
+} catch (err) {
+  $("#div_lb").append(`<span>${err}</span>`)
+}
