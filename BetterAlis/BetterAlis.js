@@ -525,6 +525,7 @@ refreshLoop();
 };
 refreshLoop();
 
+var hideOwnSkinTrue
 btaHideOwnSkin.onclick = function () {
 save()
     if (btaHideOwnSkin.checked) {
