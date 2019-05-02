@@ -15,7 +15,7 @@ function addUser(uid) {
   eval(`$.extend(users, {${uid}:{"uid":${uid}}})`)
 }
 
-forceMute(uid) {
+function forceMute(uid) {
   addUser(uid)
   setTimeout(function(){
     users[`${uid}`].muted = true
