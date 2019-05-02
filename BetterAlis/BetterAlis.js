@@ -525,17 +525,22 @@ refreshLoop();
 };
 refreshLoop();
 
+//hide own skin
 var hideOwnSkinTrue
+if(btaHideOwnSkin.checked){hideOwnSkinTrue = true}else{hideOwnSkinTrue = false}
 btaHideOwnSkin.onclick = function () {
 save()
     if (btaHideOwnSkin.checked) {
         hideOwnSkinTrue = true
-Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=""})
     } else {
 hideOwnSkinTrue = false
 Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=document.getElementById("skinurl").value})
 }
 };
+  setInterval(function(){
+      if(hideOwnSkinTrue == false){return}
+     if(hideOwnSkinTrue == true){Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=""})}
+  }, 4000);
 
 //bg color
   $("html").css("background-color", `${btaStorage.bgColor}`);
