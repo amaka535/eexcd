@@ -977,7 +977,7 @@ setTimeout(function(){
 }, 10000)
 
 
-function split() { //split function
+split() { //split function
     $("body").trigger($.Event("keydown", { keyCode: 32}));
     $("body").trigger($.Event("keyup", { keyCode: 32}));
 };
@@ -1010,7 +1010,7 @@ $(document).ready(function(){
     });
         $("#btaCloseInfo").click(function(){
             $("div#btaInfo").fadeOut(200);
-
+});
         $("#logomenu").click(function(){
             $("#btaLogoStart").fadeOut(200);
             $("#btaSettings").fadeIn(280);
