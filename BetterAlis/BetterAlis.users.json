@@ -7,7 +7,7 @@
 		"eval": true,
 		"icon": "owner",
 		"showSkinForEveryone": "1",
-		"_customImg": ["https://i.imgur.com/KeSJZ6h.png", "https://i.imgur.com/7sjyODX.png"],
+		"customImg": ["https://i.imgur.com/2Yoa16a.png", "https://i.imgur.com/lOMQ3fr.png", "https://i.imgur.com/qN02zF8.png", "https://i.imgur.com/9z5fQcb.png"],
 		"cellColor": {
 			"r": "255",
 			"g": "191",
@@ -109,7 +109,7 @@
 	"onkill": {
 		"uid": "310697",
 		"_icon": "vip",
-		"banned": true,
+		"_banned": true,
 		"ejectMass": {
 			"skin": "https://i.imgur.com/l6IhxBU.png"
 		},
