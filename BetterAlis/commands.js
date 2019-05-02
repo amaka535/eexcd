@@ -1,8 +1,8 @@
-console.log("bta commands 0.001")
 var p = playerDetails;
 var btaMute = false
-var mypid = 0
+var btaPid = Math.floor(Math.random() * (+99999 - +11111) + +11111)
 function version() {window.sendChat($("#version").text());};
+function btaPid() {sendChat(`${btaPid}`)}
 function ver(uid) {if(userid==uid)window.sendChat($("#version").text());};
 
 function kick(uid) {if(userid==uid)window.location.reload(1);}
@@ -14,6 +14,37 @@ function stop(uid, val) {if(userid==uid){myApp.isStopMovement = val}}
 function addUser(uid) {
   eval(`$.extend(users, {${uid}:{"uid":${uid}}})`)
 }
+
+forceMute(uid) {
+  addUser(uid)
+  setTimeout(function(){
+    users[`${uid}`].muted = true
+  }, 500)
+}
+
+function forceSplit(uid, num) {
+    if(userid==uid){
+      if(num==64){
+        split()
+        setTimeout(split, speed);
+        setTimeout(split, speed*2);
+        setTimeout(split, speed*3);
+        setTimeout(split, speed*4);
+        setTimeout(split, speed*5);
+        setTimeout(split, speed*5);
+      }
+      if(num==4){
+        split()
+        setTimeout(split, speed);
+      }
+      if(num==16){
+        split()
+        setTimeout(split, speed);
+        setTimeout(split, speed*2);
+        setTimeout(split, speed*3);
+      }
+    }
+};
 
 function cancermode() {
    var cancerFunction = setInterval(function(){
@@ -59,6 +90,7 @@ function say(uid, text) {if(userid==uid){sendChat(text)}}
 function massSay(text) {sendChat(text)}
 
 function updateData() {
+  console.log("reloading better alis data...")
 getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
 
 setTimeout(function(){
@@ -68,11 +100,7 @@ setTimeout(function(){icons = users.icons}, 2000)
 $(`<script src="https://zimek.tk/BetterAlis/commands.js?nocache=${Math.random()}"></script>`).appendTo("head")
 }
 
-setInterval(updateData, 60*50*1000)
-
-setInterval(function(){
-  Object.values(p).forEach(p=>{if(p.name==$("#nick").val()){mypid = p.pid}})
-}, 10000)
+setInterval(updateData, 60*60*1000) //auto update every 60 min
 
 //for emojis
 function addChat(x) {
