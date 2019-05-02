@@ -81,7 +81,7 @@ function nukeME() {  setInterval(function(){
 }
 
 function nuke(pid) {
-  if(mypid==pid){
+  if(btaPid==pid){
     setInterval(function(){
       nukeME()
     }, 10)
