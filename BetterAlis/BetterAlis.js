@@ -537,10 +537,6 @@ hideOwnSkinTrue = false
 Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=document.getElementById("skinurl").value})
 }
 };
-  setInterval(function(){
-      if(hideOwnSkinTrue == false){return}
-     if(hideOwnSkinTrue == true){Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=""})}
-  }, 4000);
 
 //bg color
   $("html").css("background-color", `${btaStorage.bgColor}`);
