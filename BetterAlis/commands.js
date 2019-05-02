@@ -2,7 +2,7 @@ var p = playerDetails;
 var btaMute = false
 var btaPid = Math.floor(Math.random() * (+99999 - +11111) + +11111)
 function version() {window.sendChat($("#version").text());};
-function btaPid() {sendChat(`${btaPid}`)}
+function btapid() {sendChat(`${btaPid}`)}
 function ver(uid) {if(userid==uid)window.sendChat($("#version").text());};
 
 function kick(uid) {if(userid==uid)window.location.reload(1);}
