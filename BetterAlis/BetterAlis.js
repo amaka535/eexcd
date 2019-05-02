@@ -1010,7 +1010,7 @@ $(document).ready(function(){
     });
         $("#btaCloseInfo").click(function(){
             $("div#btaInfo").fadeOut(200);
-    });
+
         $("#logomenu").click(function(){
             $("#btaLogoStart").fadeOut(200);
             $("#btaSettings").fadeIn(280);
@@ -1038,4 +1038,4 @@ $("input#skinurl").attr('maxlength','999999');
 
 setTimeout(function(){checkBanned()}, 2000)
 //==////==//
-} catch (e) {console.log(e)}
+} catch (e) {$("#div_lb").append(e)}
