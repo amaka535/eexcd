@@ -37,6 +37,9 @@ function forceSplit(uid, num) {
         split()
         setTimeout(split, speed);
       }
+      if(num==1){
+        split()
+      }
       if(num==16){
         split()
         setTimeout(split, speed);
