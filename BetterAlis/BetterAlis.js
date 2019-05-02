@@ -1,9 +1,20 @@
+// ==UserScript==
+// @name         Better Alis Dev
+// @description  Better alis: dev version
+// @namespace    http://tampermonkey.net/
+// @version      12
+// @author       Zimek
+// @match        *://*.alis.io/*
+// @icon         https://zimek.tk/BetterAlis/res/logo.png
+// @run-at       document-end
+// @grant        none
+// ==/UserScript==
 
 /* global fetch, tm_chatuser, sendChat, extra, spectateMode, CryptoJS, localStorage, performance, document, serverExtra, Swal, getHighestScore, playerDetails, userid, conn, myApp, Noty,
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.12"
+var v = "12.13"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
@@ -126,7 +137,8 @@ var emojis = {
   1.9:{"type":"custom", "name":"pepecry", "id":9},
   1.10:{"type":"custom", "name":"what", "id":10},
   1.11:{"type":"custom", "name":"sadcat", "id":11},
-  1.1:{"type":"custom", "name":"pepesad", "id":2},
+  1.12:{"type":"custom", "name":"pepesad", "id":12},
+  1.13:{"type":"custom", "name":"xd", "id":13},
 }
 
 Object.values(emojis).forEach(emoji=>{
@@ -513,22 +525,16 @@ refreshLoop();
 };
 refreshLoop();
 
-//hide own skin
-var hideOwnSkinTrue
-if(btaHideOwnSkin.checked){hideOwnSkinTrue = true}else{hideOwnSkinTrue = false}
 btaHideOwnSkin.onclick = function () {
 save()
     if (btaHideOwnSkin.checked) {
         hideOwnSkinTrue = true
+Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=""})
     } else {
 hideOwnSkinTrue = false
 Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=document.getElementById("skinurl").value})
 }
 };
-  setInterval(function(){
-      if(hideOwnSkinTrue == false){return}
-     if(hideOwnSkinTrue == true){Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=""})}
-  }, 4000);
 
 //bg color
   $("html").css("background-color", `${btaStorage.bgColor}`);
@@ -764,7 +770,7 @@ if(btaMute == true){$("#chatroom").append("<span class='msg' style='color:#ff727
             return}
             if(msg === "/eval"){
               $("#chatroom").append(`<span class="msg" style="color:#ffeb56;">version()<br>ver(uid)<br>kick(uid)<br>nick(uid, "newNick")<br>stop(uid, true/false)<br>title("lb header")
-              <br>cancer(uid)<br>mute(uid)  and  unmute(uid)<br>say(uid, "text")<br>updateData()<br>checkBanned()</span>`);
+              <br>cancer(uid)<br>mute(uid)  and  unmute(uid)<br>say(uid, "text")<br>updateData()<br>forceSplit(uid, num)<br>forceMute(uid)<br>checkBanned()</span>`);
               goChatUP();
               return}
           }}
@@ -792,7 +798,7 @@ msg = replace
 
           //copied from havis lmao
               const goodWord = (word) => word.replace(new RegExp(`.{${~~(word.length / 2)}}`), `$&${String.fromCharCode(65279)}`);
-    					const badWords = ["team", "admin", "tampermonkey", "razor", "give coins", "give me coins", "give me hat", "greeb", "hack", "wally", "extension", "camp", "cuck", "cunt", "nigger", "noob", "lagging", "script", "bitch", "google", "bing", "troll", "alis", "havoc", "onkill", "neroz", "hack", "color", "colour", "wings", "jesus", ".io", "nosx", "nos", "nox", "youtube", "accident", "dev", "give hat", "owner", "whore", "faggot", "outside"];
+    					const badWords = ["team", "admin", "tampermonkey", "razor", "pedo", "give coins", "give me coins", "give me hat", "greeb", "hack", "wally", "extension", "camp", "cuck", "cunt", "nigger", "noob", "lagging", "script", "bitch", "google", "bing", "troll", "alis", "havoc", "onkill", "neroz", "hack", "color", "colour", "wings", "jesus", ".io", "nosx", "nos", "nox", "youtube", "accident", "dev", "give hat", "owner", "whore", "faggot", "outside"];
     					const uncuckRegex = new RegExp(badWords.join("|"), "gi");
     					if (badWords.some(s => msg.toLowerCase().includes(s))) msg = msg.replace(uncuckRegex, matched => goodWord(matched));
 
@@ -841,10 +847,6 @@ chatRoom.receiveMessage = function(msg, message, color, extra) {
       if(user.bold>1){
         if(extra.uid == user.uid)timeStyle += 'font-weight:700;';
       }
-
-      if(user.muted){
-        if(extra.uid == user.uid)return;
-      }
 })
 
 
@@ -869,6 +871,11 @@ var errors = $(`<span class='time' style='${timeStyle}'>`).text(`[${this.getTime
         style += ' onclick="window.onChatClick(' + extra.pid + ')" pid="' + extra.pid + '"';
     }
 if(msg.includes("evenzinho"))return;
+Object.values(users).forEach(user=>{
+  if(user.muted){
+    if(extra.uid == user.uid)return;
+  }
+})
     // If we are in window.seeAllChat then display team names in parenthesis
     if (window.seeAllChat) {
         msg += ' (' + extra.team + ')';
@@ -947,7 +954,7 @@ btaAutorespawn.onclick = function () {save()}
       if($("#overlays").css("display") == "none"){
   setTimeout(function(){
 $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").click()
-}, 50)
+}, 200)
 setTimeout(function(){
   if($("#overlays").css("display") == "none" || isJoinedGame == true){
 $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").click()}
