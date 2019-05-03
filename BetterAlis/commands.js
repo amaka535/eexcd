@@ -21,6 +21,8 @@ function ccRGB(hex) { //https://stackoverflow.com/questions/5623838/rgb-to-hex-a
     ccr = (bigint >> 16) & 255;
     ccg = (bigint >> 8) & 255;
     ccb = bigint & 255;
+btacc = {"r":ccr, "g":ccg, "b":ccb}
+
 }
 
 function forceMute(uid) {
