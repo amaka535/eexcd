@@ -372,6 +372,14 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
 
 const btaStorage = JSON.parse(localStorage.getItem("BetterAlis"));
 function keyGay(x) {x.value = x.value.toLowerCase(); save()} //smh
+function ccRGB(hex) { //https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+  hex = hex.replace("#", "")
+    var bigint = parseInt(hex, 16);
+    ccr = (bigint >> 16) & 255;
+    ccg = (bigint >> 8) & 255;
+    ccb = bigint & 255;
+}
+
 //version
 $("span#version").text(`v${v}`)
 const btaLb = document.getElementById('btaLb');
