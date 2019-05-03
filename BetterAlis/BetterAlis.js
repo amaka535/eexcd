@@ -10,7 +10,7 @@
 // @grant        none
 // ==/UserScript==
 
-/* global fetch, tm_chatuser, sendChat, extra, spectateMode, CryptoJS, localStorage, performance, document, serverExtra, Swal, getHighestScore, playerDetails, userid, conn, myApp, Noty,
+/* global fetch, ccRGB, tm_chatuser, sendChat, extra, spectateMode, CryptoJS, localStorage, performance, document, serverExtra, Swal, getHighestScore, playerDetails, userid, conn, myApp, Noty,
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
@@ -297,7 +297,7 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 <div id="btaSettingsMain" style="width: 100%;max-height: 60%;float: left;margin-top: 0px;padding: 15px;">
 <div><span style="font-size: 30px;" class="fontBTA">Better Alis</span><span style="font-size: 14px;margin-left: 10px;" class="font">by Zimek</span><span style="float: right;font-size: 10px;margin-top: 20px;" id="version" class="font"></span></div>
 <div style="margin-top: 10px;overflow-y: scroll;max-height: 340px;">
-Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"><br>
+Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;margin-top:-3px;"><br>
 <label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
 <label><input id="btaChatFade" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Chatbox fade</label><br>
@@ -402,6 +402,10 @@ var btaCellColor = document.getElementById('btaCellColor');
 
 //load values
 
+if(!btaStorage.cc){
+btaStorage.cc="#82e8ff"
+}
+
 if(!btaStorage.hotkeys){
 btaStorage.hotkeys={
   "triple":"",
@@ -469,6 +473,8 @@ function save(){
   }));
 }
 
+ccRGB(btaStorage.cc)
+
 //input values to spans
 $("#btaScoreSizeVal").text(`${btaStorage.scoreSize}px`);
 $("#btaChatboxTextSizeVal").text(`${btaStorage.chatText}px`);
@@ -496,6 +502,7 @@ btaCCcell.onclick = function () {
 
 btaCellColor.oninput = function () {
   save()
+  ccRGB(btaCellColor.value)
 }
 
 //bta chat text size
