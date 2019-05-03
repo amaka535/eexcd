@@ -14,7 +14,7 @@
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.15"
+var v = "12.16"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
@@ -342,6 +342,7 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "hideownskin":false,
                     "autorespawn":false,
                     "shadow":false,
+                    "cctrue":false,
                     "fbname":false,
                     "msgtime":true,
                     "restartbtn":false,
@@ -420,6 +421,7 @@ btaGameShadow.checked = btaStorage.shadow;
 btaFbName.checked = btaStorage.fbname;
 btaRestartBtn.checked = btaStorage.restartbtn;
 btaStats.checked = btaStorage.stats;
+btaCCcell.checked = btaStorage.cctrue
 btaAutorespawn.checked = btaStorage.autorespawn;
 btaHideOwnSkin.checked = btaStorage.hideownskin;
 btaDisableLBColors.checked = btaStorage.OFFlbColors;
@@ -445,6 +447,7 @@ function save(){
   "fbname":btaFbName.checked,
   "restartbtn":btaRestartBtn.checked,
   "stats":btaStats.checked,
+  "cctrue":btaCCcell.checked,
   "chatfade":btaChatFade.checked,
   "emojis":btaEmojis.checked,
   "lb":btaLb.checked,
