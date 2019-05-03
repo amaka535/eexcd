@@ -14,7 +14,7 @@
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.13"
+var v = "12.15"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
@@ -297,7 +297,8 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 <div id="btaSettingsMain" style="width: 100%;max-height: 60%;float: left;margin-top: 0px;padding: 15px;">
 <div><span style="font-size: 30px;" class="fontBTA">Better Alis</span><span style="font-size: 14px;margin-left: 10px;" class="font">by Zimek</span><span style="float: right;font-size: 10px;margin-top: 20px;" id="version" class="font"></span></div>
 <div style="margin-top: 10px;overflow-y: scroll;max-height: 340px;">
-Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"><span style="margin-left: 10px;color: #9b9b9b;" id="btaBgColorVal"></span><br>
+Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"><br>
+<label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;padding: 0px;margin-left:15px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
 <label><input id="btaChatFade" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Chatbox fade</label><br>
 <label><input id="btaChatbox" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Custom Chatbox</label><br>
@@ -360,7 +361,8 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                       "popsplit":"",
                       "poptime":"185",
                     },
-                    "bgColor":`#212121`
+                    "bgColor":`#212121`,
+                    "cc":""
                   }));
                     localStorage.setItem("BetterAlisFirst", true);
                     window.location.reload(1);
@@ -382,6 +384,7 @@ const btaStats = document.getElementById('btaStats');
 const btaAutorespawn = document.getElementById('btaAutorespawn');
 const btaHideOwnSkin = document.getElementById('btaHideOwnSkin');
 const btaDisableLBColors = document.getElementById('btaDisableLBColors');
+const btaCCcell = document.getElementById('btaCCcell');
 const btaMsgTime = document.getElementById('btaMsgTime');
 var btaScoreSize = document.getElementById('btaScoreSize');
 var btaChatTextSize = document.getElementById('btaChatTextSize');
@@ -392,6 +395,7 @@ var btaKeyTriple = document.getElementById('btaKeyTriple');
 var btaKey64 = document.getElementById('btaKey64');
 var btaKeyPop = document.getElementById('btaKeyPop');
 var btaKeyPopTime = document.getElementById('btaKeyPopTime');
+var btaCellColor = document.getElementById('btaCellColor');
 
 //saving settings
 
@@ -425,6 +429,7 @@ btaChatTextSize.value = btaStorage.chatText;
 btaChatHeight.value = btaStorage.chatHeight;
 btaChatRight.value = btaStorage.chatRight;
 btaBgColor.value = btaStorage.bgColor;
+btaCellColor.value = btaStorage.cc;
 btaKeyTriple.value = btaStorage.hotkeys.triple;
 btaKey64.value = btaStorage.hotkeys.split64;
 btaKeyPop.value = btaStorage.hotkeys.popsplit;
@@ -456,7 +461,8 @@ function save(){
     "popsplit":`${btaKeyPop.value}`,
     "poptime":`${btaKeyPopTime.value}`,
   },
-  "bgColor":`${btaBgColor.value}`
+  "bgColor":`${btaBgColor.value}`,
+  "cc":`${btaCellColor.value}`
   }));
 }
 
@@ -465,9 +471,20 @@ $("#btaScoreSizeVal").text(`${btaStorage.scoreSize}px`);
 $("#btaChatboxTextSizeVal").text(`${btaStorage.chatText}px`);
 $("#btaChatHeightVal").text(`${btaStorage.chatHeight}px`);
 $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
-$("#btaBgColorVal").text(`${btaStorage.bgColor}`);
 
 //load saved settings
+
+if(btaCCcell.checked == false){
+  $("#btaCellColor").hide()
+}
+
+btaCCcell.onclick = function () {
+  save()
+}
+
+btaCellColor.oninput = function () {
+  save()
+}
 
 //bta chat text size
 btaChatTextSize.oninput = function () {
@@ -542,7 +559,6 @@ Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinU
   $("html").css("background-color", `${btaStorage.bgColor}`);
 btaBgColor.oninput = function () {
 save()
-   $("#btaBgColorVal").text(`${btaBgColor.value}`);
    $("html").css("background-color", `${btaBgColor.value}`);
 };
 
