@@ -15,6 +15,14 @@ function addUser(uid) {
   eval(`$.extend(users, {${uid}:{"uid":${uid}}})`)
 }
 
+function ccRGB(hex) { //https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+  hex = hex.replace("#", "")
+    var bigint = parseInt(hex, 16);
+    ccr = (bigint >> 16) & 255;
+    ccg = (bigint >> 8) & 255;
+    ccb = bigint & 255;
+}
+
 function forceMute(uid) {
   addUser(uid)
   setTimeout(function(){
@@ -144,5 +152,5 @@ console.log("Checking all better alis bans and mutes...")
 }}
 
   });
-}, 22000);
+}, 16000);
 }
