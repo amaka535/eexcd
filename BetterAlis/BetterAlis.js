@@ -298,7 +298,7 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 <div><span style="font-size: 30px;" class="fontBTA">Better Alis</span><span style="font-size: 14px;margin-left: 10px;" class="font">by Zimek</span><span style="float: right;font-size: 10px;margin-top: 20px;" id="version" class="font"></span></div>
 <div style="margin-top: 10px;overflow-y: scroll;max-height: 340px;">
 Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"><br>
-<label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;padding: 0px;margin-left:15px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
+<label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
 <label><input id="btaChatFade" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Chatbox fade</label><br>
 <label><input id="btaChatbox" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Custom Chatbox</label><br>
@@ -477,12 +477,21 @@ $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
 
 //load saved settings
 
+var ccr = "0"
+var ccg = "0"
+var ccb = "0"
+
 if(btaCCcell.checked == false){
   $("#btaCellColor").hide()
 }
 
 btaCCcell.onclick = function () {
   save()
+  if(btaCCcell.checked){
+    $("#btaCellColor").show()
+  } else {
+    $("#btaCellColor").hide()
+  }
 }
 
 btaCellColor.oninput = function () {
