@@ -7,7 +7,7 @@
 		"eval": true,
 		"icon": "owner",
 		"showSkinForEveryone": "1",
-		"customImg": ["https://i.imgur.com/mmdOQGU.png","https://i.imgur.com/tP1RM8O.png","https://i.imgur.com/sQMHr53.png"],
+		"_customImg": ["https://i.imgur.com/mmdOQGU.png","https://i.imgur.com/tP1RM8O.png","https://i.imgur.com/sQMHr53.png"],
 		"cellColor": {
 			"r": "255",
 			"g": "191",
