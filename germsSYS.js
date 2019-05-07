@@ -17,7 +17,7 @@ function Split() {
 
 $(`
   <label><input id="afking" type="checkbox" style="margin-top: 3px;width:20px;height:20px"> AFK Respawn</label><br>
-  `).appendTo("#shopTabVeteran > ul");
+  `).appendTo("#loginCustomLocked");
 
   var gay = $(`<button id="stopAFK" class="btn btn-primary" style="padding:20px;margin-bottom:300px;">Disable AFK</button>`)
 
