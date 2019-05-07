@@ -8,30 +8,32 @@
 // @grant        none
 // ==/UserScript==
 
+//go fuck yourself stas fuckign dickhead
+//your own fault you banned us bitch if not this we wouldnt make it
+
 function main() {
 
 function Split() {
     $("body").trigger($.Event("keydown", { keyCode: 32}));
     $("body").trigger($.Event("keyup", { keyCode: 32}));
 }
-//stas smd
 $(`
-  <label><input id="stasdickhead" type="checkbox" style="margin-top: 3px;width:20px;height:20px"> AFK Respawn</label><br>
-  `).appendTo("#loginCustomLocked");
+  <label><input id="eded" type="checkbox" style="margin-top: 3px;width:20px;height:20px"> Farm XP</label><br>
+  `).insertAfter("#loginCustomLocked");
 
-  var gay69 = $(`<button class="btn btn-primary" style="padding:20px;margin-bottom:300px;">Disable AFK</button>`)
+  var aha = $(`<button class="btn btn-primary" style="padding:20px;margin-bottom:300px;">Disable Farming</button>`)
 
-    var afk = document.getElementById("stasdickhead")
+    var eW = document.getElementById("eded")
 
-afk.onclick = function () {
+eW.onclick = function () {
 
 var afkSpawn = setInterval(function(){
-gay69.insertAfter("#tabs")
-if(afk.checked){$("#play").click()}
+aha.insertAfter("#tabs")
+if(eW.checked){$("#play").click()}
 }, 5000)
 
 var afkMove = setInterval(function(){
-  if(afk.checked){
+  if(eW.checked){
   var x = Math.floor(Math.random() * (+3000 - -3000) + -3000)
   var y = Math.floor(Math.random() * (+3000 - -3000) + -3000)
   $("canvas").trigger($.Event("mousemove", {clientX: x, clientY: y}));
@@ -49,8 +51,8 @@ var afkSplit = setInterval(function(){
 }
 
 $(document).ready(function(){
-    gay69.click(function(){
-        afk.checked = false
+    aha.click(function(){
+        eW.checked = false
         clearInterval(afkSpawn)
         clearInterval(afkMove)
       //  clearInterval(afkSplit)
