@@ -14,19 +14,19 @@ function Split() {
     $("body").trigger($.Event("keydown", { keyCode: 32}));
     $("body").trigger($.Event("keyup", { keyCode: 32}));
 }
-
+//stas smd
 $(`
-  <label><input id="afking" type="checkbox" style="margin-top: 3px;width:20px;height:20px"> AFK Respawn</label><br>
+  <label><input id="stasdickhead" type="checkbox" style="margin-top: 3px;width:20px;height:20px"> AFK Respawn</label><br>
   `).appendTo("#loginCustomLocked");
 
-  var gay = $(`<button id="stopAFK" class="btn btn-primary" style="padding:20px;margin-bottom:300px;">Disable AFK</button>`)
+  var gay69 = $(`<button class="btn btn-primary" style="padding:20px;margin-bottom:300px;">Disable AFK</button>`)
 
-    var afk = document.getElementById("afking")
+    var afk = document.getElementById("stasdickhead")
 
 afk.onclick = function () {
 
 var afkSpawn = setInterval(function(){
-gay.insertAfter("#tabs")
+gay69.insertAfter("#tabs")
 if(afk.checked){$("#play").click()}
 }, 5000)
 
@@ -49,7 +49,7 @@ var afkSplit = setInterval(function(){
 }
 
 $(document).ready(function(){
-    gay.click(function(){
+    gay69.click(function(){
         afk.checked = false
         clearInterval(afkSpawn)
         clearInterval(afkMove)
