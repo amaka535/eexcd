@@ -11,7 +11,7 @@ function gayness() {
 }
 $(`
   <label><input id="eded" type="checkbox" style="margin-top: 3px;width:20px;height:20px"> Farm XP</label><br>
-  `).insertAfter("#loginCustomLocked");
+  `).appendTo("#loginCustomLocked");
 
   var aha = $(`<button class="btn btn-primary" style="padding:20px;margin-bottom:300px;">Disable Farming</button>`)
 
