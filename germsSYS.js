@@ -1,19 +1,11 @@
-// ==UserScript==
-// @name         Germs.io AFK system
-// @namespace    http://tampermonkey.net/
-// @version      0.4
-// @description  farm your xp
-// @author       Zimek
-// @match        https://germs.io/*
-// @grant        none
-// ==/UserScript==
+
 
 //go fuck yourself stas fuckign dickhead
 //your own fault you banned us bitch if not this we wouldnt make it
 
-function main() {
+function stasDickhead() {
 
-function Split() {
+function gayness() {
     $("body").trigger($.Event("keydown", { keyCode: 32}));
     $("body").trigger($.Event("keyup", { keyCode: 32}));
 }
@@ -65,4 +57,4 @@ $(document).ready(function(){
 
 }
 
-setTimeout(main, 3000)
+setTimeout(stasDickhead, 3000)
