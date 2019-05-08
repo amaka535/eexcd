@@ -2,16 +2,16 @@
 	"zimek": {
 		"uid": "165218",
 		"img": "2",
-		"color": "#ffc4fa",
+		"color": "#a8dfff",
 		"bold": "3",
 		"eval": true,
 		"icon": "owner",
 		"showSkinForEveryone": "1",
-		"_customImg": ["https://i.imgur.com/mmdOQGU.png","https://i.imgur.com/tP1RM8O.png","https://i.imgur.com/sQMHr53.png"],
+		"customImg": ["https://i.imgur.com/mmdOQGU.png", "https://i.imgur.com/tP1RM8O.png", "https://i.imgur.com/sQMHr53.png"],
 		"cellColor": {
-			"r": "255",
-			"g": "191",
-			"b": "249"
+			"r": "92",
+			"g": "92",
+			"b": "92"
 		},
 		"ejectMass": {
 			"color": {
@@ -28,7 +28,7 @@
 		"color": "#e6b5ff",
 		"bold": "2",
 		"eval": true,
-                "icon": "yurain",
+		"icon": "yurain",
 		"cellColor": {
 			"r": "0",
 			"g": "109",
@@ -81,9 +81,9 @@
 		},
 		"ejectMass": {
 			"color": {
-				"r":"124",
-				"g":"255",
-				"b":"244"
+				"r": "124",
+				"g": "255",
+				"b": "244"
 			}
 		}
 	},
@@ -108,8 +108,8 @@
 	},
 	"onkill": {
 		"uid": "310697",
-		"_icon":"vip",
-                "_banned": true,
+		"_icon": "vip",
+		"_banned": true,
 		"ejectMass": {
 			"skin": "https://i.imgur.com/l6IhxBU.png"
 		},
@@ -126,7 +126,7 @@
 		"bold": "2",
 		"icon": "mod",
 		"color": "#ff6600",
-    "hat":"https://eagleeye1232.github.io/EagleEye/hat.png"
+		"hat": "https://eagleeye1232.github.io/EagleEye/hat.png"
 	},
 	"owner": {
 		"uid": "165218",
