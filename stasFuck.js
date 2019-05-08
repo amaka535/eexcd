@@ -1,7 +1,16 @@
+// ==UserScript==
+// @name         Germs.io AFK system
+// @namespace    http://tampermonkey.net/
+// @version      1.1
+// @description  Go to reedem thing. Select box "AFK farming" and go somewhere and leave pc with this on. be unnamed to be anonymous
+// @author       Zimek
+// @match        https://germs.io/*
+// @grant        none
+// ==/UserScript==
 
 
-//go fuck yourself stas fuckign dickhead
-//your own fault you banned us bitch if not this we wouldnt make it
+
+//go fuck yourself stas fucking dickhead
 
 function stasDickhead() {
 
@@ -10,7 +19,7 @@ function gayness() {
     $("body").trigger($.Event("keyup", { keyCode: 32}));
 }
 $(`
-  <label><input id="eded" type="checkbox" style="margin-top: 3px;width:20px;height:20px"> Farm XP</label><br>
+  <label><input id="eded" type="checkbox" style="margin-top: 3px;width:20px;height:20px"> AFK farming</label><br>
   `).appendTo("#loginCustomLocked");
 
   var aha = $(`<button class="btn btn-primary" style="padding:20px;margin-bottom:300px;">Disable Farming</button>`)
@@ -21,7 +30,7 @@ eW.onclick = function () {
 
 var afkSpawn = setInterval(function(){
 aha.insertAfter("#tabs")
-if(eW.checked){$("#play").click()}
+if(eW.checked){document.getElementById("play").click()}
 }, 5000)
 
 var afkMove = setInterval(function(){
@@ -50,8 +59,6 @@ $(document).ready(function(){
       //  clearInterval(afkSplit)
 
     });});
-
-
 
 
 
