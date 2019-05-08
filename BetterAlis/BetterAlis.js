@@ -14,7 +14,7 @@
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.16"
+var v = "12.17"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
@@ -299,6 +299,7 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 <div style="margin-top: 10px;overflow-y: scroll;max-height: 340px;">
 Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;margin-top:-3px;"><br>
 <label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
+<label><input id="btaPskin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Private Skin<input id="btaPrivSkin" placeholder="Private Skin URL" class="uk-input" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
 <label><input id="btaChatFade" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Chatbox fade</label><br>
 <label><input id="btaChatbox" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Custom Chatbox</label><br>
@@ -331,8 +332,6 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
 //==////==//
 
 //==//javascript//==//
-
-//custom menu
 
 
 //default settings
@@ -833,10 +832,9 @@ msg = replace
           }
           msg = detected
 
-          //copied from havis lmao
               const goodWord = (word) => word.replace(new RegExp(`.{${~~(word.length / 2)}}`), `$&${String.fromCharCode(65279)}`);
     					const badWords = ["team", "admin", "tampermonkey", "razor", "pedo", "give coins", "give me coins", "give me hat", "greeb", "hack", "wally", "extension", "camp", "cuck", "cunt", "nigger", "noob", "lagging", "script", "bitch", "google", "bing", "troll", "alis", "havoc", "onkill", "neroz", "hack", "color", "colour", "wings", "jesus", ".io", "nosx", "nos", "nox", "youtube", "accident", "dev", "give hat", "owner", "whore", "faggot", "outside"];
-    					const uncuckRegex = new RegExp(badWords.join("|"), "gi");
+    					const uncuckRegex = new RegExp(badWords.join("|"), "i");
     					if (badWords.some(s => msg.toLowerCase().includes(s))) msg = msg.replace(uncuckRegex, matched => goodWord(matched));
 
                 window.sendChat(msg);
@@ -858,9 +856,9 @@ chatRoom.receiveMessage = function(msg, message, color, extra) {
     const btaMsgTime = document.getElementById('btaMsgTime');
     if (!extra.team) { extra.team = ""; }
     // Only display chat messages if they are on the same team as this player, OR from an admin
-    if (extra.team != $("#team_name").val() && !extra.isAdmin && !window.seeAllChat) {
+    if (extra.team != $("#team_name").val() && !extra.isAdmin && !window.seeAllChat && !extra.isServer) {
         //console.log('skipping chat message because team ' + extra.team + ' != ' + $("#team_name").val() + ' and admin ' + extra.isAdmin);
-        return;
+       return;
     } else {
         //console.log('displaying chat message for team ' + extra.team + ' = ' + $("#team_name").val() + ' or admin ' + extra.isAdmin);
     }
