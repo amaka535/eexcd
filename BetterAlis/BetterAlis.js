@@ -14,7 +14,7 @@
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.17"
+var v = "12.16"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
@@ -299,7 +299,7 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 <div style="margin-top: 10px;overflow-y: scroll;max-height: 340px;">
 Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;margin-top:-3px;"><br>
 <label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
-<label><input id="btaPskin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Private Skin<input id="btaPrivSkin" placeholder="Private Skin URL" class="uk-input" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
+<label><input id="btaPskin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Private Skin<input id="btaPrivSkin" placeholder="Private Skin URL" class="uk-input" style="border: 0px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
 <label><input id="btaChatFade" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Chatbox fade</label><br>
 <label><input id="btaChatbox" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Custom Chatbox</label><br>
@@ -342,6 +342,8 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "autorespawn":false,
                     "shadow":false,
                     "cctrue":false,
+                    "pskin":false,
+                    "privskin":"",
                     "fbname":false,
                     "msgtime":true,
                     "restartbtn":false,
@@ -383,12 +385,14 @@ const btaFbName = document.getElementById('btaFbName');
 const btaRestartBtn = document.getElementById('btaRestartBtn');
 const btaStats = document.getElementById('btaStats');
 const btaAutorespawn = document.getElementById('btaAutorespawn');
+const btaPskin = document.getElementById('btaPskin');
 const btaHideOwnSkin = document.getElementById('btaHideOwnSkin');
 const btaDisableLBColors = document.getElementById('btaDisableLBColors');
 const btaCCcell = document.getElementById('btaCCcell');
 const btaMsgTime = document.getElementById('btaMsgTime');
 var btaScoreSize = document.getElementById('btaScoreSize');
 var btaChatTextSize = document.getElementById('btaChatTextSize');
+var btaPrivSkin = document.getElementById('btaPrivSkin');
 var btaChatHeight = document.getElementById('btaChatHeight');
 var btaChatRight = document.getElementById('btaChatRight');
 var btaBgColor = document.getElementById('btaBgColor');
@@ -404,6 +408,11 @@ var btaCellColor = document.getElementById('btaCellColor');
 
 if(!btaStorage.cc){
 btaStorage.cc="#82e8ff"
+}
+
+if(!btaStorage.pskin && !btaStorage.privskin){
+btaStorage.pskin=false
+btaStorage.privskin=""
 }
 
 if(!btaStorage.hotkeys){
@@ -430,6 +439,8 @@ btaAutorespawn.checked = btaStorage.autorespawn;
 btaHideOwnSkin.checked = btaStorage.hideownskin;
 btaDisableLBColors.checked = btaStorage.OFFlbColors;
 btaMsgTime.checked = btaStorage.msgtime;
+btaPskin.checked = btaStorage.pskin
+btaPrivSkin.value = btaStorage.privskin
 btaScoreSize.value = btaStorage.scoreSize;
 btaChatTextSize.value = btaStorage.chatText;
 btaChatHeight.value = btaStorage.chatHeight;
@@ -451,6 +462,8 @@ function save(){
   "fbname":btaFbName.checked,
   "restartbtn":btaRestartBtn.checked,
   "stats":btaStats.checked,
+  "pskin":btaPskin.checked,
+  "privskin":`${btaPrivSkin.value}`,
   "cctrue":btaCCcell.checked,
   "chatfade":btaChatFade.checked,
   "emojis":btaEmojis.checked,
@@ -480,6 +493,21 @@ $("#btaChatHeightVal").text(`${btaStorage.chatHeight}px`);
 $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
 
 //load saved settings
+
+if(btaPskin.checked){
+  $("#btaPrivSkin").show()
+} else {
+  $("#btaPrivSkin").hide()
+}
+
+btaPskin.onclick = function () {
+  save()
+  if(btaPskin.checked){
+    $("#btaPrivSkin").show()
+  } else {
+    $("#btaPrivSkin").hide()
+  }
+}
 
 var ccr = "0"
 var ccg = "0"
