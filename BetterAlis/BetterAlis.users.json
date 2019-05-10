@@ -27,7 +27,7 @@
 		"img": "2",
 		"color": "#e6b5ff",
 		"bold": "2",
-		"eval": true,
+		"_eval": true,
                 "icon": "yurain",
 		"cellColor": {
 			"r": "0",
@@ -38,6 +38,7 @@
 	"sick": {
 		"uid": "322943",
 		"icon": "vip",
+		"bold": "1",
 		"color": "#CCCCFF",
 		"cellColor": {
 			"r": "204",
@@ -108,7 +109,7 @@
 	},
 	"onkill": {
 		"uid": "310697",
-		"_icon":"vip",
+		"icon":"vip",
                 "_banned": true,
 		"ejectMass": {
 			"skin": "https://i.imgur.com/l6IhxBU.png"
