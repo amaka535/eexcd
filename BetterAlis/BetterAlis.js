@@ -21,16 +21,20 @@ var res = "https://zimek.tk/BetterAlis/res"
 //loading upgrades data
 $("#users").remove()
 var getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
-var fr = $.getJSON('/api/friends?token=' + $("#jwt").val())
 var users = {}
 var icons = {}
 var friends = {}
 setTimeout(function(){
-fr=fr.responseJSON
 users = getUsers.responseJSON
 icons = users.icons
-}, 3000)
-setTimeout(function(){Object.keys(fr.friends).forEach(id => {eval(`$.extend(friends, {${id}:{"uid":${id}}})`)})},3500)
+}, 2000)
+setTimeout(function(){
+  var fr = $.getJSON('/api/friends?token=' + $("#jwt").val())
+setTimeout(function(){
+  fr=fr.responseJSON
+  Object.keys(fr.friends).forEach(id => {eval(`$.extend(friends, {${id}:{"uid":${id}}})`)})
+},1500)
+},7000)
 
 //hi
 console.log("%cBetter Alis", "background: #222; color: #fff;font-family: 'Pattaya', sans-serif; padding-bottom: 20px;padding-top: 20px;padding-left: 60px;padding-right: 60px;font-size: 50px;border-radius: 100px;");
