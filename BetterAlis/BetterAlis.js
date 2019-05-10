@@ -14,20 +14,23 @@
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.16"
+var v = "12.17"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
 //loading upgrades data
 $("#users").remove()
 var getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
-var users
-var icons
+var fr = $.getJSON('/api/friends?token=' + $("#jwt").val())
+var users = {}
+var icons = {}
+var friends = {}
 setTimeout(function(){
-  users = getUsers.responseJSON
-setTimeout(function(){icons = users.icons}, 1000)
+fr=fr.responseJSON
+users = getUsers.responseJSON
+icons = users.icons
+Object.keys(fr.friends).forEach(id => {eval(`$.extend(friends, {${id}:{"uid":${id}}})`)})
 }, 2000)
-
 
 
 //hi
