@@ -30,7 +30,7 @@ fr=fr.responseJSON
 users = getUsers.responseJSON
 icons = users.icons
 Object.keys(fr.friends).forEach(id => {eval(`$.extend(friends, {${id}:{"uid":${id}}})`)})
-}, 2000)
+}, 4000)
 
 
 //hi
