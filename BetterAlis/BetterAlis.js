@@ -29,9 +29,8 @@ setTimeout(function(){
 fr=fr.responseJSON
 users = getUsers.responseJSON
 icons = users.icons
-Object.keys(fr.friends).forEach(id => {eval(`$.extend(friends, {${id}:{"uid":${id}}})`)})
-}, 4000)
-
+}, 3000)
+setTimeout(function(){Object.keys(fr.friends).forEach(id => {eval(`$.extend(friends, {${id}:{"uid":${id}}})`)})},3500)
 
 //hi
 console.log("%cBetter Alis", "background: #222; color: #fff;font-family: 'Pattaya', sans-serif; padding-bottom: 20px;padding-top: 20px;padding-left: 60px;padding-right: 60px;font-size: 50px;border-radius: 100px;");
