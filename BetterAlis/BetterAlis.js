@@ -14,7 +14,7 @@
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.17"
+var v = "12.18"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
@@ -23,10 +23,12 @@ $("#users").remove()
 var getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
 var users = {}
 var icons = {}
+var emojis = []
 var friends = {}
 setTimeout(function(){
 users = getUsers.responseJSON
 icons = users.icons
+emojis = users.emojis
 }, 2000)
 setTimeout(function(){
   var fr = $.getJSON('/api/friends?token=' + $("#jwt").val())
@@ -83,88 +85,26 @@ $(`
 `).insertBefore("#input_box2");
 $('#chatboxArea2').css({ "display": 'none', "flex-direction": 'column'});
 
-var emojis = {
-  0.01:{"type":"default", "unicode":"😃", "name":"smile", "id":1},
-  0.02:{"type":"default", "unicode":"🙂", "name":"smiling", "id":2},
-  0.03:{"type":"default", "unicode":"😄", "name":"happy", "id":3},
-  0.04:{"type":"default", "unicode":"🙁", "name":"sadface", "id":4},
-  0.05:{"type":"default", "unicode":"😟", "name":"worried", "id":5},
-  0.06:{"type":"default", "unicode":"😦", "name":"sad", "id":6},
-  0.07:{"type":"default", "unicode":"😠", "name":"angry", "id":7},
-  0.08:{"type":"default", "unicode":"😡", "name":"mad", "id":8},
-  0.09:{"type":"default", "unicode":"😤", "name":"triumph", "id":9},
-  0.10:{"type":"default", "unicode":"😑", "name":"expressionless", "id":10},
-  0.11:{"type":"default", "unicode":"😐", "name":"neutral", "id":11},
-  0.12:{"type":"default", "unicode":"😮", "name":"wow", "id":12},
-  0.13:{"type":"default", "unicode":"😕", "name":"confused", "id":13},
-  0.14:{"type":"default", "unicode":"😢", "name":"cry", "id":14},
-  0.15:{"type":"default", "unicode":"😭", "name":"sob", "id":15},
-  0.16:{"type":"default", "unicode":"😆", "name":"XD", "id":16},
-  0.17:{"type":"default", "unicode":"😂", "name":"joy", "id":17},
-  0.18:{"type":"default", "unicode":"😋", "name":"stuckout", "id":18},
-  0.19:{"type":"default", "unicode":"🤔", "name":"thinking", "id":19},
-  0.20:{"type":"default", "unicode":"😉", "name":"wink", "id":20},
-  0.21:{"type":"default", "unicode":"😏", "name":"smirk", "id":21},
-  0.22:{"type":"default", "unicode":"👌", "name":"ok", "id":22},
-  0.23:{"type":"default", "unicode":"👍", "name":"up", "id":23},
-  0.24:{"type":"default", "unicode":"👎", "name":"down", "id":24},
-  0.25:{"type":"default", "unicode":"😑", "name":"expressionless", "id":25},
-  0.26:{"type":"default", "unicode":"😒", "name":"unamused", "id":26},
-  0.27:{"type":"default", "unicode":"🖕", "name":"mid", "id":27},
-  0.28:{"type":"default", "unicode":"😔", "name":"pensive", "id":28},
-  0.29:{"type":"default", "unicode":"😓", "name":"worriedsweat", "id":29},
-  0.30:{"type":"default", "unicode":"😅", "name":"smilesweat", "id":30},
-  0.31:{"type":"default", "unicode":"😶", "name":"nomouth", "id":31},
-  0.32:{"type":"default", "unicode":"😱", "name":"omg", "id":32},
-  0.33:{"type":"default", "unicode":"😎", "name":"cool", "id":33},
-  0.34:{"type":"default", "unicode":"🤢", "name":"feelnotgood", "id":34},
-  0.35:{"type":"default", "unicode":"😣", "name":"persever", "id":35},
-  0.36:{"type":"default", "unicode":"😈", "name":"demon", "id":36},
-  0.37:{"type":"default", "unicode":"🙄", "name":"rollingeyes", "id":37},
-  0.38:{"type":"default", "unicode":"😩", "name":"weary", "id":38},
-  0.39:{"type":"default", "unicode":"😍", "name":"loving", "id":39},
-  0.40:{"type":"default", "unicode":"😘", "name":"kiss", "id":40},
-  0.41:{"type":"default", "unicode":"👏", "name":"clap", "id":41},
-  0.42:{"type":"default", "unicode":"👋", "name":"wave", "id":42},
-  0.43:{"type":"default", "unicode":"❤️", "name":"heart", "id":43},
-  0.44:{"type":"default", "unicode":"💔", "name":"broken", "id":44},
-  0.45:{"type":"default", "unicode":"🙃", "name":"upside", "id":45},
-  0.46:{"type":"default", "unicode":"😳", "name":"flushed", "id":46},
-  0.47:{"type":"default", "unicode":"🤣", "name":"rofl", "id":47},
-  0.48:{"type":"default", "unicode":"🤦", "name":"facepalm", "id":48},
-  0.49:{"type":"default", "unicode":"🌹", "name":"rose", "id":49},
-  1.2:{"type":"custom", "name":"heartato", "id":2}, //customs are broken af
-  1.3:{"type":"custom", "name":"zero2", "id":3},
-  1.4:{"type":"custom", "name":"thonk", "id":4},
-  1.5:{"type":"custom", "name":"omegalul", "id":5},
-  1.6:{"type":"custom", "name":"angery", "id":6},
-  1.7:{"type":"custom", "name":"detective", "id":7},
-  1.8:{"type":"custom", "name":"lmao-cat", "id":8},
-  1.9:{"type":"custom", "name":"pepecry", "id":9},
-  1.10:{"type":"custom", "name":"what", "id":10},
-  1.11:{"type":"custom", "name":"sadcat", "id":11},
-  1.12:{"type":"custom", "name":"pepesad", "id":12},
-  1.13:{"type":"custom", "name":"xd", "id":13},
-}
+setTimeout(function(){
+  Object.values(emojis).forEach(emoji=>{
+  if(emoji.type === "default"){
+  var file = ".svg"
+  if(emoji.id == 47 || emoji.id == 50)file=".png";
+    $("#defaultEmojis").append(`
+  <div class="unicodeemoji"><img title=':${emoji.name}:' onclick="addChat('${emoji.unicode}')" src="${res}/emojis/default/${emoji.id}${file}"></div>
+      `)
+  }
 
-Object.values(emojis).forEach(emoji=>{
-if(emoji.type === "default"){
-var file = ".svg"
-if(emoji.id == 47)file=".png";
-  $("#defaultEmojis").append(`
-<div class="unicodeemoji"><img title=':${emoji.name}:' onclick="addChat('${emoji.unicode}')" src="${res}/emojis/default/${emoji.id}${file}"></div>
-    `)
-}
+  if(emoji.type === "custom"){
+    var style
+    if(emoji.id == 8)style="margin-top:8px;";
+    $("#customEmojis").append(`
+  <div class="unicodeemoji"><img title=':${emoji.name}:' style="${style}" onclick="addChat(':${emoji.name}:')" src="${res}/emojis/custom/${emoji.name}.png"></div>
+      `)
+  }
 
-if(emoji.type === "custom"){
-  var style
-  if(emoji.id == 8)style="margin-top:8px;";
-  $("#customEmojis").append(`
-<div class="unicodeemoji"><img title=':${emoji.name}:' style="${style}" onclick="addChat(':${emoji.name}:')" src="${res}/emojis/custom/${emoji.name}.png"></div>
-    `)
-}
-
-});
+  });
+}, 3000)
 
 
 
@@ -307,6 +247,8 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaPskin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Private Skin<input id="btaPrivSkin" placeholder="Private Skin URL" class="uk-input" style="border: 0px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
+<label><input id="btaMention" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Name Mention</label><br>
+<label><input id="btaFlight" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Alis friends lighted messages</label><br>
 <label><input id="btaChatFade" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Chatbox fade</label><br>
 <label><input id="btaChatbox" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Custom Chatbox</label><br>
 <label><input id="btaAutorespawn" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Auto respawn</label><br>
@@ -358,6 +300,8 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "chatfade":false,
                     "emojis":true,
                     "lb":true,
+                    "flight":true,
+                    "mention":true,
                     "chatbox":true,
                     "scoreSize":15,
                     "chatText":14,
@@ -394,6 +338,8 @@ const btaAutorespawn = document.getElementById('btaAutorespawn');
 const btaPskin = document.getElementById('btaPskin');
 const btaHideOwnSkin = document.getElementById('btaHideOwnSkin');
 const btaDisableLBColors = document.getElementById('btaDisableLBColors');
+const btaFlight = document.getElementById('btaFlight');
+const btaMention = document.getElementById('btaMention');
 const btaCCcell = document.getElementById('btaCCcell');
 const btaMsgTime = document.getElementById('btaMsgTime');
 var btaScoreSize = document.getElementById('btaScoreSize');
@@ -419,6 +365,11 @@ btaStorage.cc="#82e8ff"
 if(!btaStorage.pskin && !btaStorage.privskin){
 btaStorage.pskin=false
 btaStorage.privskin=""
+}
+
+if(!btaStorage.mention && !btaStorage.flight){
+  btaStorage.mention=true
+  btaStorage.flight=true
 }
 
 if(!btaStorage.hotkeys){
@@ -472,6 +423,8 @@ function save(){
   "privskin":`${btaPrivSkin.value}`,
   "cctrue":btaCCcell.checked,
   "chatfade":btaChatFade.checked,
+  "flight":btaFlight.checked,
+  "mention":btaMention.checked,
   "emojis":btaEmojis.checked,
   "lb":btaLb.checked,
   "chatbox":btaChatbox.checked,
@@ -505,6 +458,9 @@ if(btaPskin.checked){
 } else {
   $("#btaPrivSkin").hide()
 }
+
+btaMention.onclick = function () {save()}
+btaFlight.onclick = function () {save()}
 
 btaPskin.onclick = function () {
   save()
@@ -960,10 +916,19 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
 
 })
     tabContent.append(size);
-    errors = $(`<span class='msg' style='font-size:${btaChatTextSize.value}px;'>`).text(message);
+    var style1 = `font-size:${btaChatTextSize.value}px;`
+    errors = $(`<span class='msg' style='${style1}'>`).text(message);
     tabContent.append(errors);
     $("#chatroom").append(tabContent);
     $(tabContent).fadeIn(250)
+    if(btaMention.checked && message.toLowerCase().includes($("#nick").val().replace(/[^\x00-\x7F]/g, "").toLowerCase())){
+      $(tabContent).css("background-color", `rgba(255, 215, 56, 0.25)`)
+    }
+    Object.values(friends).forEach(friend=>{
+    if(btaFlight.checked && friend.uid == extra.uid){
+      $(tabContent).css("background-color", `rgba(53, 255, 90, 0.25)`)
+    }
+  })
     this.popupChat(msg, message, color);
     //$('.sender').css('color', chatcolor);
       goChatUP()
@@ -998,19 +963,16 @@ if(user.color){if(extra.uid == user.uid){$(`span.sender[pid=${extra.pid}]`).next
 if(user.bold){if(extra.uid == user.uid){$(`span.sender[pid=${extra.pid}]`).css("font-weight", "700");}}
 if(user.bold>2){if(extra.uid == user.uid){$(`span.sender[pid=${extra.pid}]`).next("span.msg").css("font-weight", "600");}}
 
-//chat stuff
-if(user.img){if(extra.uid == user.uid){//img
+
+if(user.img){
+  if(extra.uid == user.uid){//img
 if($(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().startsWith("$img")){
   var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$img", "");
-  $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent a picture:");
-  $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:280px;max-height:280px;">`)
+  $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent image:");
+  $("#chatroom").append(`<img src="https://i.imgur.com/${fix}" style="max-width:280px;max-height:280px;">`)
 }
 
-if(user.img>1){//gif
-  if($(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().startsWith("$gif")){
-    var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$gif", "");
-    $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent a gif:");
-    $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.gif" style="max-width:280px;max-height:280px;">`)}}}}
+}}
 });
 };
 
@@ -1057,7 +1019,7 @@ function keydown(event) {
     }if (event.key == btaKeyTriple.value) { //triplesplit macro
         split()
         setTimeout(split, 60);
-        setTimeout(split, 130);
+        setTimeout(split, 200);
     }
     if (event.key == btaKey64.value) { //x64 macro
         split()
