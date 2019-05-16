@@ -154,7 +154,7 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
 .zimekbox{width: 27px;height: 27px;margin-top: 3px;}
   ::-webkit-scrollbar {
       width: 10px;
-      background: #191919;
+      background: rgba(25, 25, 25, 0.15);
       border-radius: 3px;
       opacity: 0.5;
   }
@@ -164,14 +164,14 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
       opacity: 0.5;
   }
   ::-webkit-scrollbar-thumb {
-      background: #3fa5ff;
+      background: rgba(63, 165, 255, 0.15);
       border-radius: 100px;
       width: 70%;
       transition-duration: 0.3s
       opacity: 0.7;
   }
   ::-webkit-scrollbar-thumb:hover {
-      background: #6dbaff;
+      background: rgba(109, 186, 255, 0.50);
       width: 98%;
       opacity: 0.85;
   }
