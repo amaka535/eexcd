@@ -923,14 +923,16 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
     tabContent.append(errors);
     $("#chatroom").append(tabContent);
     $(tabContent).fadeIn(250)
-    if(btaMention.checked && message.toLowerCase().includes($("#nick").val().replace(/[^\x00-\x7F]/g, "").toLowerCase())){
-      $(tabContent).css("background-color", `rgba(255, 215, 56, 0.25)`)
-    }
     Object.values(friends).forEach(friend=>{
     if(btaFlight.checked && friend.uid == extra.uid){
       $(tabContent).css("background-color", `rgba(53, 255, 90, 0.25)`)
+      $(tabContent).css("border-radius", `4px`)
     }
   })
+  if(btaMention.checked && message.toLowerCase().includes($("#nick").val().replace(/[^\x00-\x7F]/g, "").toLowerCase())){
+    $(tabContent).css("background-color", `rgba(255, 215, 56, 0.25)`)
+    $(tabContent).css("border-radius", `4px`)
+  }
     this.popupChat(msg, message, color);
     //$('.sender').css('color', chatcolor);
       goChatUP()
