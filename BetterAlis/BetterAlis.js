@@ -154,7 +154,7 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
 .zimekbox{width: 27px;height: 27px;margin-top: 3px;}
   ::-webkit-scrollbar {
       width: 10px;
-      background: rgba(25, 25, 25, 0.15);
+      background: rgba(25, 25, 25, 0.35);
       border-radius: 3px;
       opacity: 0.5;
   }
@@ -164,7 +164,7 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
       opacity: 0.5;
   }
   ::-webkit-scrollbar-thumb {
-      background: rgba(63, 165, 255, 0.15);
+      background: rgba(63, 165, 255, 0.35);
       border-radius: 100px;
       width: 70%;
       transition-duration: 0.3s
