@@ -985,7 +985,7 @@ if(user.img){
 if($(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().startsWith("$img")){
   var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$img", "");
   $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent image:");
-  $("#chatroom").append(`<img src="https://i.imgur.com/${fix}" style="max-width:280px;max-height:280px;">`)
+  $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:280px;max-height:280px;">`)
 }
 
 }}
