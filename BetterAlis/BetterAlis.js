@@ -331,6 +331,7 @@ function keyGay(x) {x.value = x.value.toLowerCase(); save()} //smh
 
 //version
 $("span#version").text(`v${v}`)
+
 const defaultBg = document.getElementById('defaultBg');
 const btaLb = document.getElementById('btaLb');
 const btaChatFade = document.getElementById('btaChatFade');
@@ -359,8 +360,6 @@ var btaKey64 = document.getElementById('btaKey64');
 var btaKeyPop = document.getElementById('btaKeyPop');
 var btaKeyPopTime = document.getElementById('btaKeyPopTime');
 var btaCellColor = document.getElementById('btaCellColor');
-
-//saving settings
 
 //load values
 
@@ -935,13 +934,13 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
     tabContent.append(errors);
     $("#chatroom").append(tabContent);
     $(tabContent).fadeIn(250)
-    if(btaFlight.checked && friend.uid == extra.uid){
     Object.values(friends).forEach(friend=>{
+      if(btaFlight.checked && friend.uid == extra.uid){
       $(tabContent).css("background-color", `rgba(53, 255, 90, 0.25)`)
       $(tabContent).css("border-radius", `4px`)
-
-  })
 }
+  })
+
   if(btaMention.checked && message.toLowerCase().includes($("#nick").val().replace(/[^\x00-\x7F]/g, "").toLowerCase())){
     $(tabContent).css("background-color", `rgba(255, 215, 56, 0.25)`)
     $(tabContent).css("border-radius", `4px`)
