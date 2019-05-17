@@ -14,7 +14,7 @@
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.18"
+var v = "12.19"
 var res = "https://zimek.tk/BetterAlis/res"
 
 
@@ -73,6 +73,7 @@ $(`
 <div class="unicodeEmojiContainer" style="width: 100%;width: 565px; margin-left: -40px;background-color: rgba(0,0,0,0.7);padding: 5px 5px 5px 5px;margin-bottom: 5px;overflow: hidden;border-radius: 7px; display:block;">
 <div id="emojisBox" style="border-radius: 15px;margin-bottom:30px;">
 <div id="defaultEmojis">
+<span id="loadingEmojis">Loading...</span>
 </div>
 <br>
 <div style="border-bottom: 1px solid white;margin-bottom:5px;">
@@ -86,6 +87,7 @@ $(`
 $('#chatboxArea2').css({ "display": 'none', "flex-direction": 'column'});
 
 setTimeout(function(){
+  $("#loadingEmojis").remove()
   Object.values(emojis).forEach(emoji=>{
   if(emoji.type === "default"){
   var file = ".svg"
@@ -176,7 +178,8 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
       opacity: 0.85;
   }
   .niceNameEffect
-
+  .little{height:30px;bakcground-color:#151515;border-radius:4px;color:#d1d1d1;}
+  .little:hover{cursour:pointer;background-color:#181818;color:white;}
 #div_lb{transition-duration: 0.2s;}
 .toolsBtn{width: 38px;height: 38px;cursor: pointer;opacity: 0.7;color: white;font-size: 15px;padding-left: 5px;padding-right: 5px;transition-duration: 0.2s;}
 .toolsBtn:hover{opacity: 1;cursor: pointer;}
@@ -243,7 +246,7 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 <div id="btaSettingsMain" style="width: 100%;max-height: 60%;float: left;margin-top: 0px;padding: 15px;">
 <div><span style="font-size: 30px;" class="fontBTA">Better Alis</span><span style="font-size: 14px;margin-left: 10px;" class="font">by Zimek</span><span style="float: right;font-size: 10px;margin-top: 20px;" id="version" class="font"></span></div>
 <div style="margin-top: 10px;overflow-y: scroll;max-height: 340px;">
-Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;margin-top:-3px;"><br>
+Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;margin-top:-3px;"><button id="defaultBg" class="little" style="margin-left:5px;">default</button><br>
 <label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaPskin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Private Skin<input id="btaPrivSkin" placeholder="Private Skin URL" class="uk-input" style="border: 0px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
@@ -326,6 +329,7 @@ function keyGay(x) {x.value = x.value.toLowerCase(); save()} //smh
 
 //version
 $("span#version").text(`v${v}`)
+const defaultBg = document.getElementById('defaultBg');
 const btaLb = document.getElementById('btaLb');
 const btaChatFade = document.getElementById('btaChatFade');
 const btaChatbox = document.getElementById('btaChatbox');
@@ -459,6 +463,12 @@ if(btaPskin.checked){
   $("#btaPrivSkin").show()
 } else {
   $("#btaPrivSkin").hide()
+}
+
+defaultBg.onclick = function () {
+  $("html").css("background-color", `#212121`);
+  btaBgColor.value = "#212121"
+  save()
 }
 
 btaMention.onclick = function () {save()}
@@ -923,12 +933,13 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
     tabContent.append(errors);
     $("#chatroom").append(tabContent);
     $(tabContent).fadeIn(250)
-    Object.values(friends).forEach(friend=>{
     if(btaFlight.checked && friend.uid == extra.uid){
+    Object.values(friends).forEach(friend=>{
       $(tabContent).css("background-color", `rgba(53, 255, 90, 0.25)`)
       $(tabContent).css("border-radius", `4px`)
-    }
+
   })
+}
   if(btaMention.checked && message.toLowerCase().includes($("#nick").val().replace(/[^\x00-\x7F]/g, "").toLowerCase())){
     $(tabContent).css("background-color", `rgba(255, 215, 56, 0.25)`)
     $(tabContent).css("border-radius", `4px`)
