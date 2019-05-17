@@ -219,6 +219,8 @@ $(`
 <h5>/clear<br>/clear server</h5><br>
 </div>
 <div style="float: right;width: 49%;"><font size="5px">
+<h4>Some features requires alis.io account</h4><br>
+<h4>Some features are broken with multiboxing</h4><br>
 <h4>If you have any ideas to extension tell me on discord (discord server is below)</h4><br>
 <h3>Better alis is not compatible with Havis</h3><br>
 </div></div>
