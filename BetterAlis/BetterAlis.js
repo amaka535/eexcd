@@ -178,8 +178,8 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
       opacity: 0.85;
   }
   .niceNameEffect
-  .little{height:30px;bakcground-color:#151515;border-radius:4px;color:#d1d1d1;}
-  .little:hover{cursour:pointer;background-color:#181818;color:white;}
+  .little{height:30px;background-color:#151515;border-radius:4px;color:#d1d1d1;}
+  .little:hover{cursor:pointer;background-color:#181818;color:white;}
 #div_lb{transition-duration: 0.2s;}
 .toolsBtn{width: 38px;height: 38px;cursor: pointer;opacity: 0.7;color: white;font-size: 15px;padding-left: 5px;padding-right: 5px;transition-duration: 0.2s;}
 .toolsBtn:hover{opacity: 1;cursor: pointer;}
@@ -308,8 +308,8 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "chatbox":true,
                     "scoreSize":15,
                     "chatText":14,
-                    "chatHeight":320,
-                    "chatRight":340,
+                    "chatHeight":315,
+                    "chatRight":350,
                     "hotkeys":{
                       "triple":"",
                       "split64":"",
