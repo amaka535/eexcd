@@ -220,7 +220,7 @@
 	  {"type":"default", "unicode":"🤣", "name":"rofl", "id":47},
 	  {"type":"default", "unicode":"🤦", "name":"facepalm", "id":48},
 	  {"type":"default", "unicode":"🌹", "name":"rose", "id":49},
-	  {"type":"default", "unicode":"🤫", "name":"shh", "id":49},
+	  {"type":"default", "unicode":"🤫", "name":"shh", "id":50},
 	  {"type":"custom", "name":"heartato", "id":2},
 	  {"type":"custom", "name":"zero2", "id":3},
 	  {"type":"custom", "name":"thonk", "id":4},
