@@ -7,7 +7,7 @@
 		"eval": true,
 		"icon": "owner",
 		"showSkinForEveryone": "1",
-		"_customImg": ["https://i.imgur.com/mmdOQGU.png","https://i.imgur.com/tP1RM8O.png","https://i.imgur.com/sQMHr53.png"],
+		"_customImg": ["https://i.imgur.com/mmdOQGU.png", "https://i.imgur.com/tP1RM8O.png", "https://i.imgur.com/sQMHr53.png"],
 		"cellColor": {
 			"r": "92",
 			"g": "92",
@@ -28,7 +28,7 @@
 		"color": "#e6b5ff",
 		"bold": "3",
 		"_eval": true,
-                "icon": "yurain",
+		"icon": "yurain",
 		"cellColor": {
 			"r": "0",
 			"g": "109",
@@ -44,6 +44,10 @@
 			"g": "204",
 			"b": "255"
 		}
+	},
+	"toron": {
+		"banned": true,
+		"muted": true
 	},
 	"killer": {
 		"uid": "37288",
@@ -81,9 +85,9 @@
 		},
 		"ejectMass": {
 			"color": {
-				"r":"124",
-				"g":"255",
-				"b":"244"
+				"r": "124",
+				"g": "255",
+				"b": "244"
 			}
 		}
 	},
@@ -109,8 +113,8 @@
 	},
 	"onkill": {
 		"uid": "310697",
-		"icon":"vip",
-    "_banned": true,
+		"icon": "vip",
+		"_banned": true,
 		"ejectMass": {
 			"skin": "https://i.imgur.com/l6IhxBU.png"
 		},
@@ -127,7 +131,7 @@
 		"bold": "2",
 		"icon": "mod",
 		"color": "#ff6600",
-    "hat":"https://eagleeye1232.github.io/EagleEye/hat.png"
+		"hat": "https://eagleeye1232.github.io/EagleEye/hat.png"
 	},
 	"owner": {
 		"uid": "165218",
@@ -170,68 +174,365 @@
 			"title": "Evil Yura"
 		}
 	],
-	"emojis": [
-	  {"type":"default", "unicode":"😃", "name":"smile", "id":1},
-	  {"type":"default", "unicode":"🙂", "name":"smiling", "id":2},
-	  {"type":"default", "unicode":"😄", "name":"happy", "id":3},
-	  {"type":"default", "unicode":"🙁", "name":"sadface", "id":4},
-	  {"type":"default", "unicode":"😟", "name":"worried", "id":5},
-	  {"type":"default", "unicode":"😦", "name":"sad", "id":6},
-	  {"type":"default", "unicode":"😠", "name":"angry", "id":7},
-	  {"type":"default", "unicode":"😡", "name":"mad", "id":8},
-	  {"type":"default", "unicode":"😤", "name":"triumph", "id":9},
-	  {"type":"default", "unicode":"😑", "name":"expressionless", "id":10},
-	  {"type":"default", "unicode":"😐", "name":"neutral", "id":11},
-	  {"type":"default", "unicode":"😮", "name":"wow", "id":12},
-	  {"type":"default", "unicode":"😕", "name":"confused", "id":13},
-	  {"type":"default", "unicode":"😢", "name":"cry", "id":14},
-	  {"type":"default", "unicode":"😭", "name":"sob", "id":15},
-	  {"type":"default", "unicode":"😆", "name":"XD", "id":16},
-	  {"type":"default", "unicode":"😂", "name":"joy", "id":17},
-	  {"type":"default", "unicode":"😋", "name":"stuckout", "id":18},
-	  {"type":"default", "unicode":"🤔", "name":"thinking", "id":19},
-	  {"type":"default", "unicode":"😉", "name":"wink", "id":20},
-	  {"type":"default", "unicode":"😏", "name":"smirk", "id":21},
-	  {"type":"default", "unicode":"👌", "name":"ok", "id":22},
-	  {"type":"default", "unicode":"👍", "name":"up", "id":23},
-	  {"type":"default", "unicode":"👎", "name":"down", "id":24},
-	  {"type":"default", "unicode":"😑", "name":"expressionless", "id":25},
-	  {"type":"default", "unicode":"😒", "name":"unamused", "id":26},
-	  {"type":"default", "unicode":"🖕", "name":"mid", "id":27},
-	  {"type":"default", "unicode":"😔", "name":"pensive", "id":28},
-	  {"type":"default", "unicode":"😓", "name":"worriedsweat", "id":29},
-	  {"type":"default", "unicode":"😅", "name":"smilesweat", "id":30},
-	  {"type":"default", "unicode":"😶", "name":"nomouth", "id":31},
-	  {"type":"default", "unicode":"😱", "name":"omg", "id":32},
-	  {"type":"default", "unicode":"😎", "name":"cool", "id":33},
-	  {"type":"default", "unicode":"🤢", "name":"feelnotgood", "id":34},
-	  {"type":"default", "unicode":"😣", "name":"persever", "id":35},
-	  {"type":"default", "unicode":"😈", "name":"demon", "id":36},
-	  {"type":"default", "unicode":"🙄", "name":"rollingeyes", "id":37},
-	  {"type":"default", "unicode":"😩", "name":"weary", "id":38},
-	  {"type":"default", "unicode":"😍", "name":"loving", "id":39},
-	  {"type":"default", "unicode":"😘", "name":"kiss", "id":40},
-	  {"type":"default", "unicode":"👏", "name":"clap", "id":41},
-	  {"type":"default", "unicode":"👋", "name":"wave", "id":42},
-	  {"type":"default", "unicode":"❤️", "name":"heart", "id":43},
-	  {"type":"default", "unicode":"💔", "name":"broken", "id":44},
-	  {"type":"default", "unicode":"🙃", "name":"upside", "id":45},
-	  {"type":"default", "unicode":"😳", "name":"flushed", "id":46},
-	  {"type":"default", "unicode":"🤣", "name":"rofl", "id":47},
-	  {"type":"default", "unicode":"🤦", "name":"facepalm", "id":48},
-	  {"type":"default", "unicode":"🌹", "name":"rose", "id":49},
-	  {"type":"default", "unicode":"🤫", "name":"shh", "id":50},
-	  {"type":"custom", "name":"heartato", "id":2},
-	  {"type":"custom", "name":"zero2", "id":3},
-	  {"type":"custom", "name":"thonk", "id":4},
-	  {"type":"custom", "name":"omegalul", "id":5},
-	  {"type":"custom", "name":"angery", "id":6},
-	  {"type":"custom", "name":"detective", "id":7},
-	  {"type":"custom", "name":"lmao-cat", "id":8},
-	  {"type":"custom", "name":"pepecry", "id":9},
-	  {"type":"custom", "name":"what", "id":10},
-	  {"type":"custom", "name":"sadcat", "id":11},
-	  {"type":"custom", "name":"pepesad", "id":12},
-	  {"type":"custom", "name":"xd", "id":13}
+	"emojis": [{
+			"type": "default",
+			"unicode": "😃",
+			"name": "smile",
+			"id": 1
+		},
+		{
+			"type": "default",
+			"unicode": "🙂",
+			"name": "smiling",
+			"id": 2
+		},
+		{
+			"type": "default",
+			"unicode": "😄",
+			"name": "happy",
+			"id": 3
+		},
+		{
+			"type": "default",
+			"unicode": "🙁",
+			"name": "sadface",
+			"id": 4
+		},
+		{
+			"type": "default",
+			"unicode": "😟",
+			"name": "worried",
+			"id": 5
+		},
+		{
+			"type": "default",
+			"unicode": "😦",
+			"name": "sad",
+			"id": 6
+		},
+		{
+			"type": "default",
+			"unicode": "😠",
+			"name": "angry",
+			"id": 7
+		},
+		{
+			"type": "default",
+			"unicode": "😡",
+			"name": "mad",
+			"id": 8
+		},
+		{
+			"type": "default",
+			"unicode": "😤",
+			"name": "triumph",
+			"id": 9
+		},
+		{
+			"type": "default",
+			"unicode": "😑",
+			"name": "expressionless",
+			"id": 10
+		},
+		{
+			"type": "default",
+			"unicode": "😐",
+			"name": "neutral",
+			"id": 11
+		},
+		{
+			"type": "default",
+			"unicode": "😮",
+			"name": "wow",
+			"id": 12
+		},
+		{
+			"type": "default",
+			"unicode": "😕",
+			"name": "confused",
+			"id": 13
+		},
+		{
+			"type": "default",
+			"unicode": "😢",
+			"name": "cry",
+			"id": 14
+		},
+		{
+			"type": "default",
+			"unicode": "😭",
+			"name": "sob",
+			"id": 15
+		},
+		{
+			"type": "default",
+			"unicode": "😆",
+			"name": "XD",
+			"id": 16
+		},
+		{
+			"type": "default",
+			"unicode": "😂",
+			"name": "joy",
+			"id": 17
+		},
+		{
+			"type": "default",
+			"unicode": "😋",
+			"name": "stuckout",
+			"id": 18
+		},
+		{
+			"type": "default",
+			"unicode": "🤔",
+			"name": "thinking",
+			"id": 19
+		},
+		{
+			"type": "default",
+			"unicode": "😉",
+			"name": "wink",
+			"id": 20
+		},
+		{
+			"type": "default",
+			"unicode": "😏",
+			"name": "smirk",
+			"id": 21
+		},
+		{
+			"type": "default",
+			"unicode": "👌",
+			"name": "ok",
+			"id": 22
+		},
+		{
+			"type": "default",
+			"unicode": "👍",
+			"name": "up",
+			"id": 23
+		},
+		{
+			"type": "default",
+			"unicode": "👎",
+			"name": "down",
+			"id": 24
+		},
+		{
+			"type": "default",
+			"unicode": "😑",
+			"name": "expressionless",
+			"id": 25
+		},
+		{
+			"type": "default",
+			"unicode": "😒",
+			"name": "unamused",
+			"id": 26
+		},
+		{
+			"type": "default",
+			"unicode": "🖕",
+			"name": "mid",
+			"id": 27
+		},
+		{
+			"type": "default",
+			"unicode": "😔",
+			"name": "pensive",
+			"id": 28
+		},
+		{
+			"type": "default",
+			"unicode": "😓",
+			"name": "worriedsweat",
+			"id": 29
+		},
+		{
+			"type": "default",
+			"unicode": "😅",
+			"name": "smilesweat",
+			"id": 30
+		},
+		{
+			"type": "default",
+			"unicode": "😶",
+			"name": "nomouth",
+			"id": 31
+		},
+		{
+			"type": "default",
+			"unicode": "😱",
+			"name": "omg",
+			"id": 32
+		},
+		{
+			"type": "default",
+			"unicode": "😎",
+			"name": "cool",
+			"id": 33
+		},
+		{
+			"type": "default",
+			"unicode": "🤢",
+			"name": "feelnotgood",
+			"id": 34
+		},
+		{
+			"type": "default",
+			"unicode": "😣",
+			"name": "persever",
+			"id": 35
+		},
+		{
+			"type": "default",
+			"unicode": "😈",
+			"name": "demon",
+			"id": 36
+		},
+		{
+			"type": "default",
+			"unicode": "🙄",
+			"name": "rollingeyes",
+			"id": 37
+		},
+		{
+			"type": "default",
+			"unicode": "😩",
+			"name": "weary",
+			"id": 38
+		},
+		{
+			"type": "default",
+			"unicode": "😍",
+			"name": "loving",
+			"id": 39
+		},
+		{
+			"type": "default",
+			"unicode": "😘",
+			"name": "kiss",
+			"id": 40
+		},
+		{
+			"type": "default",
+			"unicode": "👏",
+			"name": "clap",
+			"id": 41
+		},
+		{
+			"type": "default",
+			"unicode": "👋",
+			"name": "wave",
+			"id": 42
+		},
+		{
+			"type": "default",
+			"unicode": "❤️",
+			"name": "heart",
+			"id": 43
+		},
+		{
+			"type": "default",
+			"unicode": "💔",
+			"name": "broken",
+			"id": 44
+		},
+		{
+			"type": "default",
+			"unicode": "🙃",
+			"name": "upside",
+			"id": 45
+		},
+		{
+			"type": "default",
+			"unicode": "😳",
+			"name": "flushed",
+			"id": 46
+		},
+		{
+			"type": "default",
+			"unicode": "🤣",
+			"name": "rofl",
+			"id": 47
+		},
+		{
+			"type": "default",
+			"unicode": "🤦",
+			"name": "facepalm",
+			"id": 48
+		},
+		{
+			"type": "default",
+			"unicode": "🌹",
+			"name": "rose",
+			"id": 49
+		},
+		{
+			"type": "default",
+			"unicode": "🤫",
+			"name": "shh",
+			"id": 49
+		},
+		{
+			"type": "custom",
+			"name": "heartato",
+			"id": 2
+		},
+		{
+			"type": "custom",
+			"name": "zero2",
+			"id": 3
+		},
+		{
+			"type": "custom",
+			"name": "thonk",
+			"id": 4
+		},
+		{
+			"type": "custom",
+			"name": "omegalul",
+			"id": 5
+		},
+		{
+			"type": "custom",
+			"name": "angery",
+			"id": 6
+		},
+		{
+			"type": "custom",
+			"name": "detective",
+			"id": 7
+		},
+		{
+			"type": "custom",
+			"name": "lmao-cat",
+			"id": 8
+		},
+		{
+			"type": "custom",
+			"name": "pepecry",
+			"id": 9
+		},
+		{
+			"type": "custom",
+			"name": "what",
+			"id": 10
+		},
+		{
+			"type": "custom",
+			"name": "sadcat",
+			"id": 11
+		},
+		{
+			"type": "custom",
+			"name": "pepesad",
+			"id": 12
+		},
+		{
+			"type": "custom",
+			"name": "xd",
+			"id": 13
+		}
 	]
 }
