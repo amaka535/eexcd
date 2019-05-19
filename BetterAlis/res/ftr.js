@@ -54,9 +54,9 @@ player.hat = btaHatVal.value
 
 if(user.forceSkin){
   if(player.uid == user.uid)player.skinUrl=user.forceSkin;
-} else {
-   if(player.uid==userid && btaHideOwnSkin.checked == false)player.skinUrl=""
 }
+
+if(player.uid==userid && btaHideOwnSkin.checked)player.skinUrl=""
 
 if(user.ejectMass){
 
