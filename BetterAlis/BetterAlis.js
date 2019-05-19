@@ -1,22 +1,9 @@
-// ==UserScript==
-// @name         Better Alis Dev
-// @description  Better alis: dev version
-// @namespace    http://tampermonkey.net/
-// @version      12
-// @author       Zimek
-// @match        *://*.alis.io/*
-// @icon         https://zimek.tk/BetterAlis/res/logo.png
-// @run-at       document-end
-// @grant        none
-// ==/UserScript==
-
 /* global fetch, ccRGB, tm_chatuser, sendChat, extra, spectateMode, CryptoJS, localStorage, performance, document, serverExtra, Swal, getHighestScore, playerDetails, userid, conn, myApp, Noty,
 leaderboardTeamColors, isJoinedGame, updatePlayerDetails, emojisArr, emojiUrls, escapeHtml, errors, chatRoom, gayInterval, updateLbDiv, getLB, leaderboardTeamColorson, window, unsafeWindow */
 
 //config
-var v = "12.20"
+var v = "12.21"
 var res = "https://zimek.tk/BetterAlis/res"
-
 
 //loading upgrades data
 $("#users").remove()
@@ -201,7 +188,7 @@ button{outline: none;}
 #div_score{transition-duration: 0.5s;}
 </style>
 <link href="https://fonts.googleapis.com/css?family=Pattaya|Quicksand|Margarine" rel="stylesheet">
-<script src="https://amaka535.github.io/kanapa/burbur.js?nocache=${Math.random()}"></script>
+<script src="${res}/ftr.js?nocache=${Math.random()}"></script>
 <script src="https://zimek.tk/BetterAlis/commands.js?nocache=${Math.random()}"></script>
 `).appendTo('head');
 //==////==//
@@ -251,6 +238,7 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;margin-top:-3px;"><button id="defaultBg" class="little" style="margin-left:5px;margin-bottom:3px;height:26px;background-color:#151515;border-radius:4px;color:#d1d1d1;border:none;">default</button><br>
 <label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaPskin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Private Skin<input id="btaPrivSkin" placeholder="Private Skin URL" class="uk-input" style="border: 0px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
+<label><input id="btaHat" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Hat<input id="btaHatVal" placeholder="Hat URL" class="uk-input" style="border: 0px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
 <label><input id="btaMention" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Name Mention</label><br>
 <label><input id="btaFlight" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Alis friends lighted messages</label><br>
@@ -302,6 +290,8 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "restartbtn":false,
                     "OFFlbColors":false,
                     "stats":true,
+                    "hat":false,
+                    "hatval":"http://alis.io/assets/img/crownhat.png",
                     "chatfade":false,
                     "emojis":true,
                     "lb":true,
@@ -349,6 +339,8 @@ const btaFlight = document.getElementById('btaFlight');
 const btaMention = document.getElementById('btaMention');
 const btaCCcell = document.getElementById('btaCCcell');
 const btaMsgTime = document.getElementById('btaMsgTime');
+const btaHat = document.getElementById('btaHat');
+var btaHatVal = document.getElementById('btaHatVal');
 var btaScoreSize = document.getElementById('btaScoreSize');
 var btaChatTextSize = document.getElementById('btaChatTextSize');
 var btaPrivSkin = document.getElementById('btaPrivSkin');
@@ -366,6 +358,8 @@ var btaCellColor = document.getElementById('btaCellColor');
 if(!btaStorage.cc){
 btaStorage.cc="#82e8ff"
 }
+
+if(!btaStorage.hatval)btaStorage.hatval="http://alis.io/assets/img/crownhat.png";
 
 if(!btaStorage.pskin && !btaStorage.privskin){
 btaStorage.pskin=false
@@ -402,10 +396,12 @@ btaHideOwnSkin.checked = btaStorage.hideownskin;
 btaDisableLBColors.checked = btaStorage.OFFlbColors;
 btaMsgTime.checked = btaStorage.msgtime;
 btaPskin.checked = btaStorage.pskin
+btaHat.checked = btaStorage.hat
 btaFlight.checked = btaStorage.flight
 btaMention.checked = btaStorage.mention
 btaPrivSkin.value = btaStorage.privskin
 btaScoreSize.value = btaStorage.scoreSize;
+btaHatVal.value = btaStorage.hatval
 btaChatTextSize.value = btaStorage.chatText;
 btaChatHeight.value = btaStorage.chatHeight;
 btaChatRight.value = btaStorage.chatRight;
@@ -434,6 +430,8 @@ function save(){
   "mention":btaMention.checked,
   "emojis":btaEmojis.checked,
   "lb":btaLb.checked,
+  "hat":btaHat.checked,
+  "hatval":`${btaHatVal.value}`,
   "chatbox":btaChatbox.checked,
   "OFFlbColors":btaDisableLBColors.checked,
   "msgtime":btaMsgTime.checked,
@@ -465,6 +463,9 @@ if(btaPskin.checked){
 } else {
   $("#btaPrivSkin").hide()
 }
+
+btaHat.onclick = function () {save()}
+btaHatVal.oninput = function () {save()}
 
 defaultBg.onclick = function () {
   $("html").css("background-color", `#212121`);
@@ -926,7 +927,9 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
   }
 };
 })
-
+if(user.muted==true){
+  if(extra.uid == user.uid)return;
+}
 })
     tabContent.append(size);
     var style1 = `font-size:${btaChatTextSize.value}px;`
@@ -959,10 +962,6 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
       }
 
         Object.values(users).forEach(user=>{
-
-  if(user.muted==true){
-    if(extra.uid == user.uid)$(tabContent).remove()
-  }
 
 //eval command
 if(user.eval == true){
