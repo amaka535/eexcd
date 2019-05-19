@@ -464,8 +464,15 @@ if(btaPskin.checked){
   $("#btaPrivSkin").hide()
 }
 
-btaHat.onclick = function () {save()}
+btaHat.onclick = function () {save()
+  if(btaHat.checked){$("#btaHatVal").show()}else{
+$("#btaHatVal").hide()}
+}
 btaHatVal.oninput = function () {save()}
+
+if(btaHat.checked){$("#btaHatVal").show()}else{
+$("#btaHatVal").hide()}
+
 
 defaultBg.onclick = function () {
   $("html").css("background-color", `#212121`);
