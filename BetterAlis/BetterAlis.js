@@ -1,5 +1,5 @@
 //config
-var v = "12.22"
+var v = "12.21"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades data
@@ -577,7 +577,7 @@ save()
         hideOwnSkinTrue = true
     } else {
 hideOwnSkinTrue = false
-Object.values(playerDetails).forEach(player=>{if(player.pid==window.myPid)player.skinUrl=document.getElementById("skinurl").value})
+Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=document.getElementById("skinurl").value})
 }
 };
 
