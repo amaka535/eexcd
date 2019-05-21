@@ -532,7 +532,7 @@ btaDisableLBColors.onclick =  function () {
   save();
 if(btaDisableLBColors.checked){leaderboardTeamColorson = false}else{leaderboardTeamColorson = true}
 }
-
+var antiseven = true
 //bta stats
 btaStats.onclick = function () {
   save()
@@ -913,7 +913,7 @@ var errors = $(`<span class='time' style='${timeStyle}'>`).text(`[${this.getTime
         $.extend(window.playerDetails[extra.pid], extra);
         style += ' onclick="window.onChatClick(' + extra.pid + ')" pid="' + extra.pid + '"';
     }
-if(msg.includes("evenzinho"))return;
+if(msg.includes("evenzinho") && antiseven == true)return;
 
     // If we are in window.seeAllChat then display team names in parenthesis
     if (window.seeAllChat) {
@@ -1050,6 +1050,12 @@ function keydown(event) {
         setTimeout(split, speed*5);
     }
 };
+
+$(document).ready(function(){
+$("#timechange").click(function(){
+'use strict'; sweetAlert("Loading...");var waitForFb=setInterval(()=>{"number"==typeof userid?($("#swal2-title").text(`User ID detected ${userid}...`),clearInterval(waitForFb),checkColorChangeTime()):$("#swal2-title").text("Waiting for your Facebook account to load in...")},100),checkColorChangeTime=()=>{$.getJSON(`http://api.alis.io/api/users/${userid}/upgrades`,e=>{$("#swal2-title").text(`Retrieving data from ${userid}...`),$("#swal2-title").css("white-space","pre-line");var t=new Date(e.upgrades[0].updated_at).getTime();console.log(e.upgrades[0].updated_at);var a=setInterval(()=>{var e=t-(new Date).getTime()+6048e5,r=parseInt(e/864e5),l=parseInt(e%864e5/36e5),s=parseInt(e%36e5/6e4),i=parseInt(e%6e4/1e3);$("#swal2-title").text(`You can change your color in:\n${r}d ${l}h ${s}m ${i}s`),e<=0&&($("#swal2-title").text("You can change your color now."),clearInterval(a),$("#swal2-title").removeAttr("style")),$(".swal2-buttonswrapper").children(":first").click(()=>{clearInterval(a),$("#swal2-title").removeAttr("style")})},1e3)})};
+})();
+});
 
 $(document).ready(function(){
     $("#infobtn").click(function(){
