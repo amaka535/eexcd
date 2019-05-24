@@ -22,6 +22,7 @@ var xaz = "http://gaver.io/hats/xaz.png";
 
 // Run
 function upgradeBta() {
+  sendChat("/getmyid")
   Object.values(users).forEach(user=>{
     Object.values(playerDetails).forEach(player=>{
 
@@ -39,7 +40,7 @@ if(user.customImg){
 
 
 if(user.hat){
-  if(player.uid == userid){
+  if(player.pid == window.playerid){
     if(btaHat.checked){
 player.hat = btaHatVal.value
     } else {
@@ -54,7 +55,7 @@ if(user.forceSkin){
   if(player.uid == user.uid)player.skinUrl=user.forceSkin;
 }
 
-if(player.uid==userid && btaHideOwnSkin.checked)player.skinUrl=""
+if(player.pid == window.playerid && btaHideOwnSkin.checked)player.skinUrl=""
 
 if(user.ejectMass){
 
@@ -72,13 +73,13 @@ if(user.ejectMass.skin){
 }
 
 if(btaPskin.checked && btaHideOwnSkin.checked == false){
-  if(player.uid == userid)player.skinUrl=btaPrivSkin.value;
+  if(player.pid == window.playerid)player.skinUrl=btaPrivSkin.value;
 } else {
-//  if(player.uid == userid && btaHideOwnSkin.checked == false)player.skinUrl=$("#skinurl").val();
+  if(player.pid == window.playerid && btaHideOwnSkin.checked == false)player.skinUrl=$("#skinurl").val();
 }
 
 if(user.cellColor){
-  if(player.uid==userid){
+  if(player.pid == window.playerid){
     if(btaCCcell.checked){
 if(btacc==="nan")ccRGB(btaCellColor.value);
       player.color=btacc;
