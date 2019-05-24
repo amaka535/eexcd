@@ -577,7 +577,7 @@ save()
         hideOwnSkinTrue = true
     } else {
 hideOwnSkinTrue = false
-Object.values(playerDetails).forEach(player=>{if(player.uid==userid)player.skinUrl=document.getElementById("skinurl").value})
+Object.values(playerDetails).forEach(player=>{if(player.pid == window.playerid)player.skinUrl=document.getElementById("skinurl").value})
 }
 };
 
