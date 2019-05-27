@@ -1,5 +1,5 @@
 //config
-var v = "12.21"
+var v = "12.22"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades data
@@ -948,8 +948,10 @@ if(user.muted==true){
 }
   })
 
-  if(btaMention.checked && message.toLowerCase().includes($("#nick").val().replace(/[^\x00-\x7F]/g, "").toLowerCase())){
-    $(tabContent).css("background-color", `rgba(255, 215, 56, 0.25)`)
+var nick = $("#nick").val().replace(/[^\x00-\x7F]/g, "").toLowerCase()
+if(nick==="")nick="unnamed";
+  if(btaMention.checked && message.toLowerCase().includes(nick)){
+    $(tabContent).css("background-color", `rgba(255, 215, 56, 0.22)`)
     $(tabContent).css("border-radius", `4px`)
   }
     this.popupChat(msg, message, color);
