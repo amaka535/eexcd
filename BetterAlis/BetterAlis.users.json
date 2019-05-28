@@ -45,18 +45,6 @@
 			"b": "255"
 		}
 	},
-	"dave/hat": {
-		"uid": "124276",
-		"eval": true,
-		"img": true,
-		"showSkinForEveryone": "1",
-		"_bold": "3",
-		"cellColor": {
-			"r": "255",
-			"g": "165",
-			"b": "241"
-		}
-	},
 	"toron": {
 		"uid": "211845",
 		"banned": true,
@@ -111,7 +99,7 @@
 		"uid": "116426",
 		"hat": "https://i.imgur.com/eCVRWJj.png"
 	},
-	"neroz | killer | aqu": {
+	"neroz": {
 		"uid": "16999",
 		"img": true,
 		"customImg": ["https://i.imgur.com/e6SeF0w.png", "https://i.imgur.com/a7jFdt5.png"],
