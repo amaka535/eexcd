@@ -62,7 +62,7 @@ $(`
 <br>
 <div style="border-bottom: 1px solid white;margin-bottom:5px;">
 <span style="font-size:20px;">Custom Emojis</span>
-</div><br><div id="customEmojis"></div>
+</div><br><div id="customEmojis" style="overflow-y: scroll"></div>
 
 </div>
 </div>
@@ -99,11 +99,11 @@ setTimeout(function(){
 $(`<script src="https://apis.google.com/js/platform.js"></script>
 <style>
 #defaultEmojis{overflow-y: scroll}
-#customEmojis{overflow-y: scroll}
-.unicodeemoji {filter: grayscale(30%);float: left; width: 39.5px; padding: 1.5px; cursor: pointer;opacity: 0.8;transition-duration: 0.17s; }
+#customEmojis{overflow-y: scroll;max-height:150px;}
+.unicodeemoji{filter: grayscale(30%);float: left; width: 39.5px; padding: 1.5px; cursor: pointer;opacity: 0.8;transition-duration: 0.2s; }
 .unicodeemoji:hover{filter: none;transition-duration: 0.3s;opacity: 1}
 .unicodeEmojiContainer{opacity: 0.25;max-height: 39px;transition-duration: 0.5s}
-.unicodeEmojiContainer:hover{opacity: 1;max-height:4000px;height:350px}
+.unicodeEmojiContainer:hover{opacity: 1;max-height:3500px;height:350px}
 .openpanel:hover{background-color: #141414;border: 0px solid #161616;}
 .openpanel{background-color: #212121;border: 0px solid #161616;}
 .zimekremovebtn{background-color: #cc2222;border: 2px solid #ff3f3f;}
@@ -960,10 +960,9 @@ if(nick==="")nick="unnamed";
       if(btaEmojis.checked){
       Object.values(emojis).forEach(emoji=>{
         if(emoji.type === "custom"){
-        if($(`span.sender`).last().next("span.msg").text().includes(`:${emoji.name}:`)){
-          var fix = $(`span.sender`).last().next("span.msg").text().replace(`:${emoji.name}:`, `<img class='emoji' title=':${emoji.name}:' src='${res}/emojis/custom/${emoji.name}.png'>`);
-          $(`span.sender`).last().next("span.msg").html(fix);
-        }}
+          var fix = $(tabContent).replace(`:${emoji.name}:`, `<img class='emoji' title=':${emoji.name}:' src='${res}/emojis/custom/${emoji.name}.png'>`);
+          $(tabContent).html(fix);
+        }
         });
       }
 
