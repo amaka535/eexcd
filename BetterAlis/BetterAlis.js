@@ -99,7 +99,7 @@ setTimeout(function(){
 $(`<script src="https://apis.google.com/js/platform.js"></script>
 <style>
 #defaultEmojis{overflow-y: scroll}
-#customEmojis{overflow-y: scroll;max-height:150px;}
+#customEmojis{overflow-y: scroll;max-height:100px;}
 .unicodeemoji{filter: grayscale(30%);float: left; width: 39.5px; padding: 1.5px; cursor: pointer;opacity: 0.8;transition-duration: 0.2s; }
 .unicodeemoji:hover{filter: none;transition-duration: 0.3s;opacity: 1}
 .unicodeEmojiContainer{opacity: 0.25;max-height: 39px;transition-duration: 0.5s}
@@ -960,7 +960,7 @@ if(nick==="")nick="unnamed";
       if(btaEmojis.checked){
       Object.values(emojis).forEach(emoji=>{
         if(emoji.type === "custom"){
-          var fix = $(tabContent).replace(`:${emoji.name}:`, `<img class='emoji' title=':${emoji.name}:' src='${res}/emojis/custom/${emoji.name}.png'>`);
+          var fix = $(tabContent).html().replace(`:${emoji.name}:`, `<img class='emoji' title=':${emoji.name}:' src='${res}/emojis/custom/${emoji.name}.png'>`);
           $(tabContent).html(fix);
         }
         });
