@@ -953,6 +953,7 @@ var nick = $("#nick").val().toLowerCase()
 if(nick==="")nick="unnamed";
 nick = nick.replace(/[^\x00-\x7F]/g, "")
 nick = nick.replace(" ", "")
+if($("#nick").val()==="" == false && nick==="")nick=$("#nick").val();
 }
   if(btaMention.checked && message.toLowerCase().includes(nick)){
     $(tabContent).css("background-color", `rgba(255, 215, 56, 0.22)`)
