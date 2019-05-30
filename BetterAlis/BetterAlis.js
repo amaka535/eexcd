@@ -59,10 +59,10 @@ $(`
 <div id="defaultEmojis">
 <span id="loadingEmojis">Loading...</span>
 </div>
-<br>
-<div style="border-bottom: 1px solid white;margin-bottom:5px;">
+
+<div style="border-bottom: 1px solid white;margin-bottom:15px;margin-top:20px;">
 <span style="font-size:20px;">Custom Emojis</span>
-</div><br><div id="customEmojis" style="overflow-y: scroll"></div>
+</div><div id="customEmojis" style="overflow-y: scroll"></div>
 
 </div>
 </div>
