@@ -1,8 +1,8 @@
 //config
-var v = "12.22"
+var v = "12.23"
 var res = "https://zimek.tk/BetterAlis/res"
 
-//loading upgrades data
+//loading upgrades and emojis data
 $("#users").remove()
 var getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
 var users = {}
@@ -941,15 +941,19 @@ if(user.muted==true){
     tabContent.append(errors);
     $("#chatroom").append(tabContent);
     $(tabContent).fadeIn(250)
+    if(btaFlight.checked){
     Object.values(friends).forEach(friend=>{
-      if(btaFlight.checked && friend.uid == extra.uid){
+      if(friend.uid == extra.uid){
       $(tabContent).css("background-color", `rgba(53, 255, 90, 0.25)`)
       $(tabContent).css("border-radius", `4px`)
 }
-  })
-
-var nick = $("#nick").val().replace(/[^\x00-\x7F]/g, "").toLowerCase()
+  })}
+if(btaMention.checked){
+var nick = $("#nick").val().toLowerCase()
 if(nick==="")nick="unnamed";
+nick = nick.replace(/[^\x00-\x7F]/g, "")
+nick = nick.replace(" ", "")
+}
   if(btaMention.checked && message.toLowerCase().includes(nick)){
     $(tabContent).css("background-color", `rgba(255, 215, 56, 0.22)`)
     $(tabContent).css("border-radius", `4px`)
