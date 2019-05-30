@@ -98,8 +98,8 @@ setTimeout(function(){
 //CSS
 $(`<script src="https://apis.google.com/js/platform.js"></script>
 <style>
-#defaultEmojis{overflow-y: scroll;max-height:140px;}
-#customEmojis{overflow-y: scroll;max-height:140px;}
+#defaultEmojis{overflow-y: scroll;max-height:140px;border-radius:20px;}
+#customEmojis{overflow-y: scroll;max-height:140px;border-radius:20px;}
 .unicodeemoji{filter: grayscale(30%);float: left; width: 39.5px; padding: 1.5px; cursor: pointer;opacity: 0.8;transition-duration: 0.2s; }
 .unicodeemoji:hover{filter: none;transition-duration: 0.3s;opacity: 1}
 .unicodeEmojiContainer{opacity: 0.25;max-height: 39px;transition-duration: 0.5s}
