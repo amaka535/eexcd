@@ -5,10 +5,10 @@
 		"color": "#a8dfff",
 		"bold": "3",
 		"eval": true,
-		"hat": "https://cdn.discordapp.com/attachments/283249356415696896/464991723345674260/nrz_hat.png",
+		"_hat": "https://cdn.discordapp.com/attachments/283249356415696896/464991723345674260/nrz_hat.png",
 		"icon": "owner",
 		"showSkinForEveryone": "1",
-		"_customImg": ["https://i.imgur.com/mmdOQGU.png", "https://i.imgur.com/tP1RM8O.png", "https://i.imgur.com/sQMHr53.png"],
+		"customImg": ["https://i.imgur.com/FcdFnxD.png","https://i.imgur.com/pi4HCl0.png"],
 		"cellColor": {
 			"r": "92",
 			"g": "92",
