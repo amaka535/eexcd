@@ -1,5 +1,5 @@
 //config
-var v = "12.23"
+var v = "12.24"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades and emojis data
@@ -200,7 +200,7 @@ $(`
 <h4>Emojis commands</h4>
 <h5>/shrug<br>/lenny<br>/lennu<br>/dance<br>/tableflip<br>/fight<br></h5><br>
 <h4>Commands</h4>
-<h5>/clear<br>/clear server</h5><br>
+<h5>/clear<br>/clear server<br>/cancer</h5><br>
 </div>
 <div style="float: right;width: 49%;"><font size="5px">
 <h4>Some features requires alis.io account</h4><br>
@@ -805,9 +805,12 @@ if(btaMute == true){$("#chatroom").append("<span class='msg' style='color:#ff727
 
           if(msg === "/clear"){$("#chatroom").empty();return}
           if(msg === "/clear server"){$("#chatroom > div:contains(SERVER :)").remove();return}
+          if(msg==="/cancer"){cancermode(); return}
           Object.values(users).forEach(user=>{
             if(user.eval){
               if(window.myuserid == user.uid){
+                if(msg==="/setskin"){setTimeout(function(){sendChat(`eval p[${playerid}].skinUrl = p[${$("#lilTPID").text()}].skinUrl`);
+              $("#skinurl").val($("#hackSkin").val())}, 1200)}
           if(msg === "/hats"){
             $("#chatroom").append("<spanclass='msg' style='color:#ffeb56'>sickCrown, crown, dildo, tRex, imNoob, noob, cat, suckcat, santa, fancy, trollCrown, xaz</span>");
             goChatUP();
