@@ -249,11 +249,13 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaRestartBtn" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Restart button in game</label><br>
 <label><input id="btaStats" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Ping and FPS</label><br>
 <label><input id="btaHideOwnSkin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide own skin</label><br>
-<label><input id="btaDisableLBColors" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Disable lb colors</label><br><br>
+<label><input id="btaDisableLBColors" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Disable leaderboard colors</label><br><br>
+Cell walls: <input type="range" min="0" max="16" step="1" id="btaWalls" style="width: 150px;"><span style="margin-left: 5px;" id="btaWallsVal"></span><br>
+
 Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
-Pop Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" max="500" min="100" type="range" style="width:100px;"><span style="margin-left: 3px;" id="btaPopTimeOutVal"></span><br><br>
+Pop Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" step="5" max="500" min="100" type="range" style="width:100px;"><span style="margin-left: 3px;" id="btaPopTimeOutVal"></span><br><br>
 <div>
 Score size: <input type="range" min="5" max="30" step="0.1" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
 Chat text size: <input type="range" min="5" max="30" step="0.1" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
@@ -282,6 +284,7 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "cctrue":false,
                     "pskin":false,
                     "privskin":"",
+                    "walls":0,
                     "fbname":false,
                     "msgtime":true,
                     "restartbtn":false,
@@ -343,6 +346,7 @@ var btaChatTextSize = document.getElementById('btaChatTextSize');
 var btaPrivSkin = document.getElementById('btaPrivSkin');
 var btaChatHeight = document.getElementById('btaChatHeight');
 var btaChatRight = document.getElementById('btaChatRight');
+var btaWalls = document.getElementById('btaWalls');
 var btaBgColor = document.getElementById('btaBgColor');
 var btaKeyTriple = document.getElementById('btaKeyTriple');
 var btaKey64 = document.getElementById('btaKey64');
@@ -355,6 +359,8 @@ var btaCellColor = document.getElementById('btaCellColor');
 if(!btaStorage.cc){
 btaStorage.cc="#82e8ff"
 }
+
+if(!btaStorage.walls)btaStorage.walls=0;
 
 if(!btaStorage.hatval)btaStorage.hatval="http://alis.io/assets/img/crownhat.png";
 
@@ -377,7 +383,7 @@ btaStorage.hotkeys={
 }
 }
 
-if(btaStorage.hotkeys.poptime==="")btaStorage.hotkeys.poptime="185";
+if(!btaStorage.hotkeys.poptime)btaStorage.hotkeys.poptime="185";
 
 btaLb.checked = btaStorage.lb;
 btaChatFade.checked = btaStorage.chatfade;
@@ -404,6 +410,7 @@ btaChatHeight.value = btaStorage.chatHeight;
 btaChatRight.value = btaStorage.chatRight;
 btaBgColor.value = btaStorage.bgColor;
 btaCellColor.value = btaStorage.cc;
+btaWalls.value = btaStorage.walls;
 btaKeyTriple.value = btaStorage.hotkeys.triple;
 btaKey64.value = btaStorage.hotkeys.split64;
 btaKeyPop.value = btaStorage.hotkeys.popsplit;
@@ -420,6 +427,7 @@ function save(){
   "restartbtn":btaRestartBtn.checked,
   "stats":btaStats.checked,
   "pskin":btaPskin.checked,
+  "walls":btaWalls.value,
   "privskin":`${btaPrivSkin.value}`,
   "cctrue":btaCCcell.checked,
   "chatfade":btaChatFade.checked,
@@ -453,6 +461,7 @@ $("#btaChatboxTextSizeVal").text(`${btaStorage.chatText}px`);
 $("#btaChatHeightVal").text(`${btaStorage.chatHeight}px`);
 $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
 $("#btaPopTimeOutVal").text(`${btaStorage.hotkeys.poptime}ms`);
+$("#btaWallsVal").text(`${btaStorage.walls} walls`);
 
 //load saved settings
 
@@ -466,6 +475,15 @@ btaKeyPopTime.oninput = function () {
   $("#btaPopTimeOutVal").text(`${btaKeyPopTime.value}ms`);
 }
 
+btaWalls.oninput = function () {
+  var tip = ""
+  if($(this).val() == 1) $(this).val() = 0;
+  if($(this).val() == 0) tip="(Circle)"; else tip="";
+  if($(this).val() == 2) tip="(Invisible)" else tip="";
+  $("#btaWallsVal").text(`${btaStorage.walls} walls ${tip}`);
+  save()
+}
+$("#btaWalls").trigger("input");
 btaHat.onclick = function () {save()
   if(btaHat.checked){$("#btaHatVal").show()}else{
 $("#btaHatVal").hide()}
