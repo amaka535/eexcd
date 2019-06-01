@@ -253,7 +253,7 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
-Pop Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" max="500" min="100" type="range" style="width:100px;"><span style="margin-left: 3px;" id="btaPopTimeOutVal"></span>ms<br><br>
+Pop Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" max="500" min="100" type="range" style="width:100px;"><span style="margin-left: 3px;" id="btaPopTimeOutVal"></span><br><br>
 <div>
 Score size: <input type="range" min="5" max="30" step="0.1" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
 Chat text size: <input type="range" min="5" max="30" step="0.1" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
@@ -452,7 +452,7 @@ $("#btaScoreSizeVal").text(`${btaStorage.scoreSize}px`);
 $("#btaChatboxTextSizeVal").text(`${btaStorage.chatText}px`);
 $("#btaChatHeightVal").text(`${btaStorage.chatHeight}px`);
 $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
-$("#btaPopTimeOutVal").text(`${btaStorage.hotkeys.poptime}px`);
+$("#btaPopTimeOutVal").text(`${btaStorage.hotkeys.poptime}ms`);
 
 //load saved settings
 
@@ -460,6 +460,10 @@ if(btaPskin.checked){
   $("#btaPrivSkin").show()
 } else {
   $("#btaPrivSkin").hide()
+}
+
+btaKeyPopTime.oninput = function () {
+  $("#btaPopTimeOutVal").text(`${btaKeyPopTime.value}ms`);
 }
 
 btaHat.onclick = function () {save()
