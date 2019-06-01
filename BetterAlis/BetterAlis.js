@@ -284,7 +284,7 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "cctrue":false,
                     "pskin":false,
                     "privskin":"",
-                    "walls":0,
+                    "walls":1,
                     "fbname":false,
                     "msgtime":true,
                     "restartbtn":false,
@@ -360,7 +360,7 @@ if(!btaStorage.cc){
 btaStorage.cc="#82e8ff"
 }
 
-if(!btaStorage.walls)btaStorage.walls=0;
+if(!btaStorage.walls)btaStorage.walls=1;
 
 if(!btaStorage.hatval)btaStorage.hatval="http://alis.io/assets/img/crownhat.png";
 
@@ -477,9 +477,9 @@ btaKeyPopTime.oninput = function () {
 
 btaWalls.oninput = function () {
   var tip = ""
-  if($(this).val() == 1) btaWalls.value = 0;
-  if($("#btaWalls").val() == 0) {tip="(Circle)"} else {tip=""}
-  if($(this).val() == 2) {tip="(Invisible)"} else {tip=""}
+  if($(this).val() == 2) btaWalls.value = 1;
+  if($("#btaWalls").val() == 1) {tip="(Circle)"} else {tip=""}
+  if($(this).val() == 0) {tip="(Invisible)"} else {tip=""}
   $("#btaWallsVal").text(`${btaWalls.value} walls ${tip}`);
   save()
 }
