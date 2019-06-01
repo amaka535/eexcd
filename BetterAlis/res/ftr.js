@@ -54,7 +54,8 @@ player.hat = btaHatVal.value
 if(user.numSides){
 if(player.uid == user.uid)player.numSides=user.numSides
 } else {
-  if(player.pid==window.playerid)player.numSides=btaWalls.value
+  if(btaWalls.value == 1){if(player.pid==window.playerid)player.numSides=0}else{
+  if(player.pid==window.playerid)player.numSides=btaWalls.value}
 }
 
 if(user.forceSkin){
