@@ -1,5 +1,5 @@
 //config
-var v = "12.24"
+var v = "12.25"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades and emojis data
@@ -253,7 +253,7 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
-Pop-Split Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" placeholder="185" max="999" min="100" type="number" class="uk-input hotkey" style="width:80px;">ms<br><br>
+Pop Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" max="500" min="100" type="range" style="width:100px;"><span style="margin-left: 3px;" id="btaPopTimeOutVal"></span>ms<br><br>
 <div>
 Score size: <input type="range" min="5" max="30" step="0.1" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
 Chat text size: <input type="range" min="5" max="30" step="0.1" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
@@ -314,7 +314,7 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
             });
 
 const btaStorage = JSON.parse(localStorage.getItem("BetterAlis"));
-function keyGay(x) {x.value = x.value.toLowerCase(); save()} //smh
+function keyGay(x) {x.value = x.value.toUpperCase(); save()} //smh
 
 //version
 $("span#version").text(`v${v}`)
@@ -452,6 +452,7 @@ $("#btaScoreSizeVal").text(`${btaStorage.scoreSize}px`);
 $("#btaChatboxTextSizeVal").text(`${btaStorage.chatText}px`);
 $("#btaChatHeightVal").text(`${btaStorage.chatHeight}px`);
 $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
+$("#btaPopTimeOutVal").text(`${btaStorage.hotkeys.poptime}px`);
 
 //load saved settings
 
@@ -1041,15 +1042,15 @@ var speed = 50; //speed to work
 
 window.addEventListener('keydown', keydown); //macros
 function keydown(event) {
-    if (event.key == btaKeyPop.value) { //popsplit macro
+    if (event.key == btaKeyPop.value.toLowerCase()) { //popsplit macro
         split();
         setTimeout(split, btaKeyPopTime.value);
-    }if (event.key == btaKeyTriple.value) { //triplesplit macro
+    }if (event.key == btaKeyTriple.value.toLowerCase()) { //triplesplit macro
         split()
         setTimeout(split, 60);
         setTimeout(split, 200);
     }
-    if (event.key == btaKey64.value) { //x64 macro
+    if (event.key == btaKey64.value.toLowerCase()) { //x64 macro
         split()
         setTimeout(split, speed);
         setTimeout(split, speed*2);
