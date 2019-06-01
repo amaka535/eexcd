@@ -478,8 +478,8 @@ btaKeyPopTime.oninput = function () {
 btaWalls.oninput = function () {
   var tip = ""
   if($(this).val() == 1) $(this).val() = 0;
-  if($(this).val() == 0) tip="(Circle)"; else tip="";
-  if($(this).val() == 2) tip="(Invisible)" else tip="";
+  if($(this).val() == 0) {tip="(Circle)";} else {tip="";}
+  if($(this).val() == 2) {tip="(Invisible)"} else {tip="";}
   $("#btaWallsVal").text(`${btaStorage.walls} walls ${tip}`);
   save()
 }
