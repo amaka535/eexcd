@@ -1,5 +1,5 @@
 //config
-var v = "12.25"
+var v = "12.26"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades and emojis data
@@ -135,7 +135,7 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;}
-#logomenu:hover{width: 390px;height: 195px;margin-top: 45px;}
+#logomenu:hover{width: 390px;height: 195px;margin-top: 45px;cursor:pointer}
 .zimekcheckbox{margin-top: -1px;}
 .zimekbox{width: 27px;height: 27px;margin-top: 3px;}
   ::-webkit-scrollbar {
@@ -161,7 +161,6 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
       width: 98%;
       opacity: 0.85;
   }
-  .niceNameEffect
   .little{height:30px;background-color:#151515;border-radius:4px;color:#d1d1d1;}
   .little:hover{cursor:pointer;background-color:#181818;color:white;}
 #div_lb{transition-duration: 0.2s;}
@@ -169,7 +168,6 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
 .toolsBtn:hover{opacity: 1;cursor: pointer;}
 button{outline: none;}
 #info{z-index:1;}
-.zimeksettings{}
 #btaEmojisPanelImg{filter: grayscale(80%);opacity: 0.5;transition-duration: 0.17s;}
 #btaEmojisPanelImg:hover{filter: none;opacity: 1;transition-duration: 0.17s;}
 .range{padding: 10px;}
@@ -237,8 +235,6 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaPskin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Private Skin<input id="btaPrivSkin" placeholder="Private Skin URL" class="uk-input" style="border: 0px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaHat" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Hat<input id="btaHatVal" placeholder="Hat URL" class="uk-input" style="border: 0px;padding: 0px;margin-left:5px;width: 150px;font-size:14px;background-color:#111111;color:white;height: 23px;cursor: pointer;margin-bottom: 1px;"></label><br>
 <label><input id="btaLb" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Leaderboard</label><br>
-<label><input id="btaMention" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Name Mention</label><br>
-<label><input id="btaFlight" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Alis friends lighted messages</label><br>
 <label><input id="btaChatFade" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Chatbox fade</label><br>
 <label><input id="btaChatbox" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Custom Chatbox</label><br>
 <label><input id="btaAutorespawn" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Auto respawn</label><br>
@@ -255,7 +251,7 @@ Cell walls: <input type="range" min="0" max="16" step="1" id="btaWalls" style="w
 Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 Pop-Split Macro: <input id="btaKeyPop" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
-Pop Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" step="5" max="500" min="100" type="range" style="width:100px;"><span style="margin-left: 3px;" id="btaPopTimeOutVal"></span><br><br>
+Pop Macro Timeout: <input id="btaKeyPopTime" oninput="keyGay(this);" step="5" max="300" min="100" type="range" style="width:100px;"><span style="margin-left: 3px;" id="btaPopTimeOutVal"></span><br><br>
 <div>
 Score size: <input type="range" min="5" max="30" step="0.1" id="btaScoreSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaScoreSizeVal"></span><br>
 Chat text size: <input type="range" min="5" max="30" step="0.1" id="btaChatTextSize" style="width: 150px;"><span style="margin-left: 5px;" id="btaChatboxTextSizeVal"></span><br>
@@ -264,6 +260,12 @@ Costumize your chatbox: <span style="margin-left: 5px;"><span id="btaChatHeightV
 <input type="range" min="152" max="520" id="btaChatRight" style="width: 150px;margin-left:-80px;">
 </div>
 </div>
+
+<div style="width:80%;padding:20%;border-top: 1px solid grey;text-align:center;">
+<span style="font-size: 35px;" class="fontBTA">Better Alis</span><br>
+
+</div>
+
 </div><br>
 </div>`).insertBefore("#settingsoverlays");
 $(`<li id="btaColorChangeTime"><a id="timechange"><p style="width: 250px;">Color change time</p><img width="25px" style="margin-left: 1px;" src="${res}/timer.png"></a></li>`).insertAfter("#openrankingli");
@@ -295,8 +297,6 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "chatfade":false,
                     "emojis":true,
                     "lb":true,
-                    "flight":true,
-                    "mention":true,
                     "chatbox":true,
                     "scoreSize":15,
                     "chatText":14,
@@ -335,8 +335,6 @@ const btaAutorespawn = document.getElementById('btaAutorespawn');
 const btaPskin = document.getElementById('btaPskin');
 const btaHideOwnSkin = document.getElementById('btaHideOwnSkin');
 const btaDisableLBColors = document.getElementById('btaDisableLBColors');
-const btaFlight = document.getElementById('btaFlight');
-const btaMention = document.getElementById('btaMention');
 const btaCCcell = document.getElementById('btaCCcell');
 const btaMsgTime = document.getElementById('btaMsgTime');
 const btaHat = document.getElementById('btaHat');
@@ -369,11 +367,6 @@ btaStorage.pskin=false
 btaStorage.privskin=""
 }
 
-if(!btaStorage.mention && !btaStorage.flight){
-  btaStorage.mention=true
-  btaStorage.flight=true
-}
-
 if(!btaStorage.hotkeys){
 btaStorage.hotkeys={
   "triple":"",
@@ -400,8 +393,6 @@ btaDisableLBColors.checked = btaStorage.OFFlbColors;
 btaMsgTime.checked = btaStorage.msgtime;
 btaPskin.checked = btaStorage.pskin
 btaHat.checked = btaStorage.hat
-btaFlight.checked = btaStorage.flight
-btaMention.checked = btaStorage.mention
 btaPrivSkin.value = btaStorage.privskin
 btaScoreSize.value = btaStorage.scoreSize;
 btaHatVal.value = btaStorage.hatval
@@ -410,12 +401,11 @@ btaChatHeight.value = btaStorage.chatHeight;
 btaChatRight.value = btaStorage.chatRight;
 btaBgColor.value = btaStorage.bgColor;
 btaCellColor.value = btaStorage.cc;
-btaWalls.value = btaStorage.walls;
 btaKeyTriple.value = btaStorage.hotkeys.triple;
 btaKey64.value = btaStorage.hotkeys.split64;
 btaKeyPop.value = btaStorage.hotkeys.popsplit;
-btaKeyPopTime.value = btaStorage.hotkeys.poptime;
-
+btaKeyPopTime.value = 185;
+btaWalls.value = 1;
 
 
 function save(){
@@ -431,8 +421,6 @@ function save(){
   "privskin":`${btaPrivSkin.value}`,
   "cctrue":btaCCcell.checked,
   "chatfade":btaChatFade.checked,
-  "flight":btaFlight.checked,
-  "mention":btaMention.checked,
   "emojis":btaEmojis.checked,
   "lb":btaLb.checked,
   "hat":btaHat.checked,
@@ -478,8 +466,8 @@ btaKeyPopTime.oninput = function () {
 btaWalls.oninput = function () {
   var tip = ""
   if($(this).val() == 2) btaWalls.value = 1;
-  if($("#btaWalls").val() == 1) {tip="(Circle)"} else {tip=""}
-  if($(this).val() == 0) {tip="(Invisible)"} else {tip=""}
+  if($(this).val() == 1) {tip="(Circle)"} else {tip=""};
+  if($(this).val() == 0) {tip="(Invisible)"} else {tip=""};
   $("#btaWallsVal").text(`${btaWalls.value} walls ${tip}`);
   save()
 }
@@ -499,9 +487,6 @@ defaultBg.onclick = function () {
   btaBgColor.value = "#212121"
   save()
 }
-
-btaMention.onclick = function () {save()}
-btaFlight.onclick = function () {save()}
 
 btaPskin.onclick = function () {
   save()
@@ -808,6 +793,8 @@ chatRoom.show = function() {
       chatRoom.isShow = false;
   };
 
+var longmsg = "you know how its like write very long message and then its just getting cutted off, you have to write it again and again or u just get caugh by blocked word"
+
 chatRoom.sendMessage = function(msg) {
     if (msg = msg.trim()) {
 if(btaMute == true){$("#chatroom").append("<span class='msg' style='color:#ff7272;'>You are muted from Better Alis Extension</span><br>");return}
@@ -866,12 +853,43 @@ msg = replace
           }
           msg = detected
 
-              const goodWord = (word) => word.replace(new RegExp(`.{${~~(word.length / 2)}}`), `$&${String.fromCharCode(65279)}`);
-    					const badWords = ["team", "admin", "tampermonkey", "razor", "pedo", "give coins", "give me coins", "give me hat", "greeb", "hack", "wally", "extension", "camp", "cuck", "cunt", "nigger", "noob", "lagging", "script", "bitch", "google", "bing", "troll", "alis", "havoc", "onkill", "neroz", "hack", "color", "colour", "wings", "jesus", ".io", "nosx", "nos", "nox", "youtube", "accident", "dev", "give hat", "owner", "whore", "faggot", "outside"];
-    					const uncuckRegex = new RegExp(badWords.join("|"), "i");
-    					if (badWords.some(s => msg.toLowerCase().includes(s))) msg = msg.replace(uncuckRegex, matched => goodWord(matched));
+          // Updated by Gear Second (SalahGFX) 11/25/18
+          // Permission to use code from Midnight
 
-                window.sendChat(msg);
+if (msg.startsWith('/') || msg.startsWith("eval ")) return sendChat(msg);
+
+// split msg into words and add the empty char in between
+let words = msg.split(" ");
+words.forEach((word, index) => {
+    words[index] = word.split("").join("⁯");
+});
+
+// make phrases from splitted words with length of less than 99
+let i = 0;
+let str = "";
+let messages = [];
+const MAX_LENGTH = 99;
+while (i !== words.length) {
+    let length = str.length + words[i].length + 1;
+    if (length < MAX_LENGTH) {
+        str += words[i] + " ";
+        i++;
+    }
+    if (length >= MAX_LENGTH || i === words.length) {
+        messages.push(str);
+        str = "";
+    }
+}
+
+sendChat(messages[0]);
+i = 1;
+if (i < messages.length) {
+    let msgInterval = setInterval(() => {
+        sendChat(messages[i++]);
+        i === messages.length && clearInterval(msgInterval);
+    }, 900)
+}
+
         }
     };
 
@@ -967,24 +985,6 @@ if(user.muted==true){
     tabContent.append(errors);
     $("#chatroom").append(tabContent);
     $(tabContent).fadeIn(250)
-    if(btaFlight.checked){
-    Object.values(friends).forEach(friend=>{
-      if(friend.uid == extra.uid){
-      $(tabContent).css("background-color", `rgba(53, 255, 90, 0.25)`)
-      $(tabContent).css("border-radius", `4px`)
-}
-  })}
-if(btaMention.checked){
-var nick = $("#nick").val().toLowerCase()
-if(nick==="")nick="unnamed";
-nick = nick.replace(/[^\x00-\x7F]/g, "")
-nick = nick.replace(" ", "")
-if($("#nick").val()==="" == false && nick==="")nick=$("#nick").val();
-}
-  if(btaMention.checked && message.toLowerCase().includes(nick)){
-    $(tabContent).css("background-color", `rgba(255, 215, 56, 0.22)`)
-    $(tabContent).css("border-radius", `4px`)
-  }
     this.popupChat(msg, message, color);
     //$('.sender').css('color', chatcolor);
       goChatUP()
@@ -1036,11 +1036,11 @@ btaAutorespawn.onclick = function () {save()}
       if($("#overlays").css("display") == "none"){
   setTimeout(function(){
 $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").click()
-}, 60)
+}, 100)
 setTimeout(function(){
-  if($("#overlays").css("display") == "none" || isJoinedGame == true){
+  if($("#overlays").css("display") == "none" && isJoinedGame == true){
 $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").click()}
-}, 1200)
+}, 1300)
       }
     }
     isJoinedGame = false;
@@ -1101,7 +1101,7 @@ $(document).ready(function(){
             $("#btaSettings").fadeIn(280);
     });
     $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").click(function(){
-setTimeout(function(){upgradeBta()}, 300)
+setTimeout(function(){upgradeBta()}, 150)
 });
     $("#hideall").click(function(){
         $("#btaSettings").fadeOut(250);
@@ -1112,12 +1112,12 @@ setTimeout(function(){upgradeBta()}, 300)
     });
 });
 
-$("#pp").css("margin-right","100px")
+$("#pp").css("margin-right","60px")
 //timer for full screeners
 $(`
-<div style="bottom:0;right:0;position:absolute;width:90px;height:45px;background-color:#212121;">
-<div style="margin-bottom:10px;text-align:center;">
-<span id="time" style="font-size:30px;color:white;">${chatRoom.getTimeStr()}</span></div>
+<div style="bottom:0;right:0;position:absolute;width:49px;height:25.5px;background-color:#212121;">
+<div style="margin-bottom:7px;text-align:center;">
+<span id="time" style="font-size:18px;color:white;">${chatRoom.getTimeStr()}</span></div>
 </div>
 `).insertBefore("#pp")
 setInterval(function(){
