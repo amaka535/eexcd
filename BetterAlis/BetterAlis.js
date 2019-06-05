@@ -860,7 +860,10 @@ if (msg.startsWith('/') || msg.startsWith("eval ")) return sendChat(msg);
 // split msg into words and add the empty char in between
 let words = msg.split(" ");
 words.forEach((word, index) => {
-  if(word.includes(":") || word.includes(/[^\x00-\x7F]/g))return;
+  if(word.includes(":"))return;
+  for (var i = 0, n = word.length; i < n; i++) {
+    if (word.charCodeAt( i ) > 255)return;
+}
     words[index] = word.split("").join("⁯");
 });
 
