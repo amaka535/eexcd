@@ -449,7 +449,7 @@ $("#btaChatboxTextSizeVal").text(`${btaStorage.chatText}px`);
 $("#btaChatHeightVal").text(`${btaStorage.chatHeight}px`);
 $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
 $("#btaPopTimeOutVal").text(`185ms`);
-$("#btaWallsVal").text(`${btaStorage.walls} walls`);
+$("#btaWallsVal").text(`1 wall (Circle)`);
 
 //load saved settings
 
