@@ -261,7 +261,7 @@ Costumize your chatbox: <span style="margin-left: 5px;"><span id="btaChatHeightV
 </div>
 </div>
 
-<div style="width:80%;padding:20%;border-top: 1px solid grey;text-align:center;">
+<div style="width:90%;padding:10px;border-top: 1px solid grey;text-align:center;margin-top:100px;">
 <span style="font-size: 35px;" class="fontBTA">Better Alis</span><br>
 
 </div>
@@ -448,7 +448,7 @@ $("#btaScoreSizeVal").text(`${btaStorage.scoreSize}px`);
 $("#btaChatboxTextSizeVal").text(`${btaStorage.chatText}px`);
 $("#btaChatHeightVal").text(`${btaStorage.chatHeight}px`);
 $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
-$("#btaPopTimeOutVal").text(`${btaStorage.hotkeys.poptime}ms`);
+$("#btaPopTimeOutVal").text(`185ms`);
 $("#btaWallsVal").text(`${btaStorage.walls} walls`);
 
 //load saved settings
