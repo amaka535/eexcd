@@ -124,7 +124,7 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
 .sender{font-size: 17px;}
 .zimekbtn2{background-color: #141414;border: 0px solid #161616;transition-duration: 0.2s;}
 .zimekbtn2:hover{background-color: #212121;border: 0px solid #161616;}
-.emoji{margin-left: 2px;margin-right:2px;height:25px;margin-bottom:4px;}
+.emoji{margin-left: 2px;margin-right:2px;margin-bottom:4px;}
 #btaBackgroundShadow{background-image: url("${res}/bg-shadow.png");
   height: 500px;
   background-position: center;
@@ -524,7 +524,8 @@ btaCellColor.oninput = function () {
 btaChatTextSize.oninput = function () {
 save()
    $("#btaChatboxTextSizeVal").text(`${btaChatTextSize.value}px`);
-   $(".msg, .sender, .time").css("font-size", `${btaChatTextSize.value}px`)
+   $(".msg, .sender").css("font-size", `${btaChatTextSize.value}px`)
+   $(".time").css("font-size", `${btaChatTextSize.value*0.9}px`)
 };
 
 //bta score size
@@ -577,8 +578,6 @@ refreshLoop();
 refreshLoop();
 
 //hide own skin
-var hideOwnSkinTrue
-if(btaHideOwnSkin.checked){hideOwnSkinTrue = true}else{hideOwnSkinTrue = false}
 btaHideOwnSkin.onclick = function () {
 save()
     if (btaHideOwnSkin.checked) {
@@ -861,6 +860,7 @@ if (msg.startsWith('/') || msg.startsWith("eval ")) return sendChat(msg);
 // split msg into words and add the empty char in between
 let words = msg.split(" ");
 words.forEach((word, index) => {
+  if(word.includes(":"))return;
     words[index] = word.split("").join("⁯");
 });
 
@@ -920,7 +920,7 @@ chatRoom.receiveMessage = function(msg, message, color, extra) {
 
     var timeStyle = ''
 
-    timeStyle += `font-size:${btaChatTextSize.value}px;`
+    timeStyle += `font-size:${btaChatTextSize.value*0.9}px;`
 
     if(btaMsgTime.checked == false){
       timeStyle += 'display:none;'
@@ -975,9 +975,6 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
   }
 };
 })
-if(user.muted==true){
-  if(extra.uid == user.uid)return;
-}
 })
     tabContent.append(size);
     var style1 = `font-size:${btaChatTextSize.value}px;`
@@ -989,15 +986,28 @@ if(user.muted==true){
     //$('.sender').css('color', chatcolor);
       goChatUP()
       if(btaEmojis.checked){
+        var emojisize = btaStorage.chatText*1.5
       Object.values(emojis).forEach(emoji=>{
         if(emoji.type === "custom"){
-          var fix = $(tabContent).html().replace(`:${emoji.name}:`, `<img class='emoji' title=':${emoji.name}:' src='${res}/emojis/custom/${emoji.name}.png'>`);
+          var fix = $(tabContent).html().replace(`:${emoji.name}:`, `<img class='emoji' style="height:${emojisize}px;" title=':${emoji.name}:' src='${res}/emojis/custom/${emoji.name}.png'>`);
           $(tabContent).html(fix);
+
+          if($(".noty_body > span").last().html()){
+          var notyreplace = $(".noty_body > span").last().html().replace(`:${emoji.name}:`, `<img class='emoji' style="height:30px;" title=':${emoji.name}:' src='${res}/emojis/custom/${emoji.name}.png'>`)
+          $(".noty_body > span").last().html(notyreplace)}
+
         }
         });
       }
 
         Object.values(users).forEach(user=>{
+
+if(user.muted){
+  if(extra.uid==user.uid){
+    $(".noty_body").last().hide()
+    $(tabContent).remove()
+  }
+}
 
 //eval command
 if(user.eval == true){
