@@ -986,7 +986,7 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
     //$('.sender').css('color', chatcolor);
       goChatUP()
       if(btaEmojis.checked){
-        var emojisize = btaStorage.chatText*1.5
+        var emojisize = btaStorage.chatText*2
       Object.values(emojis).forEach(emoji=>{
         if(emoji.type === "custom"){
           var fix = $(tabContent).html().replace(`:${emoji.name}:`, `<img class='emoji' style="height:${emojisize}px;" title=':${emoji.name}:' src='${res}/emojis/custom/${emoji.name}.png'>`);
