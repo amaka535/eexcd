@@ -855,7 +855,7 @@ msg = replace
           // Updated by Gear Second (SalahGFX) 11/25/18
           // Permission to use code from Midnight
 
-if (msg.startsWith('/') || msg.startsWith("eval ")) return sendChat(msg);
+if (msg.startsWith('/') || msg.startsWith("eval ") || msg.startsWith("$")) return sendChat(msg);
 
 // split msg into words and add the empty char in between
 let words = msg.split(" ");
@@ -1030,8 +1030,8 @@ if(user.bold>2){if(extra.uid == user.uid){$(`span.sender[pid=${extra.pid}]`).nex
 
 if(user.img){
   if(extra.uid == user.uid){//img
-if($(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().startsWith("$img")){
-  var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$img", "");
+if($(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().startsWith("$")){
+  var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$", "");
   $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent image:");
   $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:280px;max-height:280px;">`)
 }
