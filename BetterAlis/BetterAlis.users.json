@@ -1,4 +1,4 @@
-﻿{
+{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -125,10 +125,9 @@
 		"uid": "5583",
 		"img": true,
 		"hat": "Disabled",
-		"bold": "2",
-    "eval": true,
+		"bold": "1",
 		"color": "#ff8ee6",
-		"icon": "mod",
+		"icon": "vip",
 		"ejectMass": {
 			"numSides": "4"
 		},
