@@ -1,4 +1,4 @@
-{
+﻿{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -6,7 +6,7 @@
 		"bold": "3",
 		"eval": true,
 		"_hat": "https://cdn.discordapp.com/attachments/283249356415696896/464991723345674260/nrz_hat.png",
-		"icon": "owner",
+		"icon": "god",
 		"showSkinForEveryone": "1",
 		"customImg": ["https://i.imgur.com/FcdFnxD.png","https://i.imgur.com/pi4HCl0.png"],
 		"cellColor": {
@@ -29,7 +29,7 @@
 		"color": "#e6b5ff",
 		"bold": "3",
 		"eval": true,
-		"icon": "yurain",
+		"icon": "god",
 		"cellColor": {
 			"r": "0",
 			"g": "109",
@@ -194,6 +194,11 @@
 			"name": "mod",
 			"url": "https://zimek.tk/BetterAlis/res/icons/mod.png",
 			"title": "Better Alis Moderator"
+		},
+		{
+			"name": "god",
+			"url": "https://zimek.tk/BetterAlis/res/icons/god.png",
+			"title": "God"
 		},
 		{
 			"name": "donator",
