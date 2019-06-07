@@ -1,5 +1,5 @@
 //config
-var v = "12.26"
+var v = "12.27"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades and emojis data
@@ -1028,34 +1028,33 @@ if(extra.uid == user.uid){
 
 if(user.color){if(extra.uid == user.uid){
   if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(1)").last().css("color", `${user.color}`);
-  $(`span.sender[pid=${extra.pid}]`).next("span.msg").css("color", `${user.color}`);
+  $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").css("color", `${user.color}`);
 }}
 
 if(user.bold){if(extra.uid == user.uid){
   if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(0)").last().css("font-weight", "700");
-  $(`span.sender[pid=${extra.pid}]`).css("font-weight", "700");
+  $(`span.sender[pid=${extra.pid}]`).last().css("font-weight", "700");
 }}
 
 if(user.bold>2){if(extra.uid == user.uid){
   if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(1)").last().css("font-weight", "700");
-  $(`span.sender[pid=${extra.pid}]`).css("font-weight", "600");
+  $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").css("font-weight", "600");
 }}
+
 
 
 if(user.img){
   if(extra.uid == user.uid){//img
-
-if($(`span.sender[pid=${extra.pid}]`).last().text().startsWith("$")){
+if($(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().startsWith("$")){
   var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$", "");
- $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent image:");
+  $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent image:");
   $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:400px;max-height:340px;">`)
 
   if($("#chatroom").css("display") == "none"){
-$(".noty_body > span:eq(1)").last().html(`Sent image:<br><img src="https://i.imgur.com/${fix}.png" style="max-width:400px;max-height:340px;">`)
-}
+  $(".noty_body > span:eq(1)").last().html(` Sent image: <br> <img src="https://i.imgur.com/${fix}.png" style="max-width:300px;max-height:340px;">`)
+  }
 
 }
-
 }}
 });
 };
