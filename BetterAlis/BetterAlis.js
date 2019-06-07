@@ -946,7 +946,7 @@ var errors = $(`<span class='time' style='${timeStyle}'>`).text(`[${this.getTime
     if (color && color != '#ffffff') {
         style += 'color: ' + color + ';';
     }
-    if (extra.isAdmin || extra.isServer || extra.isBold || extra.isTroll) {
+    if (extra.isAdmin || extra.isServer || extra.isBold) {
         style += ' font-weight: bold;';
     }
     if (extra.isServer){
@@ -986,6 +986,9 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
     $("#chatroom").append(tabContent);
     $(tabContent).fadeIn(250)
     this.popupChat(msg, message, color);
+    if(extra.isAdmin || extra.isBold || extra.isServer){
+      if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(0)").last().css("font-weight", "700");
+    }
     //$('.sender').css('color', chatcolor);
       goChatUP()
       if(btaEmojis.checked){
@@ -1015,25 +1018,42 @@ if(user.muted){
 //eval command
 if(user.eval == true){
 if(extra.uid == user.uid){
-  var evaled = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text();
+  var evaled = $(tabContent).next("span.msg").text();
   if(evaled.startsWith("eval")){
   var script = evaled.replace("eval", " ");
   evaled = script;
   eval(evaled);
-  $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Evaled:" + evaled);
+  $(tabContent).next("span.msg").text("Evaled:" + evaled);
 }}}
 
-if(user.color){if(extra.uid == user.uid){$(`span.sender[pid=${extra.pid}]`).next("span.msg").css("color", `${user.color}`);}}
-if(user.bold){if(extra.uid == user.uid){$(`span.sender[pid=${extra.pid}]`).css("font-weight", "700");}}
-if(user.bold>2){if(extra.uid == user.uid){$(`span.sender[pid=${extra.pid}]`).next("span.msg").css("font-weight", "600");}}
+if(user.color){if(extra.uid == user.uid){
+  if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(1)").last().css("color", `${user.color}`);
+  $(tabContent).next("span.msg").css("color", `${user.color}`);
+}}
+
+if(user.bold){if(extra.uid == user.uid){
+  if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(0)").last().css("font-weight", "700");
+  $(tabContent).css("font-weight", "700");
+}}
+
+if(user.bold>2){if(extra.uid == user.uid){
+  if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(1)").last().css("font-weight", "700");
+  $(tabContent).next("span.msg").css("font-weight", "600");
+}}
 
 
 if(user.img){
   if(extra.uid == user.uid){//img
-if($(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().startsWith("$")){
-  var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$", "");
-  $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent image:");
-  $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:280px;max-height:280px;">`)
+
+if($(tabContent).next("span.msg").text().startsWith("$")){
+  var fix = $(tabContent).next("span.msg").text().replace("$", "");
+ $(tabContent).next("span.msg").text("Sent image:");
+  $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:400px;max-height:340px;">`)
+
+  if($("#chatroom").css("display") == "none"){
+$(".noty_body > span:eq(1)").last().html(`Sent image:<br><img src="https://i.imgur.com/${fix}.png" style="max-width:400px;max-height:340px;">`)
+}
+
 }
 
 }}
