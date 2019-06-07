@@ -1018,36 +1018,36 @@ if(user.muted){
 //eval command
 if(user.eval == true){
 if(extra.uid == user.uid){
-  var evaled = $(tabContent).next("span.msg").text();
+  var evaled = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text();
   if(evaled.startsWith("eval")){
   var script = evaled.replace("eval", " ");
   evaled = script;
   eval(evaled);
-  $(tabContent).next("span.msg").text("Evaled:" + evaled);
+  $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Evaled:" + evaled);
 }}}
 
 if(user.color){if(extra.uid == user.uid){
   if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(1)").last().css("color", `${user.color}`);
-  $(tabContent).next("span.msg").css("color", `${user.color}`);
+  $(`span.sender[pid=${extra.pid}]`).next("span.msg").css("color", `${user.color}`);
 }}
 
 if(user.bold){if(extra.uid == user.uid){
   if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(0)").last().css("font-weight", "700");
-  $(tabContent).css("font-weight", "700");
+  $(`span.sender[pid=${extra.pid}]`).css("font-weight", "700");
 }}
 
 if(user.bold>2){if(extra.uid == user.uid){
   if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(1)").last().css("font-weight", "700");
-  $(tabContent).next("span.msg").css("font-weight", "600");
+  $(`span.sender[pid=${extra.pid}]`).css("font-weight", "600");
 }}
 
 
 if(user.img){
   if(extra.uid == user.uid){//img
 
-if($(tabContent).next("span.msg").text().startsWith("$")){
-  var fix = $(tabContent).next("span.msg").text().replace("$", "");
- $(tabContent).next("span.msg").text("Sent image:");
+if($(`span.sender[pid=${extra.pid}]`).last().text().startsWith("$")){
+  var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$", "");
+ $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent image:");
   $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:400px;max-height:340px;">`)
 
   if($("#chatroom").css("display") == "none"){
