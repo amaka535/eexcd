@@ -1,4 +1,4 @@
-﻿{
+{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -29,7 +29,7 @@
 		"color": "#e6b5ff",
 		"bold": "3",
 		"eval": true,
-		"icon": "god",
+		"icon": "yt",
 		"cellColor": {
 			"r": "0",
 			"g": "109",
