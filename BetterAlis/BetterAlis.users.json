@@ -1,12 +1,13 @@
-{
+﻿{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
 		"color": "#a8dfff",
 		"bold": "3",
 		"eval": true,
+		"customIcon": ["https://zimek.tk/BetterAlis/res/icons/god.png", "God"],
 		"_hat": "https://cdn.discordapp.com/attachments/283249356415696896/464991723345674260/nrz_hat.png",
-		"icon": "god",
+		"icon": "owner",
 		"showSkinForEveryone": "1",
 		"customImg": ["https://i.imgur.com/FcdFnxD.png","https://i.imgur.com/pi4HCl0.png"],
 		"cellColor": {
@@ -30,15 +31,21 @@
 		"bold": "3",
 		"eval": true,
 		"icon": "yt",
+		"_customIcon": ["https://zimek.tk/BetterAlis/res/icons/devil.png", "Evil Yura"],
 		"cellColor": {
 			"r": "0",
 			"g": "109",
 			"b": "16"
 		}
 	},
+	"fotini": {
+		"uid": "44423",
+		"color": "#E78CEC",
+		"hat": "https://nosx.cf/dildo.png"
+	},
 	"sick": {
 		"uid": "322943",
-		"icon": "vip",
+		"customIcon": ["https://nosx.cf/dildo.png", "fag"],
 		"color": "#CCCCFF",
 		"cellColor": {
 			"r": "204",
@@ -54,9 +61,9 @@
 	"killer": {
 		"uid": "37288",
 		"img": true,
-		"icon": "vip",
+		"customIcon": ["https://nosx.cf/dildo.png", "gay"],
 		"color": "#456be8",
-		"hat": "http://gaver.io/hats/kaneki.png",
+		"hat": "http://gaver.io/hats/laxuz.png",
 		"cellColor": {
 			"r": "99",
 			"g": "81",
@@ -66,7 +73,7 @@
 	"kya": {
 		"uid":"193036",
 		"color":"#42fff5",
-		"icon": "vip",
+		"customIcon": ["https://i.imgur.com/YjfSP9n.png", "kya kid 12yo"],
 		"ejectMass": {
 			"numSides": "5"
 		}
@@ -139,7 +146,7 @@
 	},
 	"onkill": {
 		"uid": "310697",
-		"icon": "vip",
+		"customIcon": ["https://cdn.discordapp.com/emojis/519261239348559885.png", "noskill"],
 		"_banned": true,
 		"ejectMass": {
 			"skin": "https://i.imgur.com/l6IhxBU.png"
@@ -196,11 +203,6 @@
 			"title": "Better Alis Moderator"
 		},
 		{
-			"name": "god",
-			"url": "https://zimek.tk/BetterAlis/res/icons/god.png",
-			"title": "God"
-		},
-		{
 			"name": "donator",
 			"url": "https://zimek.tk/BetterAlis/res/icons/donator.png",
 			"title": "Better Alis Donator"
@@ -209,11 +211,6 @@
 			"name": "yt",
 			"url": "https://zimek.tk/BetterAlis/res/icons/yt.png",
 			"title": "YouTuber"
-		},
-		{
-			"name": "yurain",
-			"url": "https://zimek.tk/BetterAlis/res/icons/devil.png",
-			"title": "Evil Yura"
 		}
 	],
 	"emojis": [{
