@@ -1,5 +1,5 @@
 //config
-var v = "12.28"
+var v = "12.29"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades and emojis data
@@ -967,7 +967,7 @@ var errors = $(`<span class='time' style='${timeStyle}'>`).text(`[${this.getTime
         $.extend(window.playerDetails[extra.pid], extra);
         style += ' onclick="window.onChatClick(' + extra.pid + ')" pid="' + extra.pid + '"';
     }
-if(msg.includes("evenzinho") && antiseven == true)return;
+if(msg.includes("Sevenzinho") && antiseven == true)return;
 
     // If we are in window.seeAllChat then display team names in parenthesis
     if (window.seeAllChat) {
@@ -976,15 +976,20 @@ if(msg.includes("evenzinho") && antiseven == true)return;
     var size = $('<span class="sender"' + style + '>').text(msg + " : ");
     tabContent.append(errors);
     Object.values(users).forEach(user=>{
+      var pSize = btaStorage.chatText*2
+      var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
       Object.values(icons).forEach(icon=>{
-var pSize = btaStorage.chatText*2
-var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
-    if(user.icon) {
+    if(user.icon || user.customIcon) {
         if(icon.name == user.icon){
     if(extra.uid == user.uid){tabContent.append(`<img title="${icon.title}" style="${iconStyle}" class="icon" src="${icon.url}"> `)}
   }
 };
 })
+
+if(user.customIcon){
+if(user.uid == extra.uid){tabContent.append(`<img title="${user.customIcon[1]}" style="${iconStyle}" class="icon" src="${user.customIcon[0]}"> `)}
+}
+
 })
     tabContent.append(size);
     var style1 = `font-size:${btaChatTextSize.value}px;`
@@ -1083,11 +1088,11 @@ $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").
       }
     }
     isJoinedGame = false;
-    $(_$_3c10[43]).prop(_$_3c10[42], false);
-    $(_$_3c10[0]).prop(_$_3c10[42], false);
-    $(_$_3c10[50]).show();
+    $(".btn-spectate").prop("disabled", false);
+    $("#nick").prop("disabled", false);
+    $(".nav").show();
     conn.leaveRoom(myApp.getRoom());
-    updatePlayerDetails();
+updatePlayerDetails();
   };
 
 setTimeout(function(){
