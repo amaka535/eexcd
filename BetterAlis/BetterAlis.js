@@ -1,5 +1,5 @@
 //config
-var v = "12.27"
+var v = "12.28"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades and emojis data
@@ -832,6 +832,14 @@ if(btaMute == true){$("#chatroom").append("<span class='msg' style='color:#ff727
           }}
           })
 
+if(msg.startsWith("$")){
+  msg = msg.replace("https://imgur.com/", "")
+  msg = msg.replace("https://i.imgur.com/", "")
+  msg = msg.replace(".png", "")
+  msg = msg.replace(".jpg", "")
+  msg = msg.replace(".gif", "")
+}
+
           if(btaEmojis.checked){
           Object.values(emojis).forEach(emoji=>{
 
@@ -908,7 +916,6 @@ chatRoom.getTimeStr = function() {
 
 chatRoom.receiveMessage = function(msg, message, color, extra) {
     // If its not set, then its blank.
-    const btaMsgTime = document.getElementById('btaMsgTime');
     if (!extra.team) { extra.team = ""; }
     // Only display chat messages if they are on the same team as this player, OR from an admin
     if (extra.team != $("#team_name").val() && !extra.isAdmin && !window.seeAllChat && !extra.isServer) {
@@ -987,7 +994,7 @@ var iconStyle = `max-height:${pSize}px;padding-bottom:7px;`
     $(tabContent).fadeIn(250)
     this.popupChat(msg, message, color);
     if(extra.isAdmin || extra.isBold || extra.isServer){
-      if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(0)").last().css("font-weight", "700");
+      if($("#chatroom").css("display") == "none")$(".noty_body > span:nth-child(1)").last().css("font-weight", "700");
     }
     //$('.sender').css('color', chatcolor);
       goChatUP()
@@ -1027,17 +1034,17 @@ if(extra.uid == user.uid){
 }}}
 
 if(user.color){if(extra.uid == user.uid){
-  if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(1)").last().css("color", `${user.color}`);
+  if($("#chatroom").css("display") == "none")$(".noty_body > span:nth-child(2)").last().css("color", `${user.color}`);
   $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").css("color", `${user.color}`);
 }}
 
 if(user.bold){if(extra.uid == user.uid){
-  if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(0)").last().css("font-weight", "700");
+  if($("#chatroom").css("display") == "none")$(".noty_body > span:nth-child(1)").last().css("font-weight", "700");
   $(`span.sender[pid=${extra.pid}]`).last().css("font-weight", "700");
 }}
 
 if(user.bold>2){if(extra.uid == user.uid){
-  if($("#chatroom").css("display") == "none")$(".noty_body > span:eq(1)").last().css("font-weight", "700");
+  if($("#chatroom").css("display") == "none")$(".noty_body > span:nth-child(2)").last().css("font-weight", "700");
   $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").css("font-weight", "600");
 }}
 
@@ -1048,10 +1055,10 @@ if(user.img){
 if($(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().startsWith("$")){
   var fix = $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text().replace("$", "");
   $(`span.sender[pid=${extra.pid}]`).last().next("span.msg").text("Sent image:");
-  $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:400px;max-height:340px;">`)
+  $("#chatroom").append(`<img src="https://i.imgur.com/${fix}.png" style="max-width:${btaChatRight.value-10}px;max-height:${btaChatHeight.value-18}px;">`)
 
   if($("#chatroom").css("display") == "none"){
-  $(".noty_body > span:eq(1)").last().html(` Sent image: <br> <img src="https://i.imgur.com/${fix}.png" style="max-width:300px;max-height:340px;">`)
+  $(".noty_body > span:nth-child(2)").last().html(` Sent image: <br> <img src="https://i.imgur.com/${fix}.png" style="max-width:300px;max-height:340px;">`)
   }
 
 }
