@@ -4,12 +4,16 @@ var btaPid = Math.floor(Math.random() * (+99999 - +11111) + +11111)
 function version() {window.sendChat($("#version").text());};
 function btapid() {sendChat(`${btaPid}`)}
 function ver(uid) {if(userid==uid)window.sendChat($("#version").text());};
+function btaPing() {sendChat($("#btaStatsPing").text())}
 
 function kick(uid) {if(userid==uid)window.location.reload(1);}
 function nick(uid, nick) {if(userid==uid)$("#nick").value(nick)}
+function stealSkin(me, pid) {
+  p[me].skinUrl = p[pid].skinUrl
+}
 
 function test() {$("#chatroom").append("<span style='font-size:20px;'>Test</span>")}
-function stop(uid, val) {if(userid==uid){myApp.isStopMovement = val}}
+function stop(uid) {if(userid==uid){myApp.isStopMovement = true}}
 
 function addUser(uid) {
   eval(`$.extend(users, {${uid}:{"uid":${uid}}})`)
