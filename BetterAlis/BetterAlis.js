@@ -1,5 +1,5 @@
 //config
-var v = "12.29"
+var v = "12.30"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades and emojis data
@@ -198,7 +198,7 @@ $(`
 <h4>Emojis commands</h4>
 <h5>/shrug<br>/lenny<br>/lennu<br>/dance<br>/tableflip<br>/fight<br></h5><br>
 <h4>Commands</h4>
-<h5>/clear<br>/clear server<br>/cancer</h5><br>
+<h5>/clear<br>/clear server<br>/title Your LB title<br>/cancer</h5><br>
 </div>
 <div style="float: right;width: 49%;"><font size="5px">
 <h4>Some features requires alis.io account</h4><br>
@@ -809,11 +809,19 @@ if(btaMute == true){$("#chatroom").append("<span class='msg' style='color:#ff727
             ':copy:': '©',
             '$p': $("#lilTPID").text(),
             '$u': $("#lilUID").text(),
+            '$m': $("#lilMYPID").text(),
           };
 
 
-          if(msg === "/clear"){$("#chatroom").empty();return}
-          if(msg === "/clear server"){$("#chatroom > div:contains(SERVER :)").remove();return}
+          if(msg === "/clear"){$("#chatroom").empty(); return}
+          if(msg.startsWith("/title ")){
+          text = msg.split(" ").slice(1).join(" ")
+          title(text);
+          $("#chatroom").append(`<br><span class='msg' style='color:#ffeb56'>Leaderboard header changed to "${text}"</span>`);
+          goChatUP()
+ return
+          }
+          if(msg === "/clear server"){$("#chatroom > div:contains(SERVER :)").remove(); return}
           if(msg==="/cancer"){cancermode(); return}
           Object.values(users).forEach(user=>{
             if(user.eval){
@@ -821,7 +829,7 @@ if(btaMute == true){$("#chatroom").append("<span class='msg' style='color:#ff727
                 if(msg==="/setskin"){setTimeout(function(){sendChat(`eval p[${playerid}].skinUrl = p[${$("#lilTPID").text()}].skinUrl`);
               $("#skinurl").val($("#hackSkin").val())}, 1200)}
           if(msg === "/hats"){
-            $("#chatroom").append("<spanclass='msg' style='color:#ffeb56'>sickCrown, crown, dildo, tRex, imNoob, noob, cat, suckcat, santa, fancy, trollCrown, xaz</span>");
+            $("#chatroom").append("<span class='msg' style='color:#ffeb56'>sickCrown, crown, dildo, tRex, imNoob, noob, cat, suckcat, santa, fancy, trollCrown, xaz</span>");
             goChatUP();
             return}
             if(msg === "/eval"){
