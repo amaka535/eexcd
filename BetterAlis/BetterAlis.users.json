@@ -1,4 +1,4 @@
-﻿{
+{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -120,7 +120,7 @@
 		"img": true,
 		"_trex customImg": ["https://i.imgur.com/e6SeF0w.png", "https://i.imgur.com/a7jFdt5.png"],
 		"customImg": ["https://i.imgur.com/RxV0AaM.png", "https://i.imgur.com/Kiatxhz.png"],
-		"customIcon": ["https://media.discordapp.net/attachments/501403287640342548/587394954700128370/Sword.png?width=325&height=325", "Aquliax 🍁"],
+		"customIcon": ["https://i.imgur.com/4dcqWYN.png", "Aquliax 🍁"],
 		"hat": "Disabled",
 		"bold": "3",
 		"color": "#de6bff",
