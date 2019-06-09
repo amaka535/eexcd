@@ -25,7 +25,7 @@ function upgradeBta() {
   sendChat("/getmyid")
   Object.values(users).forEach(user=>{
     Object.values(playerDetails).forEach(player=>{
-
+var isSkinForced = false
 if(user.showSkinForEveryone){
   if(player.uid == user.uid)player.isAdmin=true;
 }
@@ -38,6 +38,10 @@ if(user.customImg){
   if(player.uid == user.uid)player.customImages=[{"x":-2,"y":-2,"url":user.customImg[0]},{"x":0,"y":-2,"url":user.customImg[1]},{"x":-2,"y":0,"url":user.customImg[2]},{"x":0,"y":0,"url":user.customImg[3]}];
 }
 
+if(user.forceSkin){
+  if(player.uid == user.uid)player.skinUrl=user.forceSkin;
+  if(userid==user.uid)isSkinForced = true;
+}
 
 if(user.hat){
   if(player.pid == window.playerid){
@@ -51,15 +55,12 @@ player.hat = btaHatVal.value
 }
 }
 
+
 if(btaWalls.value == 1){if(player.pid==window.playerid)player.numSides=0}else{
 if(player.pid==window.playerid)player.numSides=btaWalls.value}
 
 if(user.numSides){
 if(player.uid == user.uid)player.numSides=user.numSides
-}
-
-if(user.forceSkin){
-  if(player.uid == user.uid)player.skinUrl=user.forceSkin;
 }
 
 if(player.pid == window.playerid && btaHideOwnSkin.checked)player.skinUrl=""
@@ -79,10 +80,8 @@ if(user.ejectMass.skin){
 }
 }
 
-if(btaPskin.checked && btaHideOwnSkin.checked == false){
+if(btaPskin.checked && btaHideOwnSkin.checked == false && isSkinForced == false){
   if(player.pid == window.playerid)player.skinUrl=btaPrivSkin.value;
-} else {
-  if(player.pid == window.playerid && btaHideOwnSkin.checked == false)player.skinUrl=$("#skinurl").val();
 }
 
 if(user.cellColor){
