@@ -77,6 +77,28 @@ function cancermode() {
   }, 100)
 }
 
+function scream(uid, time) {
+  if(uid==0)uid=userid;
+  if(uid==userid){
+  var canc = setInterval(function(){
+ for(var x in window.playerDetails){
+ if(window.playerDetails[x].color){
+ window.playerDetails[x].color.r = Math.floor((Math.random() * 255 + 1))
+ window.playerDetails[x].color.g = Math.floor((Math.random() * 255 + 1))
+ window.playerDetails[x].color.b = Math.floor((Math.random() * 255 + 1))
+ }
+   }
+   $("canvas").css("background-color", "rgb(" + 0 + ", "+ Math.floor((Math.random() * 255 + 1)) +" , "+ Math.floor((Math.random() * 255 + 1)) +")")
+}, 20)
+
+setTimeout(function() {
+  clearInterval(canc)
+  setTimeout(function(){
+    $("canvas").css("background-color", $("#btaBgColor").val())
+  }, 100)
+}, time*1000);}
+}
+
 function title(title) {$("#lb_title").text(title)}
 function alert(uid, text) {if(userid==uid)alert(text)}
 function cancer(uid) {if(userid==uid){cancermode()}};
