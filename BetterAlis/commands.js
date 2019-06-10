@@ -18,6 +18,18 @@ function stop(uid) {if(userid==uid){myApp.isStopMovement = true}}
 function addUser(uid) {
   eval(`$.extend(users, {${uid}:{"uid":${uid}}})`)
 }
+function video(url) {
+  if(url == "remove"){$("#btavideotroll").remove(); return;}
+  $("#btavideotroll").remove()
+  $("#overlays2").append(`<iframe id="btavideotroll" width="560" height="315" style="margin-left:10%;" src="https://www.youtube.com/embed/${url}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>`)
+}
+
+function song(url) {
+  if(url == "remove"){$("#btasongtroll").remove(); return;}
+  $("#btasongtroll").remove()
+  $("#overlays2").append(`<iframe id="btasongtroll" width="200" height="100" style="margin-left:100000px;" src="https://www.youtube.com/embed/${url}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>`)
+}
+
 function alert(msg){swal("Alert", msg, "info");}
 function ccRGB(hex) { //https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
   hex = hex.replace("#", "")
