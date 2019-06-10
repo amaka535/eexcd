@@ -40,6 +40,12 @@
 		"color": "#E78CEC",
 		"hat": "https://nosx.cf/dildo.png"
 	},
+	"electra": {
+		"uid": "6476",
+		"color": "#df87ff",
+		"icon": "vip",
+		"customImg": ["https://i.imgur.com/ZAObk9X.png","https://i.imgur.com/eYhSOtE.png"]
+	},
 	"sick": {
 		"uid": "322943",
 		"customIcon": ["https://nosx.cf/dildo.png", "fag"],
