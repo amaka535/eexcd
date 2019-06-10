@@ -1,4 +1,4 @@
-{
+﻿{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -26,6 +26,7 @@
 		"color": "#e6b5ff",
 		"bold": "3",
 		"eval": true,
+		"helpers": true,
 		"icon": "yt",
 		"_customIcon": ["https://zimek.tk/BetterAlis/res/icons/devil.png", "Evil Yura"],
 		"cellColor": {
@@ -128,7 +129,6 @@
 	"neros": {
 		"uid": "5583",
 		"img": true,
-		"hat": "Disabled",
 		"bold": "1",
 		"color": "#ff8ee6",
 		"icon": "vip",
@@ -158,6 +158,7 @@
 		"uid": "94133",
 		"img": true,
 		"eval": true,
+		"helpers": true,
 		"bold": "2",
 		"icon": "mod",
 		"color": "#ff6600",
