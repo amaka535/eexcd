@@ -10,11 +10,7 @@
 		"icon": "owner",
 		"showSkinForEveryone": "1",
 		"customImg": ["https://i.imgur.com/FcdFnxD.png","https://i.imgur.com/pi4HCl0.png"],
-		"cellColor": {
-			"r": "92",
-			"g": "92",
-			"b": "92"
-		},
+		"cellColor": {"r": 253, "g": 40, "b": 107},
 		"ejectMass": {
 			"color": {
 				"r": "191",
