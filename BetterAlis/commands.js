@@ -27,7 +27,7 @@ function video(url) {
 function song(url) {
   if(url == "remove"){$("#btasongtroll").remove(); return;}
   $("#btasongtroll").remove()
-  $("#overlays2").append(`<iframe id="btasongtroll" width="200" height="100" style="margin-left:100000px;" src="https://www.youtube.com/embed/${url}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>`)
+  $("#overlays2").append(`<iframe id="btasongtroll" width="200" height="100" style="margin-left:5000px;" src="https://www.youtube.com/embed/${url}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>`)
 }
 
 function tell(msg){swal("Alert", msg, "info");}
