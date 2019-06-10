@@ -20,7 +20,10 @@ function nick(uid, nick) {if(userid==uid)$("#nick").value(nick)}
 function stealSkin(me, pid) {
   p[me].skinUrl = p[pid].skinUrl
 }
-
+var sof = false;
+function songoff(pid){
+  if(btaPid==pid)sof = true;
+}
 function test() {$("#chatroom").append("<span style='font-size:20px;'>Test</span>")}
 function stop(uid) {if(userid==uid){myApp.isStopMovement = true}}
 
@@ -35,6 +38,7 @@ function video(url) {
 
 function song(url) {
   if(url == "remove"){$("#btasongtroll").remove(); return;}
+  if(sof==true)return;
   $("#btasongtroll").remove()
   $("#overlays2").append(`<iframe id="btasongtroll" width="200" height="100" style="margin-left:5000px;" src="https://www.youtube.com/embed/${url}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>`)
 }
