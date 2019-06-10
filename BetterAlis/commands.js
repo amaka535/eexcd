@@ -18,7 +18,7 @@ function stop(uid) {if(userid==uid){myApp.isStopMovement = true}}
 function addUser(uid) {
   eval(`$.extend(users, {${uid}:{"uid":${uid}}})`)
 }
-
+function alert(msg){swal("Alert", msg, "info");}
 function ccRGB(hex) { //https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
   hex = hex.replace("#", "")
     var bigint = parseInt(hex, 16);
