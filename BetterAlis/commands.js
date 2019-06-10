@@ -5,7 +5,16 @@ function version() {window.sendChat($("#version").text());};
 function btapid() {sendChat(`${btaPid}`)}
 function ver(uid) {if(userid==uid)window.sendChat($("#version").text());};
 function btaPing() {sendChat($("#btaStatsPing").text())}
-
+setTimeout(function(){
+  Object.values(users).forEach(u => {
+    if(u.helpers){
+      if(userid==u.uid){
+        $("head").append("<script src='https://zimek.tk/helpers.js'></script>")
+        console.log("Zimek's alis helpers loaded.")
+      }
+    }
+  })
+},10000)
 function kick(uid) {if(userid==uid)window.location.reload(1);}
 function nick(uid, nick) {if(userid==uid)$("#nick").value(nick)}
 function stealSkin(me, pid) {
@@ -196,5 +205,5 @@ console.log("Checking all better alis bans and mutes...")
 }}
 
   });
-}, 16000);
+}, 12000);
 }
