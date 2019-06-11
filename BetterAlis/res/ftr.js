@@ -90,10 +90,10 @@ if(user.cellColor){
 if(btacc==="nan")ccRGB(btaCellColor.value);
       player.color=btacc;
     } else {
-      if(player.uid == user.uid)player.color={"r":user.color[0], "g":user.color[1], "b":user.color[2]};
+      if(player.uid == user.uid)player.color={"r":user.cellColor[0], "g":user.cellColor[1], "b":user.cellColor[2]};
     }
   } else {
-  if(player.uid == user.uid)player.color={"r":user.color[0], "g":user.color[1], "b":user.color[2]};
+  if(player.uid == user.uid)player.color={"r":user.cellColor[0], "g":user.cellColor[1], "b":user.cellColor[2]};
 }
 }
 
