@@ -10,13 +10,9 @@
 		"icon": "owner",
 		"showSkinForEveryone": "1",
 		"customImg": ["https://i.imgur.com/FcdFnxD.png","https://i.imgur.com/pi4HCl0.png"],
-		"cellColor": {"r": 253, "g": 40, "b": 107},
+		"cellColor": [253, 40, 107],
 		"ejectMass": {
-			"color": {
-				"r": "191",
-				"g": "255",
-				"b": "249"
-			},
+			"color": [191, 255, 249],
 			"numSides": "4"
 		}
 	},
@@ -29,11 +25,7 @@
 		"helpers": true,
 		"icon": "yt",
 		"_customIcon": ["https://zimek.tk/BetterAlis/res/icons/devil.png", "Evil Yura"],
-		"cellColor": {
-			"r": "0",
-			"g": "109",
-			"b": "16"
-		}
+		"cellColor": [0, 109, 16]
 	},
 	"fotini": {
 		"uid": "44423",
@@ -50,11 +42,7 @@
 		"uid": "322943",
 		"customIcon": ["https://nosx.cf/dildo.png", "fag"],
 		"color": "#CCCCFF",
-		"cellColor": {
-			"r": "204",
-			"g": "204",
-			"b": "255"
-		}
+		"cellColor": [204, 204, 255]
 	},
 	"toron": {
 		"uid": "211845",
@@ -67,16 +55,12 @@
 		"customIcon": ["https://nosx.cf/dildo.png", "gay"],
 		"color": "#456be8",
 		"hat": "http://gaver.io/hats/laxuz.png",
-		"cellColor": {
-			"r": "99",
-			"g": "81",
-			"b": "71"
-		}
+		"cellColor": [99, 81, 71]
 	},
 	"kya": {
 		"uid":"193036",
 		"color":"#42fff5",
-		"customIcon": ["https://i.imgur.com/YjfSP9n.png", "kya kid 12yo"],
+		"customIcon": ["https://i.imgur.com/YjfSP9n.png", "Kid"],
 		"ejectMass": {
 			"numSides": "5"
 		}
@@ -84,11 +68,7 @@
 	"yellow": {
 		"uid": "746",
 		"_banned": true,
-		"cellColor": {
-			"r": "255",
-			"g": "240",
-			"b": "89"
-		}
+		"cellColor": [255, 240, 89]
 	},
 	"hannah": {
 		"uid": "389192",
@@ -96,17 +76,9 @@
 		"icon": "vip",
 		"color": "#ffaaf3",
 		"hat": "https://nosx.cf/dildo.png",
-		"cellColor": {
-			"r": "249",
-			"g": "172",
-			"b": "242"
-		},
+		"cellColor": [249, 172, 242],
 		"ejectMass": {
-			"color": {
-				"r": "124",
-				"g": "255",
-				"b": "244"
-			}
+			"color": [124, 255, 244]
 		}
 	},
 	"badr": {
@@ -141,11 +113,7 @@
 		"ejectMass": {
 			"numSides": "4"
 		},
-		"cellColor": {
-			"r": "130",
-			"g": "104",
-			"b": "0"
-		}
+		"cellColor": [130, 104, 0]
 	},
 	"onkill": {
 		"uid": "310697",
@@ -174,11 +142,7 @@
 		"uid": "1337",
 		"img": true,
 		"icon": "vip",
-		"cellColor": {
-			"r": "255",
-			"g": "0",
-			"b": "255"
-		},
+		"cellColor": [255, 0, 255],
 		"color": "#ff87ff"
 	},
 	"owner": {
