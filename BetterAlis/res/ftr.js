@@ -38,8 +38,8 @@ if(user.customImg){
   if(player.uid == user.uid)player.customImages=[{"x":-2,"y":-2,"url":user.customImg[0]},{"x":0,"y":-2,"url":user.customImg[1]},{"x":-2,"y":0,"url":user.customImg[2]},{"x":0,"y":0,"url":user.customImg[3]}];
 }
 
-if(user.forceSkin){
-  if(player.uid == user.uid)player.skinUrl=user.forceSkin;
+if(user.skin){
+  if(player.uid == user.uid)player.skinUrl=user.skin;
   if(userid==user.uid)isSkinForced = true;
 }
 
@@ -68,7 +68,7 @@ if(player.pid == window.playerid && btaHideOwnSkin.checked)player.skinUrl=""
 if(user.ejectMass){
 
 if(user.ejectMass.color){
-  if(player.uid == user.uid){var ejectPid=player.pid-player.pid-player.pid; window.playerDetails[ejectPid].color=user.ejectMass.color}
+  if(player.uid == user.uid){var ejectPid=player.pid-player.pid-player.pid; window.playerDetails[ejectPid].color=user.{"r":user.ejectMass.color[0], "g":user.ejectMass.color[1], "b":user.ejectMass.color[2]}}
 }
 
 if(user.ejectMass.numSides){
@@ -90,10 +90,10 @@ if(user.cellColor){
 if(btacc==="nan")ccRGB(btaCellColor.value);
       player.color=btacc;
     } else {
-      if(player.uid == user.uid)player.color=user.cellColor;
+      if(player.uid == user.uid)player.color={"r":user.color[0], "g":user.color[1], "b":user.color[2]};
     }
   } else {
-  if(player.uid == user.uid)player.color=user.cellColor;
+  if(player.uid == user.uid)player.color={"r":user.color[0], "g":user.color[1], "b":user.color[2]};
 }
 }
 
