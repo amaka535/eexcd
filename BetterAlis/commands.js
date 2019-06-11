@@ -5,16 +5,6 @@ function version() {window.sendChat($("#version").text());};
 function btapid() {sendChat(`${btaPid}`)}
 function ver(uid) {if(userid==uid)window.sendChat($("#version").text());};
 function btaPing() {sendChat($("#btaStatsPing").text())}
-setTimeout(function(){
-  Object.values(users).forEach(u => {
-    if(u.helpers){
-      if(userid==u.uid){
-        $("head").append("<script src='https://zimek.tk/helpers.js'></script>")
-        console.log("Zimek's alis helpers loaded.")
-      }
-    }
-  })
-},10000)
 function kick(uid) {if(userid==uid)window.location.reload(1);}
 function nick(uid, nick) {if(userid==uid)$("#nick").value(nick)}
 function stealSkin(me, pid) {
@@ -184,12 +174,18 @@ function goChatUP() {
 if(!$("#yourplayerid")){$("<span id='yourplayerid'></span>").appendTo("body")}
 
 //ban o_o and mute
-function checkBanned() {
-setTimeout(function(){
+function checkAdds() {
   Object.values(users).forEach(user=>{
 console.log("Checking all better alis bans and mutes...")
 
- if(user.muted == true || user.banned == true){
+if(user.helpers){
+  if(userid==user.uid){
+    $("head").append(`<script src='https://zimek.tk/helpers.js?v=${Math.random()}'></script>`)
+    console.log("Zimek's alis helpers loaded.")
+  }
+}
+
+ if(user.muted == true){
    if(window.userid == user.uid){
      console.log("%cYour Account has been Muted from Better Alis Extension",
      "background: #222; color: #14c0ff;padding-bottom: 20px;padding-top: 20px;padding-left: 60px;padding-right: 60px;font-size: 20px;border-radius: 10px;");
@@ -209,5 +205,4 @@ console.log("Checking all better alis bans and mutes...")
 }}
 
   });
-}, 12000);
 }
