@@ -1185,5 +1185,5 @@ $("input#opt_zoom_speed").attr('min','0.6');
 $("input#skinurl").attr('maxlength','999999');
 //==////==//
 
-setTimeout(function(){checkBanned()}, 2000)
+setTimeout(checkAdds, 13*1000)
 //==////==//
