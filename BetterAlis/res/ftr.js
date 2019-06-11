@@ -68,7 +68,7 @@ if(player.pid == window.playerid && btaHideOwnSkin.checked)player.skinUrl=""
 if(user.ejectMass){
 
 if(user.ejectMass.color){
-  if(player.uid == user.uid){var ejectPid=player.pid-player.pid-player.pid; window.playerDetails[ejectPid].color=user.{"r":user.ejectMass.color[0], "g":user.ejectMass.color[1], "b":user.ejectMass.color[2]}}
+  if(player.uid == user.uid){var ejectPid=player.pid-player.pid-player.pid; window.playerDetails[ejectPid].color={"r":user.ejectMass.color[0], "g":user.ejectMass.color[1], "b":user.ejectMass.color[2]}}
 }
 
 if(user.ejectMass.numSides){
