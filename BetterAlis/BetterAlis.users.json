@@ -10,7 +10,7 @@
 		"icon": "owner",
 		"showSkinForEveryone": "1",
 		"customImg": ["https://i.imgur.com/FcdFnxD.png","https://i.imgur.com/pi4HCl0.png"],
-		"cellColor": [253, 40, 107],
+		"cellColor": [255, 119, 119],
 		"ejectMass": {
 			"color": [191, 255, 249],
 			"numSides": "4"
@@ -56,6 +56,11 @@
 		"color": "#456be8",
 		"hat": "http://gaver.io/hats/laxuz.png",
 		"cellColor": [99, 81, 71]
+	},
+	"stella": {
+		"uid": "104186",
+		"color": "#ffadff",
+		"cellColor": [255, 173, 255]
 	},
 	"kya": {
 		"uid":"193036",
