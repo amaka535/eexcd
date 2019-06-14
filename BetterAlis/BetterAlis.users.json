@@ -1,4 +1,4 @@
-﻿{
+{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -62,7 +62,7 @@
 		"color": "#ffadff",
 		"cellColor": [255, 173, 255]
 	},
-	"kya": {
+	"_kya": {
 		"uid":"193036",
 		"color":"#42fff5",
 		"customIcon": ["https://i.imgur.com/YjfSP9n.png", "Kid"],
