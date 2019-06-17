@@ -35,6 +35,7 @@
 	"electra": {
 		"uid": "6476",
 		"color": "#df87ff",
+		"cellColor": [229, 158, 255],
 		"icon": "vip",
 		"customImg": ["https://i.imgur.com/ZAObk9X.png","https://i.imgur.com/eYhSOtE.png"]
 	},
