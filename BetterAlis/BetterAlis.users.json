@@ -1,4 +1,4 @@
-{
+﻿{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -62,6 +62,9 @@
 		"uid": "104186",
 		"color": "#a8dfff",
 		"bold": "2",
+		"img": true,
+		"hat": "http://gaver.io/hats/ZeeTaa.png",
+		"customIcon": ["https://i.imgur.com/Yrh1mzT.png", "Queen"],
 		"cellColor": [255, 173, 255]
 	},
 	"kya": {
