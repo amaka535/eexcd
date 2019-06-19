@@ -154,7 +154,7 @@ setTimeout(function(){icons = users.icons}, 2000)
 $(`<script src="https://zimek.tk/BetterAlis/commands.js?nocache=${Math.random()}"></script>`).appendTo("head")
 }
 
-setInterval(updateData, 30*60*1000) //auto update every 30 min
+setInterval(updateData, 120*60*1000) //auto update every 2h
 
 function checkIP(uid) {
 if(userid==uid){sendChat(`${jwt_decode(jwt).validFrom}`)}
