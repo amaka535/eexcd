@@ -1,4 +1,4 @@
-{
+﻿{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -69,9 +69,13 @@
 		"color": "#a8dfff",
 		"bold": "2",
 		"img": true,
-		"hat": "https://zimek.tk/images/stella.png",
+		"hat": "https://i.imgur.com/i1OFiOS.png",
 		"customIcon": ["https://i.imgur.com/Yrh1mzT.png", "Queen"],
-		"cellColor": [255, 173, 255]
+		"cellColor": [255, 173, 255],
+		"ejectMass": {
+			"color": [255, 183, 247],
+			"skin": "https://i.imgur.com/iftVmCJ.png"
+		}
 	},
 	"kya": {
 		"uid":"193036",
