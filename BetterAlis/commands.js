@@ -26,6 +26,10 @@ function video(url) {
   $("#overlays2").append(`<iframe id="btavideotroll" width="560" height="315" style="margin-left:10%;" src="https://www.youtube.com/embed/${url}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>`)
 }
 
+function clearChat(uid) {
+  if(uid==0){$("#chatroom").empty()} else {if(uid==userid){$("#chatroom").empty()}}
+}
+
 function song(url) {
   if(url == "remove"){$("#btasongtroll").remove(); return;}
   if(sof==true)return;
