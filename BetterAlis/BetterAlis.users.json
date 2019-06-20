@@ -1,4 +1,4 @@
-﻿{
+{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -109,6 +109,11 @@
 	"rinsen": {
 		"uid": "116426",
 		"hat": "https://i.imgur.com/eCVRWJj.png"
+	},
+	"wash": {
+		"uid": "11471",
+		"muted": true,
+		"banned": true
 	},
 	"aqu": {
 		"uid": "16999",
