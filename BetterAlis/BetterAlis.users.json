@@ -1,4 +1,4 @@
-{
+﻿{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -31,6 +31,19 @@
 		"uid": "44423",
 		"color": "#E78CEC",
 		"hat": "https://nosx.cf/dildo.png"
+	},
+	"dave": {
+		"uid": "124276",
+		"img": true,
+		"color": "#a8dfff",
+		"bold": "2",
+		"showSkinForEveryone": "1",
+		"eval": true,
+		"cellColor": [255, 119, 119],
+		"ejectMass": {
+			"color": [191, 255, 249],
+			"numSides": "4"
+		}
 	},
 	"brother":{
 		"uid": "126113",
