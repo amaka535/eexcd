@@ -128,6 +128,12 @@
 		"muted": true,
 		"banned": true
 	},
+	"maktxpro donator 10$": {
+		"uid": "270261",
+		"color": "#ff6dee",
+		"hat": "https://i.imgur.com/UvrUIU0.png",
+		"icon": "donator"
+	},
 	"aqu": {
 		"uid": "16999",
 		"img": true,
