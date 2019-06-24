@@ -111,11 +111,11 @@ if(isJoinedGame || spectateMode){upgradeBta()}
 
 
 //Animated skin by Zimek
-/*
-var userUID = 165218
-var speed = 80
-var frames = 5
-var url1 = "https://zimek.tk/askin2/"
+
+var userUID = 124276
+var speed = 100
+var frames = 23
+var url1 = "https://zimek.tk/askin3/"
 var url2 = ".gif"
 var count = 1
 
@@ -129,4 +129,3 @@ if(player.uid==userUID)player.skinUrl=url
 });
 count = count + 1;
 }, speed)
-*/
