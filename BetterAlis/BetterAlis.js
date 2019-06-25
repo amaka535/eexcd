@@ -287,7 +287,6 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "pskin":false,
                     "privskin":"",
                     "walls":1,
-                    "wallstrue": false,
                     "fbname":false,
                     "msgtime":true,
                     "restartbtn":false,
@@ -360,8 +359,6 @@ if(!btaStorage.cc){
 btaStorage.cc="#82e8ff"
 }
 
-if(!btaStorage.wallstrue)btaStorage.wallstrue=false;
-
 if(!btaStorage.walls)btaStorage.walls=1;
 
 if(!btaStorage.hatval)btaStorage.hatval="http://alis.io/assets/img/crownhat.png";
@@ -394,7 +391,6 @@ btaCCcell.checked = btaStorage.cctrue
 btaAutorespawn.checked = btaStorage.autorespawn;
 btaHideOwnSkin.checked = btaStorage.hideownskin;
 btaDisableLBColors.checked = btaStorage.OFFlbColors;
-btaCellWalls.checked = btaStorage.wallstrue;
 btaMsgTime.checked = btaStorage.msgtime;
 btaPskin.checked = btaStorage.pskin
 btaHat.checked = btaStorage.hat
@@ -410,7 +406,7 @@ btaKeyTriple.value = btaStorage.hotkeys.triple;
 btaKey64.value = btaStorage.hotkeys.split64;
 btaKeyPop.value = btaStorage.hotkeys.popsplit;
 btaKeyPopTime.value = 185;
-btaWalls.value = 1;
+btaWalls.value = btaStorage.walls;
 
 
 function save(){
@@ -469,14 +465,23 @@ btaKeyPopTime.oninput = function () {
 
 btaCellWalls.onchange = function () {
   save()
+  Object.values(playerDetails).forEach(u => {
+      if(btaCellWalls.checked==false){
+    if(u.pid==window.playerid)u.numSides=0}else{
+      if(u.pid==window.playerid)u.numSides=btaWalls.value
+    }
+  })
 }
 
 btaWalls.oninput = function () {
   var tip = ""
   var isMultiple = ""
-  if($(this).val() !== 1){isMultiple=""}else{isMultiple="s"}
   if($(this).val() == 2) btaWalls.value = 1;
-  if($(this).val() == 1) {tip="(Circle)"} else {
+  if($(this).val() == 1) {
+    tip="(Circle)"
+    isMultiple=""
+  } else {
+    isMultiple="s"
       if($(this).val() == 0) {tip="(Invisible)"} else {tip=""}
   };
   $("#btaWallsVal").text(`${btaWalls.value} wall${isMultiple} ${tip}`);
