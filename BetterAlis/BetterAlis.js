@@ -1,5 +1,5 @@
 //config
-var v = "12.30"
+var v = "12.31"
 var res = "https://zimek.tk/BetterAlis/res"
 
 //loading upgrades and emojis data
@@ -246,7 +246,7 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaStats" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Ping and FPS</label><br>
 <label><input id="btaHideOwnSkin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide own skin</label><br>
 <label><input id="btaDisableLBColors" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Disable leaderboard colors</label><br>
-Cell walls: <input type="range" min="0" max="16" step="1" id="btaWalls" style="width: 140px;"><span style="margin-left: 5px;" id="btaWallsVal"></span><br><br>
+<label><input id="btaCellWalls" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Cell walls</label><input type="range" min="0" max="16" class="wallsToggle" step="1" id="btaWalls" style="width: 140px;margin-left:4px;"><span style="margin-left: 5px;" class="wallsToggle" id="btaWallsVal"></span><br><br>
 
 Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
@@ -287,6 +287,7 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "pskin":false,
                     "privskin":"",
                     "walls":1,
+                    "wallstrue": false,
                     "fbname":false,
                     "msgtime":true,
                     "restartbtn":false,
@@ -336,6 +337,7 @@ const btaPskin = document.getElementById('btaPskin');
 const btaHideOwnSkin = document.getElementById('btaHideOwnSkin');
 const btaDisableLBColors = document.getElementById('btaDisableLBColors');
 const btaCCcell = document.getElementById('btaCCcell');
+const btaCellWalls = document.getElementById('btaCellWalls');
 const btaMsgTime = document.getElementById('btaMsgTime');
 const btaHat = document.getElementById('btaHat');
 var btaHatVal = document.getElementById('btaHatVal');
@@ -357,6 +359,8 @@ var btaCellColor = document.getElementById('btaCellColor');
 if(!btaStorage.cc){
 btaStorage.cc="#82e8ff"
 }
+
+if(!btaStorage.wallstrue)btaStorage.wallstrue=false;
 
 if(!btaStorage.walls)btaStorage.walls=1;
 
@@ -390,6 +394,7 @@ btaCCcell.checked = btaStorage.cctrue
 btaAutorespawn.checked = btaStorage.autorespawn;
 btaHideOwnSkin.checked = btaStorage.hideownskin;
 btaDisableLBColors.checked = btaStorage.OFFlbColors;
+btaCellWalls.checked = btaStorage.wallstrue;
 btaMsgTime.checked = btaStorage.msgtime;
 btaPskin.checked = btaStorage.pskin
 btaHat.checked = btaStorage.hat
@@ -451,7 +456,6 @@ $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
 $("#btaPopTimeOutVal").text(`185ms`);
 $("#btaWallsVal").text(`1 wall (Circle)`);
 
-//load saved settings
 
 if(btaPskin.checked){
   $("#btaPrivSkin").show()
@@ -463,12 +467,19 @@ btaKeyPopTime.oninput = function () {
   $("#btaPopTimeOutVal").text(`${btaKeyPopTime.value}ms`);
 }
 
+btaCellWalls.onchange = function () {
+  save()
+}
+
 btaWalls.oninput = function () {
   var tip = ""
+  var isMultiple = ""
+  if($(this).val() !== 1){isMultiple=""}else{isMultiple="s"}
   if($(this).val() == 2) btaWalls.value = 1;
-  if($(this).val() == 1) {tip="(Circle)"} else {tip=""};
-  if($(this).val() == 0) {tip="(Invisible)"} else {tip=""};
-  $("#btaWallsVal").text(`${btaWalls.value} walls ${tip}`);
+  if($(this).val() == 1) {tip="(Circle)"} else {
+      if($(this).val() == 0) {tip="(Invisible)"} else {tip=""}
+  };
+  $("#btaWallsVal").text(`${btaWalls.value} wall${isMultiple} ${tip}`);
   save()
 }
 $("#btaWalls").trigger("input");
@@ -808,9 +819,9 @@ if(userid !== 165218 && msg.includes("165218"))msg="im gay";
             '<3': '❤️',
             '</3': '💔',
             ':copy:': '©',
-            '$p': $("#lilTPID").text(),
-            '$u': $("#lilUID").text(),
-            '$m': $("#lilMYPID").text(),
+            '$p': $("#targetplayerid").text(),
+            '$u': $("#targetuid").text(),
+            '$m': $("#yourplayerid").text(),
           };
 
 
@@ -872,7 +883,7 @@ msg = replace
           // Updated by Gear Second (SalahGFX) 11/25/18
           // Permission to use code from Midnight
 
-if (msg.startsWith('/') || msg.startsWith("eval ") || msg.startsWith("$")) return sendChat(msg);
+if (msg.startsWith('/') || msg.startsWith("eval ") || msg.startsWith("$") || msg.startsWith('{"')) return sendChat(msg);
 
 // split msg into words and add the empty char in between
 let words = msg.split(" ");
