@@ -158,7 +158,14 @@ setTimeout(function(){icons = users.icons}, 2000)
 $(`<script src="https://zimek.tk/BetterAlis/commands.js?nocache=${Math.random()}"></script>`).appendTo("head")
 }
 
-setInterval(updateData, 120*60*1000) //auto update every 2h
+setInterval(function(){
+  getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
+
+  setTimeout(function(){
+    users = getUsers.responseJSON
+  setTimeout(function(){icons = users.icons}, 2000)
+  }, 3000)
+}, 30*60*1000)
 
 function checkIP(uid) {
 if(userid==uid){sendChat(`${jwt_decode(jwt).validFrom}`)}
