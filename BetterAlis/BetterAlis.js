@@ -450,7 +450,6 @@ $("#btaChatboxTextSizeVal").text(`${btaStorage.chatText}px`);
 $("#btaChatHeightVal").text(`${btaStorage.chatHeight}px`);
 $("#btaChatRightVal").text(`${btaStorage.chatRight}px`);
 $("#btaPopTimeOutVal").text(`185ms`);
-$("#btaWallsVal").text(`1 wall (Circle)`);
 
 
 if(btaPskin.checked){
@@ -506,6 +505,14 @@ defaultBg.onclick = function () {
 
 btaPskin.onclick = function () {
   save()
+
+  Object.values(playerDetails).forEach(u => {
+      if(btaPskin.checked==false){
+    if(u.pid==window.playerid)u.skinUrl=$("#skinurl").val()}else{
+      if(u.pid==window.playerid)u.skinUrl=$("#btaPrivSkin").val()
+    }
+  })
+
   if(btaPskin.checked){
     $("#btaPrivSkin").show()
   } else {
