@@ -246,7 +246,7 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaStats" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Ping and FPS</label><br>
 <label><input id="btaHideOwnSkin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide own skin</label><br>
 <label><input id="btaDisableLBColors" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Disable leaderboard colors</label><br>
-<label><input id="btaCellWalls" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Cell walls</label><input type="range" min="0" max="16" class="wallsToggle" step="1" id="btaWalls" style="width: 140px;margin-left:4px;"><span style="margin-left: 5px;" class="wallsToggle" id="btaWallsVal"></span><br><br>
+<label><input id="btaCellWalls" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Cell walls</label><input type="range" min="0" max="16" class="wallsToggle" step="1" id="btaWalls" style="width: 120px;margin-left:4px;"><span style="margin-left: 5px;" class="wallsToggle" id="btaWallsVal"></span><br><br>
 
 Triple Split Macro: <input id="btaKeyTriple" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
 x64 Split Macro: <input id="btaKey64" maxlength="1" onkeyup="keyGay(this);" class="uk-input hotkey"><br>
