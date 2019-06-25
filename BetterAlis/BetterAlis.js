@@ -1,6 +1,7 @@
 //config
 var v = "12.31"
 var res = "https://zimek.tk/BetterAlis/res"
+var userid = 0
 
 //loading upgrades and emojis data
 $("#users").remove()
@@ -804,15 +805,13 @@ $('#seasondates').html(now2.getFullYear() + ' Season #' + week);
 $("#chatroom").show()
 chatRoom.show = function() {
   $("#chatroom").show()
-  $("#chatroom").css("margin-left", "0px");
-      chatRoom.isShow = true;
+  chatRoom.isShow = true;
       goChatUP()
   };
 
   chatRoom.hide = function() {
-    $("#chatroom").css("margin-left", "-540px");
-    setTimeout(function(){$("#chatroom").hide()}, 300)
-      chatRoom.isShow = false;
+    $("#chatroom").hide()
+    chatRoom.isShow = false;
   };
 
 var longmsg = "you know how its like write very long message and then its just getting cutted off, you have to write it again and again or u just get caugh by blocked word"
@@ -833,7 +832,8 @@ if(userid !== 165218 && msg.includes("165218"))msg="im gay";
             ':copy:': '©',
             '$p': $("#targetplayerid").text(),
             '$u': $("#targetuid").text(),
-            '$m': $("#yourplayerid").text(),
+            '$mp': $("#yourplayerid").text(),
+            '$mu': userid,
           };
 
 
@@ -845,7 +845,15 @@ if(userid !== 165218 && msg.includes("165218"))msg="im gay";
           goChatUP()
  return
           }
-          if(msg === "/clear server"){$("#chatroom > div:contains(SERVER :)").remove(); return}
+          if(msg.startsWith("/clear ")){
+            text = msg.split(" ").slice(1).join(" ")
+            if(text.toLowerCase() === "server"){
+            $("#chatroom > div:contains(SERVER :)").remove()} else {
+              $(`#chatroom > div:contains(${text})`).remove()
+            }
+
+
+            return}
           if(msg==="/cancer"){cancermode(); return}
           Object.values(users).forEach(user=>{
             if(user.eval){
