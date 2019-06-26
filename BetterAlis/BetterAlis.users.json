@@ -86,13 +86,13 @@
 		"customIcon": ["https://i.imgur.com/Yrh1mzT.png", "Queen"],
 		"cellColor": [255, 173, 255],
 		"ejectMass": {
-			"color": [255, 183, 247],
-			"skin": "https://i.imgur.com/iftVmCJ.png"
+			"color": [255, 190, 255],
+			"numSides": "4"
 		}
 	},
 	"kya": {
 		"uid":"193036",
-		"color":"#42fff5",
+		"_color":"#42fff5",
 		"customIcon": ["https://i.imgur.com/YjfSP9n.png", "Kid"],
 		"ejectMass": {
 			"_numSides": "5"
@@ -148,7 +148,7 @@
 			"numSides": "3"
 		}
 	},
-	"neros": {
+	"sexrex": {
 		"uid": "5583",
 		"img": true,
 		"bold": "1",
@@ -159,7 +159,7 @@
 		},
 		"cellColor": [130, 104, 0]
 	},
-	"onkill": {
+	"noskill": {
 		"uid": "310697",
 		"customIcon": ["https://cdn.discordapp.com/emojis/519261239348559885.png", "noskill"],
 		"_banned": true,
