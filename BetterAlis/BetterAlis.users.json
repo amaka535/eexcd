@@ -1,4 +1,4 @@
-﻿{
+{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -62,7 +62,7 @@
 		"uid": "322943",
 		"customIcon": ["https://nosx.cf/dildo.png", "fag"],
 		"color": "#CCCCFF",
-		"cellColor": [204, 204, 255]
+		"_cellColor": [204, 204, 255]
 	},
 	"toron": {
 		"uid": "211845",
