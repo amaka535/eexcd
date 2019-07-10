@@ -39,7 +39,7 @@
 		"bold": "2",
 		"showSkinForEveryone": "1",
 		"eval": true,
-		"cellColor": [255, 119, 119],
+		"cellColor": [79, 32, 135],
 		"ejectMass": {
 			"color": [191, 255, 249],
 			"numSides": "4"
@@ -54,7 +54,7 @@
 		"uid": "6476",
 		"color": "#df87ff",
 		"img": true,
-		"cellColor": [229, 158, 255],
+		"cellColor": [104,0,103],
 		"icon": "vip",
 		"hat": "https://i.imgur.com/kddGYWi.png",
 		"_customImg": ["https://i.imgur.com/ZAObk9X.png","https://i.imgur.com/eYhSOtE.png"]
