@@ -85,7 +85,7 @@
 		"img": true,
 		"hat": "https://i.imgur.com/i1OFiOS.png",
 		"customIcon": ["https://i.imgur.com/Yrh1mzT.png", "Queen"],
-		"cellColor": [255, 173, 255],
+		"cellColor": [140, 255, 240],
 		"ejectMass": {
 			"color": [255, 190, 255],
 			"numSides": "4"
