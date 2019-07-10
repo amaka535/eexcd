@@ -56,7 +56,8 @@
 		"img": true,
 		"cellColor": [229, 158, 255],
 		"icon": "vip",
-		"customImg": ["https://i.imgur.com/ZAObk9X.png","https://i.imgur.com/eYhSOtE.png"]
+		"hat": "https://i.imgur.com/kddGYWi.png",
+		"_customImg": ["https://i.imgur.com/ZAObk9X.png","https://i.imgur.com/eYhSOtE.png"]
 	},
 	"sick": {
 		"uid": "322943",
@@ -116,8 +117,8 @@
 	},
 	"badr": {
 		"uid": "316234",
-		"hat": "http://gaver.io/hats/noob.png",
-		"icon": "vip"
+		"_hat": "http://gaver.io/hats/noob.png",
+		"_icon": "vip"
 	},
 	"rinsen": {
 		"uid": "116426",
