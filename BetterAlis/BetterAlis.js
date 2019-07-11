@@ -1,5 +1,5 @@
 //config
-var v = "12.31"
+var v = "12.32"
 var res = "https://zimek.tk/BetterAlis/res"
 var userid = 0
 
@@ -9,12 +9,13 @@ var getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=
 var users = {}
 var icons = {}
 var emojis = []
-var friends = {}
+//var friends = {}
 setTimeout(function(){
 users = getUsers.responseJSON
 icons = users.icons
 emojis = users.emojis
 }, 2000)
+/*
 setTimeout(function(){
   var fr = $.getJSON('/api/friends?token=' + $("#jwt").val())
 setTimeout(function(){
@@ -22,7 +23,7 @@ setTimeout(function(){
   Object.keys(fr.friends).forEach(id => {eval(`$.extend(friends, {${id}:{"uid":${id}}})`)})
 },1500)
 },7000)
-
+*/
 //hi
 console.log("%cBetter Alis", "background: #222; color: #fff;font-family: 'Pattaya', sans-serif; padding-bottom: 20px;padding-top: 20px;padding-left: 60px;padding-right: 60px;font-size: 50px;border-radius: 100px;");
 
@@ -208,7 +209,7 @@ $(`
 <h3>Better alis is not compatible with Havis</h3><br>
 </div></div>
 <div style="margin-left: 81px;"><div style="max-height: 200px;">
-<div style="margin-bottom: 30px;float: left;"><a href="https://discord.gg/jewrxwY" target="_blank"><img src="${res}/infopanel/discord.png" width="200px" height="68"></a></div>
+<div style="margin-bottom: 30px;float: left;"><a href="https://discord.gg/RfckHY9" target="_blank"><img src="${res}/infopanel/discord.png" width="200px" height="68"></a></div>
 <div class="mark"><b>Better Alis by Zimek</b></div>
 <div style="float: left;margin-top: 10px;margin-left: 10px;"><div class="g-ytsubscribe" data-channelid="UCzQLS2sTAPAYH7qyj0FXP3w" data-layout="full" data-theme="dark" data-count="hidden"></div></div>
 </div></div></div></div>
@@ -243,6 +244,8 @@ Background color: <input id="btaBgColor" class="uk-input" type="color" style="bo
 <label><input id="btaMsgTime" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Message Timelapse</label><br>
 <label><input id="btaGameShadow" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Background shadow</label><br>
 <label><input id="btaFbName" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide facebook name</label><br>
+<label><input id="btaEnemyNames" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide enemy names</label><br>
+<label><input id="btaAutoCleanChatbox" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Auto-clean chatbox</label><br>
 <label><input id="btaRestartBtn" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Restart button in game</label><br>
 <label><input id="btaStats" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Ping and FPS</label><br>
 <label><input id="btaHideOwnSkin" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox" style="margin-top: 3px;"> Hide own skin</label><br>
@@ -288,6 +291,8 @@ $('<br><div style="margin-left: 10px;margin-top:17px;" id="btaStatsDiv"><span id
                     "pskin":false,
                     "privskin":"",
                     "walls":1,
+                    "autocleanchatbox":true,
+                    "enemynames":false,
                     "fbname":false,
                     "msgtime":true,
                     "restartbtn":false,
@@ -333,6 +338,8 @@ const btaFbName = document.getElementById('btaFbName');
 const btaRestartBtn = document.getElementById('btaRestartBtn');
 const btaStats = document.getElementById('btaStats');
 const btaAutorespawn = document.getElementById('btaAutorespawn');
+const btaAutoCleanChatbox = document.getElementById('btaAutoCleanChatbox ');
+const btaEnemyNames = document.getElementById('btaEnemyNames');
 const btaPskin = document.getElementById('btaPskin');
 const btaHideOwnSkin = document.getElementById('btaHideOwnSkin');
 const btaDisableLBColors = document.getElementById('btaDisableLBColors');
@@ -358,6 +365,11 @@ var btaCellColor = document.getElementById('btaCellColor');
 
 if(!btaStorage.cc){
 btaStorage.cc="#82e8ff"
+}
+
+if(!btaStorage.enemynames){
+  btaStorage.enemynames=false;
+  btaStorage.autocleanchatbox=true;
 }
 
 if(!btaStorage.walls)btaStorage.walls=1;
@@ -389,6 +401,8 @@ btaFbName.checked = btaStorage.fbname;
 btaRestartBtn.checked = btaStorage.restartbtn;
 btaStats.checked = btaStorage.stats;
 btaCCcell.checked = btaStorage.cctrue
+btaAutoCleanChatbox.checked = btaStorage.autocleanchatbox
+btaEnemyNames.checked = btaStorage.enemynames
 btaAutorespawn.checked = btaStorage.autorespawn;
 btaHideOwnSkin.checked = btaStorage.hideownskin;
 btaDisableLBColors.checked = btaStorage.OFFlbColors;
@@ -424,6 +438,8 @@ function save(){
   "cctrue":btaCCcell.checked,
   "chatfade":btaChatFade.checked,
   "emojis":btaEmojis.checked,
+  "enemynames":btaEnemyNames.checked,
+  "autocleanchatbox":btaAutoCleanChatbox.checked,
   "lb":btaLb.checked,
   "hat":btaHat.checked,
   "hatval":`${btaHatVal.value}`,
@@ -462,7 +478,8 @@ if(btaPskin.checked){
 btaKeyPopTime.oninput = function () {
   $("#btaPopTimeOutVal").text(`${btaKeyPopTime.value}ms`);
 }
-
+btaEnemyNames.onchange = function () {save()}
+btaAutoCleanChatbox.onchange = function () {save()}
 btaCellWalls.onchange = function () {
   save()
   Object.values(playerDetails).forEach(u => {
@@ -1065,6 +1082,12 @@ if(user.muted){
     $(".noty_body").last().hide()
     $(tabContent).remove()
   }
+}
+
+if(btaAutoCleanChatbox.checked){
+  setTimeout(function(){
+    $(tabContent).remove()
+  },10*60*1000)
 }
 
 //eval command
