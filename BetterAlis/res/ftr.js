@@ -36,7 +36,10 @@ if(user.customImages){
 }
 
 if(btaEnemyNames.checked){
-  if(player.teamHash !== playerDetails[playerid].teamHash)player.name=nonName
+  if(player.teamHash !== playerDetails[playerid].teamHash){
+player.name=nonName
+player.extra.name=nonName
+  }
 }
 
 if(user.customImg){
@@ -114,7 +117,7 @@ setInterval(function() {
 $(document).ready(function(){
 if(isJoinedGame || spectateMode){upgradeBta()}
 })
-}, 5000);
+}, 3000);
 
 
 //Animated skin by Zimek
