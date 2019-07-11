@@ -1208,7 +1208,7 @@ $(document).ready(function(){
             $("#btaSettings").fadeIn(280);
     });
     $("button.uk-button.uk-button-default.btn-play.uk-button-large.uk-width-small").click(function(){
-setTimeout(function(){upgradeBta()}, 150)
+setTimeout(function(){upgradeBta()}, 300)
 });
     $("#hideall").click(function(){
         $("#btaSettings").fadeOut(250);
