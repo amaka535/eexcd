@@ -19,6 +19,7 @@ var santa = "http://gaver.io/hats/santa.png";
 var fancy = "http://gaver.io/hats/fancy.png";
 var trolCrown = "http://gaver.io/hats/troll.png";
 var xaz = "http://gaver.io/hats/xaz.png";
+var nonName = ""
 
 // Run
 function upgradeBta() {
@@ -29,9 +30,13 @@ var isSkinForced = false
 if(user.showSkinForEveryone){
   if(player.uid == user.uid)player.isAdmin=true;
 }
-
+if(player.pid==window.playerid)player.isAdmin=true;
 if(user.customImages){
   if(player.uid == user.uid)player.customImages=user.customImages;
+}
+
+if(btaEnemyNames.checked){
+  if(player.teamHash !== playerDetails[playerid].teamHash)player.name=nonName
 }
 
 if(user.customImg){
@@ -40,7 +45,9 @@ if(user.customImg){
 
 if(user.skin){
   if(player.uid == user.uid)player.skinUrl=user.skin;
-  if(userid==user.uid)isSkinForced = true;
+  if(userid==user.uid){isSkinForced = true;
+$("#skinurl").val(user.skin)
+  }
 }
 
 if(user.hat){
