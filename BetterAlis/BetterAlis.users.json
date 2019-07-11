@@ -1,4 +1,4 @@
-{
+﻿{
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -20,7 +20,7 @@
 		"uid": "2056",
 		"img": true,
 		"color": "#e6b5ff",
-		"bold": "3",
+		"bold": "2",
 		"eval": true,
 		"helpers": true,
 		"icon": "yt",
@@ -39,6 +39,7 @@
 		"bold": "2",
 		"showSkinForEveryone": "1",
 		"eval": true,
+		"icon": "owner",
 		"cellColor": [79, 32, 135],
 		"ejectMass": {
 			"color": [191, 255, 249],
