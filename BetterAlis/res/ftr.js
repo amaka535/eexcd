@@ -36,10 +36,13 @@ if(user.customImages){
 }
 
 if(btaEnemyNames.checked){
-  if(player.teamHash !== playerDetails[playerid].teamHash){
-player.name=nonName
-player.extra.name=nonName
+  Object.values(allCells).forEach(cell=>{
+    if(cell.isVirus || cell.isFood || cell.name=="")return;
+  if(cell.extra.teamHash !== playerDetails[playerid].teamHash){
+cell.name=nonName
+cell.extra.name=nonName
   }
+})
 }
 
 if(user.customImg){
