@@ -191,6 +191,14 @@
 		"cellColor": [255, 0, 255],
 		"color": "#ff87ff"
 	},
+	"lorenzo": {
+		"uid": "289125",
+		"muted": true
+	},
+	"zeox": {
+		"uid": "127960",
+		"muted": true
+	},
 	"owner": {
 		"uid": "165218",
 		"img": true,
