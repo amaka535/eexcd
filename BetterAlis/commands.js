@@ -149,23 +149,24 @@ function massSay(text) {sendChat(text)}
 
 function updateData() {
   console.log("reloading better alis data...")
-getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
-
-setTimeout(function(){
-  users = getUsers.responseJSON
-setTimeout(function(){icons = users.icons}, 2000)
-}, 3000)
+  $.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json`, function(data) {
+  users = data
+  icons = data.icons
+  emojis = data.emojis
+  })
 $(`<script src="https://zimek.tk/BetterAlis/commands.js?nocache=${Math.random()}"></script>`).appendTo("head")
 }
 
-setInterval(function(){
-  getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
-
-  setTimeout(function(){
-    users = getUsers.responseJSON
-  setTimeout(function(){icons = users.icons}, 2000)
-  }, 3000)
-}, 30*60*1000)
+setTimeout(function(){
+  setInterval(function(){
+    console.log("auto-reloading better alis data...")
+    $.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json`, function(data) {
+    users = data
+    icons = data.icons
+    emojis = data.emojis
+    })
+  }, users.settings["users-autoupdate"]*1000*60)
+}, 3000)
 
 function checkIP(uid) {
 if(userid==uid){sendChat(`${jwt_decode(jwt).validFrom}`)}
