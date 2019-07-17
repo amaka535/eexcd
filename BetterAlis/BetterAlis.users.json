@@ -1,4 +1,9 @@
 ﻿{
+	"settings": {
+		"upgrades-update": 5,
+		"users-update": 60,
+		"discord": "https://discord.gg/RfckHY9"
+	},
 	"zimek": {
 		"uid": "165218",
 		"img": true,
