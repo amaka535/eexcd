@@ -1,7 +1,7 @@
 ﻿{
 	"settings": {
 		"upgrades-update": 5,
-		"users-update": 60,
+		"users-autoupdate": 60,
 		"discord": "https://discord.gg/RfckHY9",
 		"yt": "https://www.youtube.com/channel/UCzQLS2sTAPAYH7qyj0FXP3w"
 	},
