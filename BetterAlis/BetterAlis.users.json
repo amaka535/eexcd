@@ -92,6 +92,10 @@
 			"numSides": "4"
 		}
 	},
+	"nugo": {
+		"uid": "58061",
+		"banned": true
+	},
 	"kya": {
 		"uid":"193036",
 		"_color":"#42fff5",
