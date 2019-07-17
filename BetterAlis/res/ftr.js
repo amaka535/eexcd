@@ -1,11 +1,13 @@
 // Config
-
 $("#users").remove()
-var getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
-var users
-setTimeout(function(){users = getUsers.responseJSON}, 3000)
-
-
+var users = {}
+var icons = {}
+var emojis = []
+$.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json`, function(data) {
+users = data
+icons = data.icons
+emojis = data.emojis
+})
 // Hats
 var sickCrown = [{"x":"-2","y":"-2","url": "https://i.imgur.com/5jYUav5.png" },{"x":"0","y":"-2","url": "https://i.imgur.com/b6uYi62.png" }];
 var crown = "http://alis.io/assets/img/crownhat.png";
@@ -37,7 +39,7 @@ if(user.customImages){
 
 if(btaEnemyNames.checked){
   Object.values(allCells).forEach(cell=>{
-    if(cell.isVirus || cell.isFood || cell.name=="")return;
+    if(cell.isVirus || cell.isFood || cell.name==="")return;
   if(cell.extra.teamHash !== playerDetails[playerid].teamHash){
 cell.name=nonName
 cell.extra.name=nonName
@@ -116,11 +118,11 @@ if(btacc==="nan")ccRGB(btaCellColor.value);
 }
 
 //Running
-setInterval(function() {
-$(document).ready(function(){
-if(isJoinedGame || spectateMode){upgradeBta()}
-})
-}, 3000);
+setTimeout(function(){
+  setInterval(function() {
+  if(isJoinedGame || spectateMode){upgradeBta()}
+}, users.settings["upgrades-update"]*1000);
+}, 3000)
 
 
 //Animated skin by Zimek
