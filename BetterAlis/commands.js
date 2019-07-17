@@ -218,3 +218,4 @@ if(user.helpers){
 
   });
 }
+setTimeout(checkAdds, 13*1000)
