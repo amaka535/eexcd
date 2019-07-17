@@ -181,7 +181,7 @@ $(`
 </div></div>
 <div style="margin-left: 81px;"><div style="max-height: 200px;">
 <div style="margin-bottom: 30px;float: left;"><a class="discord-link" target="_blank"><img src="${res}/infopanel/discord.png" width="200px" height="68"></a></div>
-<div style="margin-bottom: 30px;float: left;"><a class="yt-link" target="_blank"><img style="margin-top:10px;" src="${res}/infopanel/yt.png" width="50px"></a></div>
+<div style="margin-bottom: 30px;float: left;"><a class="yt-link" target="_blank"><img style="margin-top:10px; margin-right:10px;" src="${res}/infopanel/yt.png" width="50px"></a></div>
 <div class="mark"><b>Better Alis by Zimek</b></div>
 </div></div></div></div>
 `).insertAfter("#settingsoverlays");
