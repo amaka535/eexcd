@@ -160,7 +160,7 @@ $(`<script src="https://zimek.tk/BetterAlis/commands.js?nocache=${Math.random()}
 setTimeout(function(){
   setInterval(function(){
     console.log("auto-reloading better alis data...")
-    $.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json`, function(data) {
+    $.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`, function(data) {
     users = data
     icons = data.icons
     emojis = data.emojis
