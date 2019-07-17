@@ -3,7 +3,7 @@ $("#users").remove()
 var users = {}
 var icons = {}
 var emojis = []
-$.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json`, function(data) {
+$.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`, function(data) {
 users = data
 icons = data.icons
 emojis = data.emojis
