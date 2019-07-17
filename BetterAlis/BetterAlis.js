@@ -1,29 +1,8 @@
 //config
-var v = "12.32"
+var v = "12.33"
 var res = "https://zimek.tk/BetterAlis/res"
 var userid = 0
 
-//loading upgrades and emojis data
-$("#users").remove()
-var getUsers = $.get(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.random()}`);
-var users = {}
-var icons = {}
-var emojis = []
-//var friends = {}
-setTimeout(function(){
-users = getUsers.responseJSON
-icons = users.icons
-emojis = users.emojis
-}, 2000)
-/*
-setTimeout(function(){
-  var fr = $.getJSON('/api/friends?token=' + $("#jwt").val())
-setTimeout(function(){
-  fr=fr.responseJSON
-  Object.keys(fr.friends).forEach(id => {eval(`$.extend(friends, {${id}:{"uid":${id}}})`)})
-},1500)
-},7000)
-*/
 //hi
 console.log("%cBetter Alis", "background: #222; color: #fff;font-family: 'Pattaya', sans-serif; padding-bottom: 20px;padding-top: 20px;padding-left: 60px;padding-right: 60px;font-size: 50px;border-radius: 100px;");
 
@@ -46,14 +25,6 @@ $("div#ad_main").remove(); //Adblock
 
 
 //==//chat features//==//
-
-/*
-<div id="chattools" class="unicodeEmojiContainer" style="width: 100%;width: 565px; margin-left: -40px;background-color: rgba(0,0,0,0.7);border: 1px solid #82fff8;padding: 5px 5px 5px 5px;margin-bottom: 5px;overflow: hidden;border-radius: 10px; display:block;>
-<button id="chattoolsinfo" class="openpanel toolsBtn" style="width: auto;"><img width="30px" src="${res}/trash.png"> CLEAR CHATBOX:</button>
-<button id="clearchat" class="openpanel toolsBtn" style="width: auto;">ALL</button>
-<button id="clearserver" class="openpanel toolsBtn" style="padding-left: 3px;width: auto;">SERVER</button>
-</div>
-*/
 $(`
 <div id="btaEmojisBox">
 <div class="unicodeEmojiContainer" style="width: 100%;width: 565px; margin-left: -40px;background-color: rgba(0,0,0,0.7);padding: 5px 5px 5px 5px;margin-bottom: 5px;overflow: hidden;border-radius: 7px; display:block;">
@@ -200,7 +171,7 @@ $(`
 <h4>Emojis commands</h4>
 <h5>/shrug<br>/lenny<br>/lennu<br>/dance<br>/tableflip<br>/fight<br></h5><br>
 <h4>Commands</h4>
-<h5>/clear<br>/clear server<br>/title Your LB title<br>/cancer</h5><br>
+<h5>/clear<br>/clear server<br>/title Your leaderboard title<br>/cancer (better dont use)</h5><br>
 </div>
 <div style="float: right;width: 49%;"><font size="5px">
 <h4>Some features requires alis.io account</h4><br>
@@ -209,9 +180,9 @@ $(`
 <h3>Better alis is not compatible with Havis</h3><br>
 </div></div>
 <div style="margin-left: 81px;"><div style="max-height: 200px;">
-<div style="margin-bottom: 30px;float: left;"><a href="https://discord.gg/RfckHY9" target="_blank"><img src="${res}/infopanel/discord.png" width="200px" height="68"></a></div>
+<div style="margin-bottom: 30px;float: left;"><a class="discord-link" target="_blank"><img src="${res}/infopanel/discord.png" width="200px" height="68"></a></div>
+<div style="margin-bottom: 30px;float: left;"><a class="yt-link" target="_blank"><img src="${res}/infopanel/yt.png" width="80px"></a></div>
 <div class="mark"><b>Better Alis by Zimek</b></div>
-<div style="float: left;margin-top: 10px;margin-left: 10px;"><div class="g-ytsubscribe" data-channelid="UCzQLS2sTAPAYH7qyj0FXP3w" data-layout="full" data-theme="dark" data-count="hidden"></div></div>
 </div></div></div></div>
 `).insertAfter("#settingsoverlays");
 
@@ -230,7 +201,7 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 <button id="infobtn" class="zimekbtn2" style="width: 50%;height: 70px;float:right;"><img src="${res}/symbols/info.png" width="50px"></button>
 </div>
 <div id="btaSettingsMain" style="width: 100%;max-height: 60%;float: left;margin-top: 0px;padding: 15px;">
-<div><span style="font-size: 30px;" class="fontBTA">Better Alis</span><span style="font-size: 14px;margin-left: 10px;" class="font">by Zimek</span><span style="float: right;font-size: 10px;margin-top: 20px;" id="version" class="font"></span></div>
+<div><span style="font-size: 30px;" class="fontBTA">Better Alis</span><span style="font-size: 14px;margin-left: 10px;" class="font">by Zimek</span><a class="discord-link" target="_blank"><img style="margin-left:7px;" src="${res}/discord.png" width="40px"></a><a class="yt-link" target="_blank"><img style="margin-left:7px;" src="${res}/infopanel/yt.png" width="40px"></a><span style="float: right;font-size: 10px;margin-top: 20px;" id="version" class="font"></span></div>
 <div style="margin-top: 10px;overflow-y: scroll;max-height: 340px;">
 Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;margin-top:-3px;"><button id="defaultBg" class="little" style="margin-left:5px;margin-bottom:3px;height:26px;background-color:#151515;border-radius:4px;color:#d1d1d1;border:none;">default</button><br>
 <label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
