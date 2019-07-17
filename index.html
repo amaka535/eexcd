@@ -95,6 +95,8 @@ div.btnbg {
 
   $.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json`, function(data) {
     $("#discord").attr("href", data.settings.discord)
+    $("#yt").attr("href", data.settings.yt)
+
   })
 
 </script>
@@ -104,7 +106,7 @@ div.btnbg {
   <div style="text-align: center;margin-top:19%;">
     <div style="display: inline-block">
            <span class="welcum" style="">Zimek.tk</span><br><div id="social" style="display: inline-block;max-width:200px;">
-           <div style="float:left;"><a href="https://www.youtube.com/channel/UCzQLS2sTAPAYH7qyj0FXP3w" target="_blank"><img class="youtube antigray" src="./web/youtube.png"></a></div>
+           <div style="float:left;"><a id="yt" target="_blank"><img class="youtube antigray" src="./web/youtube.png"></a></div>
            <div style="float:right;"><a id="discord" target="_blank"><img class="discord antigray" src="./web/discord.png"></a></div>
            </div>
     </div>
