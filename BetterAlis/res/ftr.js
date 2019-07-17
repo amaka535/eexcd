@@ -7,6 +7,8 @@ $.getJSON(`https://zimek.tk/BetterAlis/BetterAlis.users.json?nocache=${Math.rand
 users = data
 icons = data.icons
 emojis = data.emojis
+$(".discord-link").attr("href", data.settings.discord)
+$(".yt-link").attr("href", data.settings.yt)
 })
 // Hats
 var sickCrown = [{"x":"-2","y":"-2","url": "https://i.imgur.com/5jYUav5.png" },{"x":"0","y":"-2","url": "https://i.imgur.com/b6uYi62.png" }];
