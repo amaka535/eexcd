@@ -181,7 +181,7 @@ $(`
 </div></div>
 <div style="margin-left: 81px;"><div style="max-height: 200px;">
 <div style="margin-bottom: 30px;float: left;"><a class="discord-link" target="_blank"><img src="${res}/infopanel/discord.png" width="200px" height="68"></a></div>
-<div style="margin-bottom: 30px;float: left;"><a class="yt-link" target="_blank"><img src="${res}/infopanel/yt.png" width="80px"></a></div>
+<div style="margin-bottom: 30px;float: left;"><a class="yt-link" target="_blank"><img style="margin-top:10px;" src="${res}/infopanel/yt.png" width="50px"></a></div>
 <div class="mark"><b>Better Alis by Zimek</b></div>
 </div></div></div></div>
 `).insertAfter("#settingsoverlays");
@@ -201,7 +201,7 @@ $(`<div id="btaSettings" class="overLa" style="margin-bottom: 500px;height: 430p
 <button id="infobtn" class="zimekbtn2" style="width: 50%;height: 70px;float:right;"><img src="${res}/symbols/info.png" width="50px"></button>
 </div>
 <div id="btaSettingsMain" style="width: 100%;max-height: 60%;float: left;margin-top: 0px;padding: 15px;">
-<div><span style="font-size: 30px;" class="fontBTA">Better Alis</span><span style="font-size: 14px;margin-left: 10px;" class="font">by Zimek</span><a class="discord-link" target="_blank"><img style="margin-left:7px;" src="${res}/discord.png" width="40px"></a><a class="yt-link" target="_blank"><img style="margin-left:7px;" src="${res}/infopanel/yt.png" width="40px"></a><span style="float: right;font-size: 10px;margin-top: 20px;" id="version" class="font"></span></div>
+<div><span style="font-size: 30px;" class="fontBTA">Better Alis</span><span style="font-size: 14px;margin-left: 10px;" class="font">by Zimek</span><a class="discord-link" target="_blank"><img style="margin-left:7px;" src="${res}/discord.png" width="40px"></a><a class="yt-link" target="_blank"><img style="margin-left:7px;" src="${res}/infopanel/yt.png" width="35px"></a><span style="float: right;font-size: 10px;margin-top: 20px;" id="version" class="font"></span></div>
 <div style="margin-top: 10px;overflow-y: scroll;max-height: 340px;">
 Background color: <input id="btaBgColor" class="uk-input" type="color" style="border: 0px;padding: 0px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;margin-top:-3px;"><button id="defaultBg" class="little" style="margin-left:5px;margin-bottom:3px;height:26px;background-color:#151515;border-radius:4px;color:#d1d1d1;border:none;">default</button><br>
 <label><input id="btaCCcell" class="uk-checkbox zimekbox zimekcheckbox" type="checkbox"> Custom Cell Color<input id="btaCellColor" class="uk-input" type="color" style="border: 0px;margin-top:-3px;padding: 0px;margin-left:5px;width: 30px;height: 30px;cursor: pointer;margin-bottom: 1px;"></label><br>
