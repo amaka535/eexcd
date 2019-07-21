@@ -68,9 +68,10 @@
 	},
 	"sick": {
 		"uid": "322943",
+                "helpers": true,
 		"customIcon": ["https://nosx.cf/dildo.png", "fag"],
 		"color": "#CCCCFF",
-		"_cellColor": [204, 204, 255]
+		"cellColor": [204, 204, 255]
 	},
 	"toron": {
 		"uid": "211845",
