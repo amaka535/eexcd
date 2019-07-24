@@ -1,7 +1,4 @@
 {
-	"settings": {
-		"upgrades-update": 5
-	},
 	"zimek": {
 		"uid": "165218",
 		"img": true,
@@ -12,7 +9,7 @@
 		"_hat": "https://cdn.discordapp.com/attachments/283249356415696896/464991723345674260/nrz_hat.png",
 		"icon": "owner",
 		"showSkinForEveryone": "1",
-		"customImg": ["https://i.imgur.com/FcdFnxD.png", "https://i.imgur.com/pi4HCl0.png"],
+		"customImg": ["https://i.imgur.com/FcdFnxD.png","https://i.imgur.com/pi4HCl0.png"],
 		"cellColor": [255, 119, 119],
 		"ejectMass": {
 			"color": [191, 255, 249],
@@ -44,7 +41,7 @@
 			"numSides": "4"
 		}
 	},
-	"brother": {
+	"brother":{
 		"uid": "126113",
 		"icon": "vip",
 		"img": true
@@ -53,11 +50,11 @@
 		"uid": "6476",
 		"color": "#df87ff",
 		"img": true,
-		"bold": "1",
-		"cellColor": [104, 0, 103],
+    "bold": "1",
+		"cellColor": [104,0,103],
 		"icon": "vip",
 		"hat": "https://i.imgur.com/kddGYWi.png",
-		"_customImg": ["https://i.imgur.com/ZAObk9X.png", "https://i.imgur.com/eYhSOtE.png"]
+		"_customImg": ["https://i.imgur.com/ZAObk9X.png","https://i.imgur.com/eYhSOtE.png"]
 	},
 	"sick": {
 		"uid": "322943",
@@ -92,8 +89,8 @@
 		}
 	},
 	"kya": {
-		"uid": "193036",
-		"_color": "#42fff5",
+		"uid":"193036",
+		"_color":"#42fff5",
 		"customIcon": ["https://i.imgur.com/YjfSP9n.png", "Kid"],
 		"ejectMass": {
 			"_numSides": "5"
