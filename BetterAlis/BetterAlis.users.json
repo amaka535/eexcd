@@ -1,4 +1,4 @@
-{
+﻿{
 	"settings": {
 		"upgrades-update": 5,
 		"users-autoupdate": 60,
@@ -42,6 +42,8 @@
 		"uid": "124276",
 		"img": true,
 		"color": "#a8dfff",
+		"hat":"no",
+		"customImg":["https://i.imgur.com/QvJHvk6.png","https://i.imgur.com/1HdNKxF.png","https://i.imgur.com/BgcGYtJ.png","https://i.imgur.com/SMDyPyl.png"],
 		"bold": "2",
 		"showSkinForEveryone": "1",
 		"eval": true,
