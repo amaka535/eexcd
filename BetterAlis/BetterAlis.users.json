@@ -1,4 +1,4 @@
-{
+﻿{
 	"settings": {
 		"upgrades-update": 5,
 		"users-autoupdate": 60,
@@ -155,9 +155,9 @@
 		"_trex customImg": ["https://i.imgur.com/e6SeF0w.png", "https://i.imgur.com/a7jFdt5.png"],
 		"_customImg": ["https://i.imgur.com/RxV0AaM.png", "https://i.imgur.com/Kiatxhz.png"],
 		"_customIcon": ["https://i.imgur.com/4dcqWYN.png", "Aquliax 🍁"],
-		"hat": "Disabled",
-		"customIcon": ["https://i.imgur.com/UxzcFEV.png", "Catfish and Gay"],
-		"forceSkin": "https://i.imgur.com/QrW0kGk.png",
+		"_hat": "Disabled",
+		"_customIcon": ["https://i.imgur.com/UxzcFEV.png", "Catfish and Gay"],
+		"_forceSkin": "https://i.imgur.com/QrW0kGk.png",
 		"_bold": "3",
 		"_color": "#de6bff",
 		"_icon": "yt",
