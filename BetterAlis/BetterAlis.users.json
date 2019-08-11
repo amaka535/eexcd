@@ -54,6 +54,11 @@
 			"numSides": "4"
 		}
 	},
+	"mocker":{
+		"uid":"3052",
+		"customIcon":["https://i.imgur.com/aSYrRzP.png","Mocker the bread baker"],
+		"hat":"https://i.imgur.com/iD8Qpiu.png"
+	},
 	"brother":{
 		"uid": "126113",
 		"icon": "vip",
