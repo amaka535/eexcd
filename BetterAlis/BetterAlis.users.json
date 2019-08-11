@@ -1,4 +1,4 @@
-﻿{
+{
 	"settings": {
 		"upgrades-update": 5,
 		"users-autoupdate": 60,
@@ -72,8 +72,9 @@
 	"sick": {
 		"uid": "322943",
 		"customIcon": ["https://nosx.cf/dildo.png", "fag"],
+		"customImg": ["https://i.imgur.com/rcmqUSm.png","https://i.imgur.com/4kTs3cP.png","https://i.imgur.com/T6N4HA2.png","https://i.imgur.com/iEOu66a.png"],
 		"color": "#CCCCFF",
-		"_cellColor": [204, 204, 255]
+		"cellColor": [204, 204, 255]
 	},
 	"toron": {
 		"uid": "211845",
