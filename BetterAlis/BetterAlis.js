@@ -29,7 +29,7 @@ $(`
 <div id="btaEmojisBox">
 <div class="unicodeEmojiContainer" style="width: 100%;width: 565px; margin-left: -40px;background-color: rgba(0,0,0,0.7);padding: 5px 5px 5px 5px;margin-bottom: 5px;overflow: hidden;border-radius: 7px; display:block;">
 <div id="emojisBox" style="border-radius: 15px;margin-bottom:30px;">
-
+<span id="loadingEmojis">Loading emojis...</span>
 
 </div>
 </div>
@@ -41,10 +41,10 @@ setTimeout(function(){
   $("#loadingEmojis").remove()
   Object.values(emojis).forEach(emoji=>{
   if(emoji.type === "default"){
-  var file = ".svg"
-  if(emoji.id == 47 || emoji.id == 50)file=".png";
+  var file = "svg"
+  if(emoji.format)file=emoji.format;
     $("#emojisBox").append(`
-  <div class="unicodeemoji"><img title=':${emoji.name}:' onclick="addChat('${emoji.unicode}')" src="${res}/emojis/default/${emoji.id}${file}"></div>
+  <div class="unicodeemoji"><img title=':${emoji.name}:' onclick="addChat('${emoji.unicode}')" src="${res}/emojis/default/${emoji.id}.${file}"></div>
       `)
   }
 
