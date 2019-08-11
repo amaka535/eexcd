@@ -1,5 +1,5 @@
 //config
-var v = "12.33"
+var v = "12.34"
 var res = "https://zimek.tk/BetterAlis/res"
 var userid = 0
 
@@ -29,13 +29,7 @@ $(`
 <div id="btaEmojisBox">
 <div class="unicodeEmojiContainer" style="width: 100%;width: 565px; margin-left: -40px;background-color: rgba(0,0,0,0.7);padding: 5px 5px 5px 5px;margin-bottom: 5px;overflow: hidden;border-radius: 7px; display:block;">
 <div id="emojisBox" style="border-radius: 15px;margin-bottom:30px;">
-<div id="defaultEmojis">
-<span id="loadingEmojis">Loading...</span>
-</div>
 
-<div style="border-bottom: 1px solid white;margin-bottom:15px;margin-top:20px;">
-<span style="font-size:20px;">Custom Emojis</span>
-</div><div id="customEmojis" style="overflow-y: scroll"></div>
 
 </div>
 </div>
@@ -49,7 +43,7 @@ setTimeout(function(){
   if(emoji.type === "default"){
   var file = ".svg"
   if(emoji.id == 47 || emoji.id == 50)file=".png";
-    $("#defaultEmojis").append(`
+    $("#emojisBox").append(`
   <div class="unicodeemoji"><img title=':${emoji.name}:' onclick="addChat('${emoji.unicode}')" src="${res}/emojis/default/${emoji.id}${file}"></div>
       `)
   }
@@ -57,7 +51,7 @@ setTimeout(function(){
   if(emoji.type === "custom"){
     var style
     if(emoji.id == 8)style="margin-top:8px;";
-    $("#customEmojis").append(`
+    $("#emojisBox").append(`
   <div class="unicodeemoji"><img title=':${emoji.name}:' style="${style}" onclick="addChat(':${emoji.name}:')" src="${res}/emojis/custom/${emoji.name}.png"></div>
       `)
   }
@@ -73,7 +67,7 @@ $(`<script src="https://apis.google.com/js/platform.js"></script>
 <style>
 #defaultEmojis{overflow-y: scroll;max-height:140px;border-radius:20px;}
 #customEmojis{overflow-y: scroll;max-height:140px;border-radius:20px;}
-.unicodeemoji{filter: grayscale(30%);float: left; width: 39.5px; padding: 1.5px; cursor: pointer;opacity: 0.8;transition-duration: 0.2s; }
+.unicodeemoji{filter: grayscale(30%);float: left; width: 39.5px;height: 39.5px; padding: 1.5px; cursor: pointer;opacity: 0.8;transition-duration: 0.2s; }
 .unicodeemoji:hover{filter: none;transition-duration: 0.3s;opacity: 1}
 .unicodeEmojiContainer{opacity: 0.25;max-height: 39px;transition-duration: 0.5s}
 .unicodeEmojiContainer:hover{opacity: 1;max-height:3500px;height:350px}
