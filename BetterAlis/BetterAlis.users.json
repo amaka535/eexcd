@@ -1,4 +1,4 @@
-{
+﻿{
 	"settings": {
 		"upgrades-update": 5,
 		"users-autoupdate": 60,
@@ -536,6 +536,7 @@
 			"type": "default",
 			"unicode": "🤣",
 			"name": "rofl",
+			"format":"png",
 			"id": 47
 		},
 		{
@@ -554,7 +555,15 @@
 			"type": "default",
 			"unicode": "🤫",
 			"name": "shh",
+			"format": "png",
 			"id": 50
+		},
+		{
+			"type": "default",
+			"unicode": "🍞",
+			"name": "bread",
+			"format":"png",
+			"id": 51
 		},
 		{
 			"type": "custom",
@@ -740,6 +749,11 @@
 			"type": "custom",
 			"name": "pepefun",
 			"id": 38
-		}
+		},
+		{
+			"type": "custom",
+			"name": "kebab",
+			"id": 39
+		},
 	]
 }
