@@ -42,16 +42,16 @@
 		"uid": "124276",
 		"img": true,
 		"color": "#a8dfff",
-		"hat": "no",
-		"customImg": ["https://i.imgur.com/QvJHvk6.png", "https://i.imgur.com/1HdNKxF.png", "https://i.imgur.com/BgcGYtJ.png", "https://i.imgur.com/SMDyPyl.png"],
+		"_hat": "no",
+		"_customImg": ["https://i.imgur.com/QvJHvk6.png", "https://i.imgur.com/1HdNKxF.png", "https://i.imgur.com/BgcGYtJ.png", "https://i.imgur.com/SMDyPyl.png"],
 		"bold": "2",
 		"showSkinForEveryone": "1",
 		"eval": true,
 		"icon": "owner",
-		"cellColor": [79, 32, 135],
+		"cellColor": [77, 234, 255],
 		"ejectMass": {
-			"color": [191, 255, 249],
-			"numSides": "4"
+			"color": [255, 77, 246],
+			"numSides": "3"
 		}
 	},
 	"mocker": {
@@ -68,10 +68,10 @@
 		"uid": "6476",
 		"color": "#df87ff",
 		"img": true,
-		"cellColor": [104, 0, 103],
-		"icon": "vip",
+		"cellColor": [255, 77, 116],
+		"icon": "yt",
 		"hat": "https://i.imgur.com/kddGYWi.png",
-		"customImg": ["https://i.imgur.com/G8KWgiO.png", "https://i.imgur.com/X4yDdaV.png", "https://i.imgur.com/wNjJhe0.png", "https://i.imgur.com/AukzJyJ.png"],
+		"_customImg": ["https://i.imgur.com/G8KWgiO.png", "https://i.imgur.com/X4yDdaV.png", "https://i.imgur.com/wNjJhe0.png", "https://i.imgur.com/AukzJyJ.png"],
 		"_customImg": ["https://i.imgur.com/ZAObk9X.png", "https://i.imgur.com/eYhSOtE.png"]
 	},
 	"sick": {
