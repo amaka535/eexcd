@@ -43,6 +43,7 @@
 		"img": true,
 		"color": "#a8dfff",
 		"_hat": "no",
+		"customIcon":["https://cdn.discordapp.com/emojis/562680838282805249.png", "Ultimate retard"],
 		"_customImg": ["https://i.imgur.com/QvJHvk6.png", "https://i.imgur.com/1HdNKxF.png", "https://i.imgur.com/BgcGYtJ.png", "https://i.imgur.com/SMDyPyl.png"],
 		"bold": "2",
 		"showSkinForEveryone": "1",
@@ -74,9 +75,14 @@
 		"_customImg": ["https://i.imgur.com/G8KWgiO.png", "https://i.imgur.com/X4yDdaV.png", "https://i.imgur.com/wNjJhe0.png", "https://i.imgur.com/AukzJyJ.png"],
 		"_customImg": ["https://i.imgur.com/ZAObk9X.png", "https://i.imgur.com/eYhSOtE.png"]
 	},
+	"smoov":{
+		"uid":"2312",
+		"customIcon":["https://i.imgur.com/r6k5xcl.png", "cunt"],
+		"hat":"https://nosx.cf/dildo.png"
+	},
 	"sick": {
 		"uid": "322943",
-		"customIcon": ["https://nosx.cf/dildo.png", "fag"],
+		"customIcon": ["https://cdn.discordapp.com/emojis/610131786881695758.png", "Kebab maker"],
 		"customImg": ["https://i.imgur.com/rcmqUSm.png", "https://i.imgur.com/4kTs3cP.png", "https://i.imgur.com/T6N4HA2.png", "https://i.imgur.com/iEOu66a.png"],
 		"color": "#CCCCFF",
 		"cellColor": [204, 204, 255]
