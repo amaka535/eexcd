@@ -1,0 +1,95 @@
+<head>
+<title>Hypertion</title>
+<meta name="description" content="Vanis.io Extension">
+<meta property="og:title" content="Hypertion">
+<meta property="og:description" content="Vanis.io Extension">
+<meta property="og:image" content="https://zimek.tk/Hypertion/web/logo.png?v=4f32ecc8f43d">
+<link rel="shortcut icon" href="./web/logo.png?v=4f32ecc8f43d">
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://zimek.tk/Hypertion/Hypertion.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://zimek-chat.glitch.me/socket.io/socket.io.js"></script>
+<style>
+.link{float:right;font-size:30px;padding:5px;margin-right:25px;margin-top:8px;color:#f5ffff;}
+.glow:hover{text-shadow: 0 0 3px #f5ffff, 0 0 5px #adffff;}
+.buttonhover:hover{box-shadow: 0px 0px 5px white;border-radius:30px;}
+.glow{transition:0.3s;}
+.cursordefault{cursor:default;}
+.cursorpointer{cursor:pointer;}
+a:link {
+  text-decoration: none;
+  color:#f5ffff;
+}
+
+body{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color:#f5ffff;
+}
+
+a:hover {
+  text-decoration: none;
+  color:white;
+}
+
+a:active {
+  text-decoration: none;
+  color:white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #adcaff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #adcaff;
+}
+
+</style>
+</head>
+
+<body style="background-color:#00030a;font-family: 'Quicksand', sans-serif;background-image: radial-gradient(#001033, #00030a);" oncontextmenu="return false">
+  <div id="mainbox" style="width:100.45%;height:100%;padding:0px;margin:-10px;display:none;">
+    <div id="topper" style="width:100.45%;background-color:#00040d;height:70px;background-image: repeating-linear-gradient(#000c2b, #00081c 80%, #000512);">
+      <div id="logo" style="float:left;width:65px;height:65px;margin-left:5%;margin-top:5px;background-image: url('./web/logo.png');box-shadow: 0px 0px 5px black;background-color: #cccccc;height: 65px;background-position: center;background-repeat: no-repeat;background-size: cover;position: relative;"></div>
+      <div class="glow cursordefault" style="float:left;font-size:40px;margin-left:15px;margin-top:6px;"><span style="color:#f5ffff;">Hypertion</span></div>
+      <div class="link glow cursorpointer"><a href="https://discord.gg/RfckHY9" target="_blank">Discord</a></div>
+    <!--  <div class="link glow cursorpointer"><a href="/contact">Contact</a></div> -->
+      <div class="link glow cursorpointer"><a href="https://greasyfork.org/en/scripts/389976-hypertion" target="_blank">Install</a></div>
+    </div>
+    <div id="banner" style="box-shadow: inset 4px -15px 25px 3px #000003;width:100.45%;height:423px;background-image: url('./web/banner.png');background-color: #cccccc;background-position: center;background-repeat: no-repeat;background-size: cover;position: relative;"></div>
+    <div style="background-color:#0d0d0d;height:100%;width:100.45%;z-index:999;background-image:repeating-linear-gradient(#000003, #050505, #0d0d0d);">
+      <div>
+      <div style="padding-top:200px;"><center>
+        <a class="cursorpointer glow buttonhover" href="https://greasyfork.org/en/scripts/389976-hypertion" style="font-size:70px;color:white;border: 1px solid white;padding:30px;box-shadow: 0px 0px 3px white;">Install Hypertion</a>
+      </center>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  $("#mainbox").fadeIn(1000)
+
+</script>
