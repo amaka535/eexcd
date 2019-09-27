@@ -14,7 +14,7 @@ setTimeout(function(){
     if (e.which == 9) {
       e.preventDefault();
       if($("#multiboxtab").css("display") === "none"){
-        window.activeElement.blur();
+        document.activeElement.blur();
         $("#multiboxtab").show()
         iframe.contentWindow.focus();
       } else {
@@ -29,7 +29,7 @@ setTimeout(function(){
     if (e.which == 9) {
       e.preventDefault();
       if($("#multiboxtab").css("display") === "none"){
-        window.activeElement.blur();
+        document.activeElement.blur();
         $("#multiboxtab").show()
         iframe.contentWindow.focus();
       } else {
