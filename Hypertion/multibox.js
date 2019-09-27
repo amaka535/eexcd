@@ -8,17 +8,13 @@ setTimeout(function(){
           objEvent.preventDefault(); // stops its action
       }
   })
-  $('#multiboxtab').contents().find('body').on('keyup',function(e) {
+  $('#multiboxtab').on('keyup',function(e) {
     if (e.which == 9) {
       e.preventDefault();
       if($("#multiboxtab").css("display") === "none"){
-        document.activeElement.blur();
         $("#multiboxtab").show()
-document.getElementsByName("multiboxtab")[0].contentWindow.document.body.focus();
-} else {
-document.getElementsByName("multiboxtab")[0].contentWindow.document.activeElement.blur();
+      } else {
         $("#multiboxtab").hide()
-        window.focus();
       }
       }
     })
@@ -27,13 +23,9 @@ document.getElementsByName("multiboxtab")[0].contentWindow.document.activeElemen
     if (e.which == 9) {
       e.preventDefault();
       if($("#multiboxtab").css("display") === "none"){
-        document.activeElement.blur();
         $("#multiboxtab").show()
-        iframe.contentWindow.focus();
       } else {
-        iframe.activeElement.blur();
         $("#multiboxtab").hide()
-        window.focus();
       }
     }
   };
