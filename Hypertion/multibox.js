@@ -1,19 +1,4 @@
 var multiboxTab = true
-function imMultiboxTab(){
-  multiboxTab = false
-  $(document).keydown(function(objEvent) {
-      if (objEvent.keyCode == 9) {  //tab pressed
-          objEvent.preventDefault(); // stops its action
-      }
-  })
-  document.onkeyup = function(e) {
-    if (e.which == 9) {
-      e.preventDefault();
-        $("body").trigger("focus")
-        $("#multiboxtab").fadeOut(140)
-      }
-    }
-  };
 
 
 if(localStorage.getItem("hypertionID") == 69 && multiboxTab){ //testing multiboxing
@@ -25,7 +10,13 @@ setTimeout(function(){
           objEvent.preventDefault(); // stops its action
       }
   })
-  document.getElementById('multiboxtab').contentWindow.imMultiboxTab();
+  document.getElementById('multiboxtab').onkeyup = function(e) {
+    if (e.which == 9) {
+      e.preventDefault();
+        $(this).fadeOut(140)
+      }
+    }
+
   document.onkeyup = function(e) {
     if (e.which == 9) {
       e.preventDefault();
