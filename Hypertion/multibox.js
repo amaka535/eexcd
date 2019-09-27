@@ -9,7 +9,6 @@ setTimeout(function(){
       }
   })
   var iframeBody=$('#multiboxtab').contents().find('body');
-iframeBody.attr('contenteditable', true);
 
   $(iframeBody).on('keyup',function(e) {
     if (e.which == 9) {
