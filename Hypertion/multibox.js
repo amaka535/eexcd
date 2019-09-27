@@ -14,7 +14,13 @@ iframeBody.attr('contenteditable', true);
   $(iframeBody).on('keyup',function(e) {
     if (e.which == 9) {
       e.preventDefault();
-$("#multiboxtab").fadeOut(140)
+      if($("#multiboxtab").css("display") === "none"){
+        $("#multiboxtab").fadeIn(140)
+        $("#multiboxtab").trigger("focus")
+      } else {
+        $("body").trigger("focus")
+        $("#multiboxtab").fadeOut(140)
+      }
       }
     })
 
