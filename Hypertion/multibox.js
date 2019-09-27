@@ -1,4 +1,3 @@
-var multiboxTab = true
 
 
 if(localStorage.getItem("hypertionID") == 69 && multiboxTab){ //testing multiboxing
@@ -10,12 +9,15 @@ setTimeout(function(){
           objEvent.preventDefault(); // stops its action
       }
   })
-  document.getElementById('multiboxtab').onkeyup = function(e) {
+  var iframeBody=$('#multiboxtab').contents().find('body');
+iframeBody.attr('contenteditable', true);
+
+  $(iframeBody).on('keyup',function(e) {
     if (e.which == 9) {
       e.preventDefault();
-        $(this).fadeOut(140)
+$("#multiboxtab").fadeOut(140)
       }
-    }
+    })
 
   document.onkeyup = function(e) {
     if (e.which == 9) {
