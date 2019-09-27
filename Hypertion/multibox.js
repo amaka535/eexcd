@@ -9,16 +9,18 @@ setTimeout(function(){
       }
   })
   var iframeBody=$('#multiboxtab').contents().find('body');
-
+  var iframe = $("#TB_iframeContent")
   $(iframeBody).on('keyup',function(e) {
     if (e.which == 9) {
       e.preventDefault();
       if($("#multiboxtab").css("display") === "none"){
-        $("#multiboxtab").fadeIn(50)
-        iframeBody.focus()
+        window.activeElement.blur();
+        $("#multiboxtab").show()
+        iframe.contentWindow.focus();
       } else {
-        $("#multiboxtab").fadeOut(50)
-        document.getElementsByTagName('body').focus()
+        iframe.activeElement.blur();
+        $("#multiboxtab").hide()
+        window.focus();
       }
       }
     })
@@ -27,11 +29,13 @@ setTimeout(function(){
     if (e.which == 9) {
       e.preventDefault();
       if($("#multiboxtab").css("display") === "none"){
-        $("#multiboxtab").fadeIn(50)
-        iframeBody.focus()
+        window.activeElement.blur();
+        $("#multiboxtab").show()
+        iframe.contentWindow.focus();
       } else {
-        $("#multiboxtab").fadeOut(50)
-        document.getElementsByTagName('body').focus()
+        iframe.activeElement.blur();
+        $("#multiboxtab").hide()
+        window.focus();
       }
     }
   };
