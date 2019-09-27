@@ -16,8 +16,10 @@ setTimeout(function(){
       if($("#multiboxtab").css("display") === "none"){
         $("#multiboxtab").fadeIn(140)
         $(iframeBody).trigger("focus")
+        $(iframeBody).trigger("click")
       } else {
-        $(document).trigger("focus")
+        $('body').trigger("focus")
+        $('body').trigger("click")
         $("#multiboxtab").fadeOut(140)
       }
       }
