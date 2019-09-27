@@ -9,7 +9,7 @@ setTimeout(function(){
       }
   })
   var iframeBody=$('#multiboxtab').contents().find('body');
-  var iframe = $("#TB_iframeContent")
+  var iframe = $("#multiboxtab")
   $(iframeBody).on('keyup',function(e) {
     if (e.which == 9) {
       e.preventDefault();
