@@ -5,7 +5,7 @@
 <meta property="og:description" content="Vanis.io Extension">
 <meta property="og:image" content="https://zimek.tk/Hypertion/web/logo.png?v=4f32ecc8f43d">
 <link rel="shortcut icon" href="./web/logo.png?v=4f32ecc8f43d">
-<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://zimek.tk/Hypertion/Hypertion.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -13,7 +13,7 @@
 <style>
 .link{float:right;font-size:30px;padding:5px;margin-right:25px;margin-top:8px;color:#f5ffff;}
 .glow:hover{text-shadow: 0 0 3px #f5ffff, 0 0 5px #adffff;}
-.buttonhover:hover{box-shadow: 0px 0px 5px white;border-radius:30px;}
+.buttonhover:hover{box-shadow: 0px 0px 5px white;}
 .glow{transition:0.3s;}
 .cursordefault{cursor:default;}
 .cursorpointer{cursor:pointer;}
@@ -21,7 +21,7 @@ a:link {
   text-decoration: none;
   color:#f5ffff;
 }
-
+.textshadow{text-shadow: 0 0 3px black, 0 0 5px black;}
 body{
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -30,6 +30,8 @@ body{
     -ms-user-select: none;
     user-select: none;
 }
+
+
 
 a:visited {
   text-decoration: none;
@@ -47,7 +49,7 @@ a:active {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 2px;
 }
 
 /* Track */
@@ -68,28 +70,86 @@ a:active {
 </style>
 </head>
 
-<body style="background-color:#00030a;font-family: 'Quicksand', sans-serif;background-image: radial-gradient(#001033, #00030a);" oncontextmenu="return false">
+<body style="background-color:#00030a;font-family: 'Quicksand', sans-serif;background-image: radial-gradient(#000003, #050505, #212121);" oncontextmenu="return false">
   <div id="mainbox" style="width:100.45%;height:100%;padding:0px;margin:-10px;display:none;">
-    <div id="topper" style="width:100.45%;background-color:#00040d;height:70px;background-image: repeating-linear-gradient(#000c2b, #00081c 80%, #000512);">
-      <div id="logo" style="float:left;width:65px;height:65px;margin-left:5%;margin-top:5px;background-image: url('./web/logo.png');box-shadow: 0px 0px 5px black;background-color: #cccccc;height: 65px;background-position: center;background-repeat: no-repeat;background-size: cover;position: relative;"></div>
-      <div class="glow cursordefault" style="float:left;font-size:40px;margin-left:15px;margin-top:6px;"><span style="color:#f5ffff;">Hypertion</span></div>
-      <div class="link glow cursorpointer"><a href="https://discord.gg/RfckHY9" target="_blank">Discord</a></div>
-    <!--  <div class="link glow cursorpointer"><a href="/contact">Contact</a></div> -->
-      <div class="link glow cursorpointer"><a href="https://greasyfork.org/en/scripts/389976-hypertion" target="_blank">Install</a></div>
+    <div id="banner" style="box-shadow: inset 4px -15px 25px 3px #000003;width:100.45%;height:947px;background-color: #cccccc;background-position: center;background-repeat: no-repeat;background-size: cover;position: relative;">
+<center><div style="padding-top:200px;"><span class="textshadow" style="z-index:99;font-size:100px;color:white;">Hypertion</span><br><br>
+<span class="textshadow" style="z-index:99;font-size:50px;color:white;">A vanis.io extension by Zimek</span>
+<br><br><br><br><br><br><br><br><a class="cursorpointer glow buttonhover" href="https://greasyfork.org/en/scripts/389976-hypertion" style="background-color:rgba(0,0,0,0.7);font-size:40px;color:white;border: 1px solid white;padding:10px;padding-left:30px;padding-right:30px;box-shadow: 0px 0px 3px white;">Install Hypertion</a>
+</div></center>
     </div>
-    <div id="banner" style="box-shadow: inset 4px -15px 25px 3px #000003;width:100.45%;height:423px;background-image: url('./web/banner.png');background-color: #cccccc;background-position: center;background-repeat: no-repeat;background-size: cover;position: relative;"></div>
-    <div style="background-color:#0d0d0d;height:100%;width:100.45%;z-index:999;background-image:repeating-linear-gradient(#000003, #050505, #0d0d0d);">
+    <div style="background-color:#0d0d0d;height:3900px;width:100.45%;z-index:999;background-image:repeating-linear-gradient(#000003, #050505, #0d0d0d);">
       <div>
       <div style="padding-top:200px;"><center>
-        <a class="cursorpointer glow buttonhover" href="https://greasyfork.org/en/scripts/389976-hypertion" style="font-size:70px;color:white;border: 1px solid white;padding:30px;box-shadow: 0px 0px 3px white;">Install Hypertion</a>
-      </center>
+<span style="font-size:60px;color:white;">Features</span></center>
+<div style="margin-top:200px;">
+  <div style="padding:40px;padding-left:10%;margin-top:200px;padding-right:10%;">
+    <img height="350px" src="./skingallery.png" style="float:right;box-shadow: 0px 0px 5px black;border-radius:10px;">
+    <span style="font-size:40px;color:white;">Skins gallery</span><br><br>
+    <span style="font-size:20px;color:white;">Skins gallery allows you to store your skins to use them in any time (limit is 30) You can add skins, remove skins and copy their URLs. You can also add multiple skins at same time to save more time. By donating you can unlock unlimited skins storage</span>
+  </div>
+  <div style="padding:40px;padding-left:10%;margin-top:200px;text-align:right;padding-right:10%;">
+    <img height="350px" src="./nicks.png" style="float:left;box-shadow: 0px 0px 5px black;border-radius:10px;">
+    <span style="font-size:40px;color:white;">Nicks storage</span><br><br>
+    <span style="font-size:20px;color:white;">Nicks storage allows you to store your all fancy nicknames or also secret tags. Nicks storage doesnt include option to add multiple at same time because i find it pointless. Limit of nicks is 20 but by donating you can unlock unlimited</span>
+  </div>
+  <div style="padding:40px;padding-left:10%;margin-top:200px;padding-right:10%;">
+    <img height="350px" src="./export.png" style="margin-left:15px;float:right;box-shadow: 0px 0px 5px black;border-radius:10px;">
+    <img height="350px" src="./import.png" style="float:right;box-shadow: 0px 0px 5px black;border-radius:10px;">
+    <span style="font-size:40px;color:white;">Export and Import</span><br><br>
+    <span style="font-size:20px;color:white;">You can download your all skins and nicks on your deskop and import/load it later if you will lose it, or to share them with your friends<br>(Find buttons in settings)</span>
+  </div>
+  <div style="padding:40px;padding-left:10%;margin-top:200px;text-align:right;padding-right:10%;">
+    <img height="350px" src="./captcha.png" style="float:left;box-shadow: 0px 0px 5px black;border-radius:10px;">
+    <img width="250px" src="./resetbtn.png" style="margin-left:15px;float:left;box-shadow: 0px 0px 5px black;border-radius:10px;">
+    <span style="font-size:40px;color:white;">Reseting</span><br><br>
+    <span style="font-size:20px;color:white;">You can reset your entire skins or nicks storage if you have too many useless, even if you click accidentally, theres captcha that you have to fill to reset it<br>(Find buttons in settings)</span>
+  </div>
+</div>
+
+<div style="padding:200px;padding-top:200px;padding-bottom:100px;"><center><span style="font-size:40px;color:white;">More coming soon...</span></center><hr style="height:0px;border:0.5px solid #d1d1d1;margin-top:100px;"></div>
+<center><span style="font-size:60px;color:white;">Install</span>
+<div style="margin-top:100px;">
+  <span style="font-size:30px;color:white;">To install Hypertion you need Tampermonkey extension or other userscript browser extension.</span><br><br><br>
+<a class="cursorpointer glow buttonhover" href="https://greasyfork.org/en/scripts/389976-hypertion" style="background-color:rgba(0,0,0,0.7);font-size:40px;color:white;border: 1px solid white;padding:10px;padding-left:30px;padding-right:30px;box-shadow: 0px 0px 3px white;">Install Hypertion</a>
+  </div>
+  </center>
+<div style="padding:200px;padding-top:100px;padding-bottom:100px;"><hr style="height:0px;border:0.5px solid #d1d1d1;"></div>
+<center><span style="font-size:60px;color:white;">Credits</span></center>
+<div style="margin-top:100px;width:100%">
+<div style="width:300px;  display: table;margin: 0 auto;height:260px;background-color:rgba(0,0,0,0.3);box-shadow: 0px 0px 5px rgba(0,0,0,0.3);">
+  <div style="text-align:center;margin-top:25px;">
+<img width="150px" height="150px" src="https://i.imgur.com/t6zAqFl.png" style="border-radius:10px;"><br>
+<span style="font-size:25px;color:white;"><b>Zimek</b></span><br>
+<span style="font-size:20px;color:white;">Developer & Owner</span>
+</div>
+  </div>
+  <div style="padding:200px;padding-top:200px;padding-bottom:50px;"><hr style="height:0px;border:0.5px solid #d1d1d1;margin-top:100px;"></div>
+<center><a class="link glow cursorpointer" href="https://zimek.tk/discord/" target="_blank" style="font-size:25px;color:white;float:none;">Discord</a>
+<a class="link glow cursorpointer" target="_blank" style="font-size:25px;color:white;float:none;margin-left:50px;">YouTube</a></center>
       </div>
       </div>
     </div>
   </div>
 </body>
 
+<script src="./vanta/vendor/three.r92.min.js"></script>
+<script src="./vanta/dist/vanta.net.min.js"></script>
+<script>
+  //background-image: url('./web/banner.png');
+  VANTA.NET({
+    el: "#banner",
+    color: 0x3ff3ff,
+    backgroundColor: 0x0,
+    points: 20.00,
+    maxDistance: 16.00,
+    showDots: false
+  })
+  </script>
+
 <script>
   $("#mainbox").fadeIn(1000)
-
+$("canvas").css("width", "100%")
+$("canvas").attr("width", "1910px")
+$("canvas").css("box-shadow", "inset 4px -15px 25px 3px #000003")
 </script>
