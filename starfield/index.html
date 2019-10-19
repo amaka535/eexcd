@@ -18,3 +18,17 @@
 </div>
 </body>
 <script src="./starfield.js"></script>
+<script>
+  var config = {
+   "speed":2,
+   "color":"125, 248, 255",  //rgb
+   "backgroundColor":"0, 0, 0",    //rgb
+   "alpha":3,
+   "size":3,
+   "amount":100,
+   "fps":30,
+   "appearTime":200,    //ms
+   "divID":"box"    //find canvas to use inside div with that id
+  }
+  var starField = new StarField(config.divID).render(config.amount, config.speed);
+</script>
