@@ -1,0 +1,126 @@
+{
+    name: 'Nemesis',
+    mode: 0,
+    IP: 'eu.senpa.io:2001',
+    stats: 'eu.senpa.io:2001/tracker',
+    region: 'EU'
+  },
+  {
+    name: 'Zephyr',
+    mode: 2,
+    IP: 'eu.senpa.io:1001',
+    stats: 'eu.senpa.io:1001/tracker',
+    region: 'EU'
+  },
+    {
+    name: 'Elysium',
+    mode: 5,
+    IP: 'eu.senpa.io:3001',
+    stats: 'eu.senpa.io:3001/tracker',
+    region: 'EU'
+  },
+    {
+    name: 'Windbine',
+    mode: 1,
+    IP: 'eu.senpa.io:4001',
+    stats: 'eu.senpa.io:4001/tracker',
+    region: 'EU'
+  },
+    {
+    name: 'Ram',
+    mode: 8,
+    IP: 'eu.senpa.io:5001',
+    stats: 'eu.senpa.io:5001/tracker',
+    region: 'EU'
+  },
+  {
+    name: 'Ares',
+    mode: 7,
+    IP: 'eu.senpa.io:6001',
+    stats: 'eu.senpa.io:6001/tracker',
+    region: 'EU'
+  },
+   {
+    name: 'Heavenly',
+    mode: 0,
+    IP: 'us.senpa.io:2001',
+    stats: 'us.senpa.io:2001/tracker',
+    region: 'NA'
+  },
+  {
+    name: 'Drakon',
+    mode: 2,
+    IP: 'us.senpa.io:1001',
+    stats: 'us.senpa.io:1001/tracker',
+    region: 'NA'
+  },
+    {
+    name: 'Stella',
+    mode: 5,
+    IP: 'us.senpa.io:3001',
+    stats: 'us.senpa.io:3001/tracker',
+    region: 'NA'
+  },
+    {
+    name: 'Angel',
+    mode: 1,
+    IP: 'us.senpa.io:4001',
+    stats: 'us.senpa.io:4001/tracker',
+    region: 'NA'
+  },
+    {
+    name: 'Loco',
+    mode: 8,
+    IP: 'us.senpa.io:5001',
+    stats: 'us.senpa.io:5001/tracker',
+    region: 'NA'
+  },
+  {
+    name: 'SoloTricks',
+    mode: 7,
+    IP: 'us.senpa.io:6001',
+    stats: 'us.senpa.io:6001/tracker',
+    region: 'NA'
+  },
+   {
+    name: 'Hiso',
+    mode: 0,
+    IP: 'asia.senpa.io:2001',
+    stats: 'asia.senpa.io:2001/tracker',
+    region: 'AS'
+  },
+  {
+    name: 'Sakura',
+    mode: 2,
+    IP: 'asia.senpa.io:1001',
+    stats: 'asia.senpa.io:1001/tracker',
+    region: 'AS'
+  },
+    {
+    name: 'Mimi',
+    mode: 5,
+    IP: 'asia.senpa.io:3001',
+    stats: 'asia.senpa.io:3001/tracker',
+    region: 'AS'
+  },
+    {
+    name: 'Akalunia',
+    mode: 1,
+    IP: 'asia.senpa.io:4001',
+    stats: 'asia.senpa.io:4001/tracker',
+    region: 'AS'
+  },
+    {
+    name: 'Razor',
+    mode: 8,
+    IP: 'asia.senpa.io:5001',
+    stats: 'asia.senpa.io:5001/tracker',
+    region: 'AS'
+  },
+  {
+    name: 'Marl',
+    mode: 7,
+    IP: 'asia.senpa.io:6001',
+    stats: 'asia.senpa.io:6001/tracker',
+    region: 'AS'
+  }
