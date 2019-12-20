@@ -15,7 +15,7 @@ if(location.search==="?tab2"){
     if (keycode1 == 9) {
         e.preventDefault();
         e.stopPropagation();
-        parent.document.hideTab()
+        parent.hideTab()
     }
 });
 } else {
