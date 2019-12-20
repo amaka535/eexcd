@@ -21,6 +21,7 @@ if(location.search==="?tab2"){
         parent.document.getElementById("canvas").focus()
     }
 });
+$("#starfield").hide()
 } else {
   $(document).keydown(function (e)
 {
