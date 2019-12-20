@@ -9,7 +9,7 @@ function hideTab(){
 
 if(location.search==="?tab2"){
   secondtab = true
-  $("#app").append(`<span style="position:absolute;top:100;left:0;">TAB 2</iframe>`)
+  $("#app").append(`<span style="position:absolute;top:5;left:5;font-size:20px;"><b>TAB 2</b></iframe>`)
   $(document).keydown(function (e)
 {
     var keycode1 = (e.keyCode ? e.keyCode : e.which);
@@ -21,7 +21,6 @@ if(location.search==="?tab2"){
         parent.document.getElementById("canvas").focus()
     }
 });
-$("#starfield").hide()
 } else {
   $(document).keydown(function (e)
 {
@@ -40,7 +39,7 @@ $("#starfield").hide()
         }
     }
 });
-$("#starfield").hide()
   $("body").append(`<iframe id="second-tab" src="https://vanis.io?tab2" style="width:100%;height:100%;position:absolute;top:0;left:0;" frameborder="0"></iframe>`)
-  $("#app").append(`<span style="position:absolute;top:100;left:0;">TAB 1</iframe>`)
+  $("#app").append(`<span style="position:absolute;top:5;left:5;font-size:20px;"><b>TAB 1</b></iframe>`)
 }
+$("#starfield").hide()
