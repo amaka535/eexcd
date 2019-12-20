@@ -2,8 +2,9 @@ var secondtab = false
 var secondtabhidden = false
 
 function hideTab(){
-  $("#second-tab").fadeOut(60)
+  $("#second-tab").fadeOut(100)
   secondtabhidden = true
+  document.getElementById("canvas").focus()
 }
 
 if(location.search==="?tab2"){
@@ -17,10 +18,10 @@ if(location.search==="?tab2"){
         e.stopPropagation();
         parent.hideTab()
         parent.focus()
+        parent.document.getElementById("canvas").focus()
     }
 });
 } else {
-
   $(document).keydown(function (e)
 {
     var keycode1 = (e.keyCode ? e.keyCode : e.which);
@@ -28,12 +29,13 @@ if(location.search==="?tab2"){
         e.preventDefault();
         e.stopPropagation();
         if(secondtabhidden){
-          $("#second-tab").fadeIn(60)
+          $("#second-tab").fadeIn(100)
           document.getElementById("second-tab").focus()
+          document.getElementById("second-tab").contentWindow.document.getElementById("canvas").focus()
           secondtabhidden = false
         } else {
           secondtabhidden = true
-          $("#second-tab").fadeOut(60)
+          $("#second-tab").fadeOut(100)
         }
     }
 });
