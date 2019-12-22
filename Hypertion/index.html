@@ -7,7 +7,6 @@
 <link rel="shortcut icon" href="./web/logo.png?v=4f32ecc8f43d">
 <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://zimek.tk/Hypertion/Hypertion.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://zimek-chat.glitch.me/socket.io/socket.io.js"></script>
 <style>
@@ -74,8 +73,10 @@ a:active {
 <body style="background-color:#00030a;font-family: 'Quicksand', sans-serif;background-image: radial-gradient(#000003, #050505, #212121);" oncontextmenu="return false">
   <div id="mainbox" style="width:100.45%;height:100%;padding:0px;margin:-10px;display:none;">
     <div id="banner" style="width:100.45%;height:900px;">
-<center><div style="padding-top:200px;"><span class="textshadow" style="z-index:99;font-size:100px;color:white;">Hypertion</span><br><br>
-<span class="textshadow" style="z-index:99;font-size:50px;color:white;">A vanis.io extension by Zimek</span>
+<center><div style="padding-top:70px;"><span class="textshadow" style="z-index:99;font-size:100px;color:white;">Hypertion</span><br><br>
+<span class="textshadow" style="z-index:99;font-size:50px;color:white;">Best vanis.io extension by Zimek</span><br><br>
+<span class="textshadow" style="z-index:99;font-size:30px;color:white;" id="installs">Total installs: -</span><br>
+<span class="textshadow" style="z-index:99;font-size:30px;color:white;" id="online">Users online: -</span>
 <br><br><br><br><a class="cursorpointer glow buttonhover" href="https://greasyfork.org/en/scripts/389976-hypertion" style="background-color:rgba(0,0,0,0.7);font-size:40px;color:white;border: 1px solid white;padding:10px;padding-left:30px;padding-right:30px;box-shadow: 0px 0px 3px white;">Install Hypertion</a>
 </div></center>
     </div>
@@ -86,6 +87,29 @@ a:active {
 <script src="./vanta/vendor/three.r92.min.js"></script>
 <script src="./vanta/dist/vanta.net.min.js"></script>
 <script>
+
+  $.getJSON("https://zimek-chat.glitch.me/hypertion", function(data){
+    var count = 0
+    for (var i = 0; i <= data.totalInstalls; ++i) {
+      setTimeout(function(){
+        count += 1
+        $("#installs").text(`Total installs: ${count}`)
+      }, i*2)
+}
+
+var count1 = 0
+for (var i = 0; i <= data.online; ++i) {
+  setTimeout(function(){
+    count1 += 1
+    $("#online").text(`Users online: ${count1}`)
+  }, i*50)
+}
+    });
+
+/*
+  for (var number = 1; number <= times; number++) {
+    document.getElementById("placefillerWebsite" + number).innerHTML = placefillerWebsite;
+}*/
   //background-image: url('./web/banner.png');
   VANTA.NET({
     el: "body",
